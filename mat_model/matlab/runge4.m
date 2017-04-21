@@ -28,21 +28,26 @@ while (t < b)
         'END'
     end
     x3_solve(i+1) = func_x3(t(i), x1_solve(i), x2_solve(i), x3_solve(i));
-    K = koef4(t, x1_solve(i), x2_solve(i), x3_solve(i), h);
-    Km = koef4(t/2, x1_solve(i), x2_solve(i), x3_solve(i), h);
     
+    K = koef4(t, x1_solve(i), x2_solve(i), x3_solve(i), h);
     z1 = x1_solve(i) + (K.kx1.k1 + 2 * K.kx1.k2 + 2 * K.kx1.k3 + K.kx1.k4) / 6;
     z2 = x2_solve(i) + (K.kx2.k1 + 2 * K.kx2.k2 + 2 * K.kx2.k3 + K.kx2.k4) / 6;
-     
-
+    
+    
+    Km = koef4(t, x1_solve(i), x2_solve(i), x3_solve(i), h/2);
     y1 = x1_solve(i) + (Km.kx1.k1 + 2 * Km.kx1.k2 + 2 * Km.kx1.k3 + Km.kx1.k4) / 6;
     y2 = x2_solve(i) + (Km.kx2.k1 + 2 * Km.kx2.k2 + 2 * Km.kx2.k3 + Km.kx2.k4) / 6;
+    Km = koef4(t+h/2, x1_solve(i), x2_solve(i), x3_solve(i), h/2);
+    y1 = y1 + (Km.kx1.k1 + 2 * Km.kx1.k2 + 2 * Km.kx1.k3 + Km.kx1.k4) / 6;
+    y2 = y2 + (Km.kx2.k1 + 2 * Km.kx2.k2 + 2 * Km.kx2.k3 + Km.kx2.k4) / 6;
     
-	err(i+1) = abs(16 * y1 - z1) / 15
-    if (abs(16 * y2 - z2)/15 > err(i+1)) 
-        err(i+1) = abs(16 * y2 - z2)/15;
+    tmp_err = abs(z1-y1);
+    tmp_err2 = abs(z2-y2);
+    if (tmp_err > tmp_err2)
+        err(i+1) = tmp_err;
+    else
+        err(i+1) = tmp_err2;
     end
-
     
     if (err(i+1) < eps)
 		if (err(i+1) < 0.001 * eps)
@@ -50,14 +55,14 @@ while (t < b)
      			h = h * 2;
             else
                i = i+1;
-               x1_solve(i) = z1;
-               x2_solve(i) = z2;
+               x1_solve(i) = (16 * y1 - z1)/15;
+               x2_solve(i) = (16 * y2 - z2)/15;
                t(i) = t(i-1) + h;
            end
         else
             i = i+1;
-			x1_solve(i) = z1;
-			x2_solve(i) = z2;
+			x1_solve(i) = (16 * y1 - z1)/15;
+			x2_solve(i) = (16 * y2 - z2)/15;
 			t(i) = t(i-1) + h;
         end
     else
