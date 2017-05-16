@@ -40,6 +40,11 @@ Vector2 &operator * (Vector2 a, double b) {
 	return res;
 }
 
+struct data {
+	Vector2 Vector2;
+	bool flag_map;
+};
+
 struct koef_model {
 	double mass;
 	double gravity;
