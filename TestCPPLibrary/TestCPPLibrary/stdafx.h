@@ -13,6 +13,9 @@
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
 
+#include "stdio.h"
+#include "stdlib.h"
+
 
 struct Vector2 {
 	double x;
@@ -40,12 +43,17 @@ Vector2 &operator * (Vector2 a, double b) {
 	return res;
 }
 
+struct state_model {
+	Vector2 Coord;
+	Vector2 Velocity;
+};
+
 struct data {
 	Vector2 Vector2;
 	bool flag_map;
 };
 
-struct koef_model {
+struct koef_of_model {
 	double mass;
 	double gravity;
 	double force;
