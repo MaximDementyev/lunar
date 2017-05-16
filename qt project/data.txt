@@ -1,0 +1,1 @@
+{"name": "", "int": 28, "double": 10.5, "favourite_color": "Red"}
