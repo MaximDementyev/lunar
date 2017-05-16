@@ -11,6 +11,37 @@
 // Файлы заголовков Windows:
 #include <windows.h>
 
-
-
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
+
+
+struct Vector2 {
+	double x;
+	double y;
+};
+
+Vector2 &operator + (Vector2 a, Vector2 b) {
+	Vector2 res;
+	res.x = a.x + b.x;
+	res.y = a.y + b.y;
+	return res;
+}
+
+Vector2 &operator - (Vector2 a, Vector2 b) {
+	Vector2 res;
+	res.x = a.x - b.x;
+	res.y = a.y - b.y;
+	return res;
+}
+
+Vector2 &operator * (Vector2 a, double b) {
+	Vector2 res;
+	res.x = a.x * b;
+	res.y = a.y * b;
+	return res;
+}
+
+struct koef_model {
+	double mass;
+	double gravity;
+	double force;
+};
