@@ -48,8 +48,8 @@ struct state_model {
 	Vector2 Velocity;
 };
 
-struct data {
-	Vector2 Vector2;
+struct data_model {
+	state_model state_model;
 	bool flag_map;
 };
 
