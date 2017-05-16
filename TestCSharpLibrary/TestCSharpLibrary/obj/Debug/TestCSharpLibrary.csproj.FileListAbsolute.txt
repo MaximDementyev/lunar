@@ -1,0 +1,4 @@
+D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\bin\Debug\TestCSharpLibrary.dll
+D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\bin\Debug\TestCSharpLibrary.pdb
+D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\obj\Debug\TestCSharpLibrary.dll
+D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\obj\Debug\TestCSharpLibrary.pdb
