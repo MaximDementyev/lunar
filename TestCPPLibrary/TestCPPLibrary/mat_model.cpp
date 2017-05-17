@@ -18,5 +18,10 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 }
 
 extern "C" __declspec(dllexport) data_model solve_step(state_model current_model, double time, double angle, double limitation_x) {
+	// проверка касания.
+	// касание есть
+	// вызов next_step_N
 
+	//касания нет
+	//вызов next_step_no_N
 }

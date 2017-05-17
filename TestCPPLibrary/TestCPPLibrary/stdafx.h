@@ -12,6 +12,8 @@
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
 
+#include"function_header.h"
+
 #include "stdio.h"
 #include "stdlib.h"
 #define _USE_MATH_DEFINES
@@ -44,6 +46,13 @@ Vector2 &operator * (Vector2 a, double b) {
 	return res;
 }
 
+Vector2 &operator * (double b, Vector2 a) {
+	Vector2 res;
+	res.x = a.x * b;
+	res.y = a.y * b;
+	return res;
+}
+
 Vector2 &operator / (Vector2 a, double b) {
 	Vector2 res;
 	if (b != 0) {
@@ -70,6 +79,8 @@ struct koef_of_model {
 	double force;
 };
 
+
+//struct for runge koef
 struct koef1 {
 	Vector2 k1;
 	Vector2 k2;
@@ -82,9 +93,3 @@ struct runge_K {
 	koef1 kx2;
 	koef1 kx3;
 };
-
-double norm(Vector2 a, Vector2 b);
-double norm(Vector2 a);
-double sign(double);
-double cos_deg(double a);
-double sin_deg(double a);
