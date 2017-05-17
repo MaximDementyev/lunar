@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-extern "C" __declspec(dllexport) koef_of_model  initialization() {
+extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 	koef_of_model koef_model;
 
 	FILE *in;
@@ -17,3 +17,6 @@ extern "C" __declspec(dllexport) koef_of_model  initialization() {
 	return koef_model;
 }
 
+extern "C" __declspec(dllexport) data_model solve_step(state_model current_model, double time, double angle, double limitation_x) {
+
+}

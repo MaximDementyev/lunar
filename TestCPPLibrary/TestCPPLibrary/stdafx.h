@@ -1,7 +1,6 @@
 // stdafx.h: включаемый файл дл€ стандартных системных включаемых файлов
 // или включаемых файлов дл€ конкретного проекта, которые часто используютс€, но
 // не часто измен€ютс€
-//
 
 #pragma once
 
@@ -15,11 +14,13 @@
 
 #include "stdio.h"
 #include "stdlib.h"
+#define _USE_MATH_DEFINES
+#include "cmath"
 
 
 struct Vector2 {
-	double x;
-	double y;
+	double x = 0;
+	double y = 0;
 };
 
 Vector2 &operator + (Vector2 a, Vector2 b) {
@@ -43,6 +44,16 @@ Vector2 &operator * (Vector2 a, double b) {
 	return res;
 }
 
+Vector2 &operator / (Vector2 a, double b) {
+	Vector2 res;
+	if (b != 0) {
+		res.x = a.x / b;
+		res.y = a.y / b;
+		return res;
+	}
+	return res;
+}
+
 struct state_model {
 	Vector2 Coord;
 	Vector2 Velocity;
@@ -58,3 +69,22 @@ struct koef_of_model {
 	double gravity;
 	double force;
 };
+
+struct koef1 {
+	Vector2 k1;
+	Vector2 k2;
+	Vector2 k3;
+	Vector2 k4;
+};
+
+struct runge_K {
+	koef1 kx1;
+	koef1 kx2;
+	koef1 kx3;
+};
+
+double norm(Vector2 a, Vector2 b);
+double norm(Vector2 a);
+double sign(double);
+double cos_deg(double a);
+double sin_deg(double a);

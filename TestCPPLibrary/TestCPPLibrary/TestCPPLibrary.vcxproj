@@ -146,6 +146,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bibl.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -162,6 +163,7 @@
     </ClCompile>
     <ClCompile Include="mat_model.cpp" />
     <ClCompile Include="runge.cpp" />
+    <ClCompile Include="runge_func.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TestCPPLibrary.cpp" />
   </ItemGroup>
