@@ -2,14 +2,14 @@
 #include "stdafx.h"
 
 //bibl.cpp
-double norm(Vector2 a, Vector2 b);
-double norm(Vector2 a);
+double norm(struct Vector2 a, struct Vector2 b);
+double norm(struct Vector2 a);
 double sign(double);
 double cos_deg(double a);
 double sin_deg(double a);
 
 //runge_func.cpp
-Vector2 func_solve_acceleration(Vector2 Velocity, koef_of_model koef_model, double alpha, double mu);
-runge_K runge_koef(Vector2 solve_velocity, Vector2 solve_acceleration, double h, koef_of_model koef_model, double alpha, double mu);
-Vector2 solve_koef_coord(runge_K K);
-Vector2 solve_koef_velocity(runge_K K);
+struct Vector2 func_solve_acceleration(struct Vector2 Velocity, struct koef_of_model koef_model, double force, struct surface current_surface);
+struct runge_K runge_koef(struct Vector2 solve_velocity, struct Vector2 solve_acceleration, struct koef_of_model koef_model, struct surface current_surface, double force, double h);
+struct Vector2 solve_koef_coord(struct runge_K K);
+struct Vector2 solve_koef_velocity(struct runge_K K);

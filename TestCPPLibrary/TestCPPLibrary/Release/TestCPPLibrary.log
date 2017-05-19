@@ -1,8 +1,22 @@
-﻿  dllmain.cpp
+﻿  bibl.cpp
+  mat_model.cpp
+mat_model.cpp(8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
+mat_model.cpp(13): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(1192): note:  см. объявление "fscanf"
+mat_model.cpp(14): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(1192): note:  см. объявление "fscanf"
+mat_model.cpp(15): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(1192): note:  см. объявление "fscanf"
+  runge.cpp
+  runge_func.cpp
   stdafx.cpp
   TestCPPLibrary.cpp
-     Создается библиотека D:\Progect_VS\TestCPPLibrary\Release\TestCPPLibrary.lib и объект D:\Progect_VS\TestCPPLibrary\Release\TestCPPLibrary.exp
+  dllmain.cpp
+     Создается библиотека D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.lib и объект D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.exp
   Создание кода
-  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  16 of 16 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    12 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
-  TestCPPLibrary.vcxproj -> D:\Progect_VS\TestCPPLibrary\Release\TestCPPLibrary.dll
+  TestCPPLibrary.vcxproj -> D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.dll
