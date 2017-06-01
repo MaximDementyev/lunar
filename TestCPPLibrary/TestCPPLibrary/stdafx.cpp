@@ -1,5 +1,5 @@
 #include "stdafx.h"
-//operators for Vector2
+
 struct Vector2 &operator + (struct Vector2 a, struct Vector2 b) {
 	struct Vector2 res;
 	res.x = a.x + b.x;

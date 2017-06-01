@@ -18,13 +18,21 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 	return koef_model;
 }
 
-extern "C" __declspec(dllexport) data_model solve_step(state_model current_model, koef_of_model koef_model, double time, surface current_surface) {
+extern "C" __declspec(dllexport) data_model solve_step(state_model current_model, koef_of_model koef_model, surface current_surface, double current_time, double step_time) {
+	
+	
+	//соударение!!!!!!!!!!!!!!
+	
 	// проверка касания.
-	/*if (current_surface.distance_to_earth > koef_model.radius) {	// касание есть
+	if (fabs(current_surface.distance_to_earth - koef_model.radius) < eps) { //There is a touch
+		if (current_surface.distance_to_earth < koef_model.radius) // Fell a little under the texture
+			current_model.Coord.y += fabs(current_surface.distance_to_earth - koef_model.radius);  //Surface elevation
 													// вызов next_step_N
-	}else{//касания нет
-		  //вызов next_step_no_N
-	}*/
+	}else{
+		if (current_surface.distance_to_earth < koef_model.radius) // This should not be!!!
+			current_model.Coord.y += fabs(current_surface.distance_to_earth - koef_model.radius);//Surface elevation
+													// вызов next_step_no_N
+	}
 	data_model a;
 	return a;
 }

@@ -21,3 +21,7 @@ double cos_deg(double a) {
 double sin_deg(double a) {
 	return sin(a * M_PI / 180);
 }
+
+double tan_deg(double a) {
+	return tan(a * M_PI / 180);
+}
