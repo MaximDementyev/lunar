@@ -3,7 +3,7 @@
 const double eps = 1e-6; // подобрать
 
 
-state_model next_step_N(state_model current_model, koef_of_model koef_model, surface current_surface, double force, double time, double limitation_x) {
+struct state_model next_step_N(struct state_model current_model, struct koef_of_model koef_model, struct surface current_surface, double force, double time, double limitation_x) {
 	double h = 5;
 	Vector2 solve_Acceleration = func_solve_acceleration(current_model.Velocity, koef_model, force, current_surface); // Acceleration calculation
 	
@@ -49,6 +49,15 @@ state_model next_step_N(state_model current_model, koef_of_model koef_model, sur
 	//return;
 }
 
-state_model next_step_no_N(state_model current_model, double limitation_x, koef_of_model koef_model) {
-	//return;
+struct state_model next_step_no_N(struct state_model current_model, struct koef_of_model koef_model, double time) {
+	//Analytical solution
+	struct state_model final_model;
+
+	final_model.Velocity.x = current_model.Velocity.x;  // v = v
+	final_model.Velocity.y -= koef_model.gravity * time; // v = v0 - gt
+
+	final_model.Coord.x += final_model.Velocity.x * time; // x = x0 + vt
+	final_model.Coord.y += final_model.Velocity.y * time - koef_model.gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
+
+	return final_model;
 }
