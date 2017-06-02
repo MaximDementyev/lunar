@@ -14,6 +14,13 @@ struct Vector2 &operator - (struct Vector2 a, struct Vector2 b) {
 	return res;
 }
 
+struct Vector2 &operator - (struct Vector2 a) {
+	struct Vector2 res;
+	res.x = -a.x;
+	res.y = -a.y;
+	return res;
+}
+
 struct Vector2 &operator * (struct Vector2 a, double b) {
 	struct Vector2 res;
 	res.x = a.x * b;
@@ -35,5 +42,12 @@ struct Vector2 &operator / (struct Vector2 a, double b) {
 		res.y = a.y / b;
 		return res;
 	}
+	return res;
+}
+
+struct Vector2 &operator *= (struct Vector2 a, double b) {
+	struct Vector2 res;
+	res.x = a.x * b;
+	res.y = a.y * b;
 	return res;
 }

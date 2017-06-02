@@ -29,9 +29,11 @@ struct Vector2 {
 };
 struct Vector2 &operator + (struct Vector2 a, struct Vector2 b);
 struct Vector2 &operator - (struct Vector2 a, struct Vector2 b);
+struct Vector2 &operator - (struct Vector2 a);
 struct Vector2 &operator * (struct Vector2 a, double b);
 struct Vector2 &operator * (double b, struct Vector2 a);
 struct Vector2 &operator / (struct Vector2 a, double b);
+struct Vector2 &operator *= (struct Vector2 a, double b);
 
 struct state_model {
 	struct Vector2 Coord;
