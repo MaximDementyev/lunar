@@ -11,3 +11,15 @@ double find_earth(state_model current_model, koef_of_model koef_model, surface c
 
 	return touch_time;
 }
+
+struct Vector2 hit(state_model current_model, koef_of_model koef_model, surface current_surface) {
+	struct Vector2 guide_surface;   //Surface vector guide
+	guide_surface.x = cos_deg(current_surface.angle);
+	guide_surface.y = sin_deg(current_surface.angle);
+
+	double projection = dotprod(current_model.Velocity, guide_surface) / norm(guide_surface);   //Module of the velocity vector projection onto the surface
+	
+	struct Vector2 Velocity_after_impact = projection * guide_surface; //Velocity after impact :) Accurate to a sign
+	Velocity_after_impact *= sign(dotprod(Velocity_after_impact, current_model.Velocity)); //Checked the sign
+	return Velocity_after_impact;
+}
