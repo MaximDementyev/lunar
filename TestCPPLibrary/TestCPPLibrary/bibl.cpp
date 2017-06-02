@@ -25,3 +25,7 @@ double sin_deg(double a) {
 double tan_deg(double a) {
 	return tan(a * M_PI / 180);
 }
+
+double dotprod(struct Vector2 a, struct Vector2 b) {
+	return a.x * b.x + a.y * b.y;
+}
