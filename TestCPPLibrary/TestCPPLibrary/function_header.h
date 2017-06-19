@@ -11,7 +11,7 @@ double tan_deg(double a);
 double dotprod(struct Vector2 a, struct Vector2 b);
 
 //runge.cpp
-struct state_model next_step_N(struct state_model current_model, struct koef_of_model koef_model, struct surface current_surface, double force, double time, double limitation_x);
+struct state_model next_step_N(struct state_model current_model, struct koef_of_model koef_model, struct surface current_surface, double force, double* time_left);
 struct state_model next_step_no_N(struct state_model current_model, struct koef_of_model koef_model, double time);
 
 //runge_func.cpp
@@ -22,4 +22,6 @@ struct Vector2 solve_koef_velocity(struct runge_K K);
 
 //xz.cpp
 double find_earth(state_model current_model, koef_of_model koef_model, surface current_surface); //-2 error! We fell through the texture //-1 Touching outside a known surface //Through how many will be touching
+double time_no_N(state_model current_model, surface current_surface);
 struct Vector2 hit(state_model current_model, koef_of_model koef_model, surface current_surface);
+int touch_test(state_model current_model, surface current_surface);

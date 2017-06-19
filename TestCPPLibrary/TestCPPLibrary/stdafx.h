@@ -42,7 +42,8 @@ struct state_model {
 
 struct data_model {
 	struct state_model state_model;
-	bool flag_map;
+	int flag_map;
+	double time_left;
 };
 
 struct koef_of_model {
@@ -52,8 +53,9 @@ struct koef_of_model {
 };
 
 struct surface {
+	double start_x;
+	double srart_y;
 	double angle;
-	double distance_to_earth;
 	double limitation_x;
 	double mu;
 };

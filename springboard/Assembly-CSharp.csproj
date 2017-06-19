@@ -79,7 +79,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="TestCSharpLibrary">
- <HintPath>C:/Users/Uaer/Desktop/springboard/Assets/TestCSharpLibrary.dll</HintPath>
+ <HintPath>D:/GitHab/lunar/springboard/Assets/TestCSharpLibrary.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
