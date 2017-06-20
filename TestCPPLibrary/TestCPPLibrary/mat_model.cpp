@@ -24,14 +24,14 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, koef
 
 		//int touch = touch_test(current_model, current_surface);
 
-		double ñurrent_surface_height = tan_deg(current_surface->angle) * current_model->Coord.x + current_surface->srart_y - current_surface->start_x * tan_deg(current_surface->angle);
+		double current_surface_height = tan_deg(current_surface->angle) * current_model->Coord.x + current_surface->srart_y - current_surface->start_x * tan_deg(current_surface->angle);
 
-		if (ñurrent_surface_height > current_model->Coord.y) {//We fell through the textures
-			current_model->Coord.y = ñurrent_surface_height;//Climbed to the surface
+		if (current_surface_height > current_model->Coord.y) {//We fell through the textures
+			current_model->Coord.y = current_surface_height;//Climbed to the surface
 			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
 		}
 
-		if (fabs(ñurrent_surface_height - current_model->Coord.y) < eps) {//We are on the surface
+		if (fabs(current_surface_height - current_model->Coord.y) < eps) {//We are on the surface
 			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
 			next_step_N(current_model, koef_model, current_surface, force, step_time);//Step calculation
 		
