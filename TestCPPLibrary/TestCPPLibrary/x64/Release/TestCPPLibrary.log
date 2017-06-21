@@ -1,5 +1,18 @@
-﻿     Создается библиотека D:\Progect_VS\TestCPPLibrary\x64\Release\TestCPPLibrary.lib и объект D:\Progect_VS\TestCPPLibrary\x64\Release\TestCPPLibrary.exp
+﻿  TestCPPLibrary.cpp
+TestCPPLibrary.cpp(31): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
+TestCPPLibrary.cpp(39): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
+     Создается библиотека D:\GitHab\lunar\TestCPPLibrary\x64\Release\TestCPPLibrary.lib и объект D:\GitHab\lunar\TestCPPLibrary\x64\Release\TestCPPLibrary.exp
   Создание кода
-  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(43): warning C4172: возвращение адреса локальной или временной переменной : res
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(45): warning C4172: возвращение адреса локальной или временной переменной : res
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(35): warning C4172: возвращение адреса локальной или временной переменной : res
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(28): warning C4172: возвращение адреса локальной или временной переменной : res
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(14): warning C4172: возвращение адреса локальной или временной переменной : res
+d:\githab\lunar\testcpplibrary\testcpplibrary\stdafx.cpp(7): warning C4172: возвращение адреса локальной или временной переменной : res
   Создание кода завершено
-  TestCPPLibrary.vcxproj -> D:\Progect_VS\TestCPPLibrary\x64\Release\TestCPPLibrary.dll
+  21 of 40 functions (52.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  TestCPPLibrary.vcxproj -> D:\GitHab\lunar\TestCPPLibrary\x64\Release\TestCPPLibrary.dll
