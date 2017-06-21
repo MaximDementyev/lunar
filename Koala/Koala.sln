@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koala", "Assembly-CSharp.csproj", "{74CE317F-9442-A658-ACA4-85AC6BF3A529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koala", "Assembly-CSharp-Editor.csproj", "{46D9B5A6-5B79-3FC9-5FE7-4BBB5AC9BFF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CE317F-9442-A658-ACA4-85AC6BF3A529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CE317F-9442-A658-ACA4-85AC6BF3A529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CE317F-9442-A658-ACA4-85AC6BF3A529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CE317F-9442-A658-ACA4-85AC6BF3A529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D9B5A6-5B79-3FC9-5FE7-4BBB5AC9BFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D9B5A6-5B79-3FC9-5FE7-4BBB5AC9BFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D9B5A6-5B79-3FC9-5FE7-4BBB5AC9BFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D9B5A6-5B79-3FC9-5FE7-4BBB5AC9BFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
