@@ -26,13 +26,13 @@ struct Vector2 {
 	double y = 0;
 };
 
-struct Vector2 &operator + (const struct Vector2 &, const struct Vector2 &);
-struct Vector2 &operator - (const struct Vector2 &, const struct Vector2 &);
-struct Vector2 &operator - (const struct Vector2 &);
-struct Vector2 &operator * (const struct Vector2 &, const double);
-struct Vector2 &operator * (const double, const struct Vector2 &);
-struct Vector2 &operator *= (struct Vector2 &, const double);
-struct Vector2 &operator / (struct Vector2 &, const double);
+struct Vector2 operator + (const struct Vector2 &, const struct Vector2 &);
+struct Vector2 operator - (const struct Vector2 &, const struct Vector2 &);
+struct Vector2 operator - (const struct Vector2 &);
+struct Vector2 operator * (const struct Vector2 &, const double);
+struct Vector2 operator * (const double, const struct Vector2 &);
+struct Vector2 operator *= (struct Vector2 &, const double);
+struct Vector2 operator / (struct Vector2 &, const double);
 
 
 struct state_model {
