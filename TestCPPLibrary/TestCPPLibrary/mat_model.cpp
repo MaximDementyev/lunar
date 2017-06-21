@@ -5,14 +5,14 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 	koef_of_model koef_model;
 
 	FILE *in;
-	if ((in = fopen("model_koef.txt", "r")) == NULL) {
+	if ((in = fopen("model_koef.ini", "r")) == NULL) {
 		printf("Cannot open file model_koef.txt");
 		return koef_model;
 	}
 
-	fscanf(in, "%lf", &koef_model.mass);
-	fscanf(in, "%lf", &koef_model.gravity);
-	fscanf(in, "%lf", &koef_model.radius);
+	fscanf_s(in, "%lf", &koef_model.mass);
+	fscanf_s(in, "%lf", &koef_model.gravity);
+	fscanf_s(in, "%lf", &koef_model.radius);
 	
 	fclose(in);
 	return koef_model;
