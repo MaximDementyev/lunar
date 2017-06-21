@@ -28,25 +28,25 @@ Vector2 func_solve_acceleration(Vector2* Velocity, koef_of_model* koef_model, do
 	}
 }
 
-void runge_koef(Vector2* solve_velocity, Vector2* solve_acceleration, koef_of_model* koef_model, surface* current_surface, double* force, double h, runge_K* K) {
+void runge_koef(Vector2* solve_velocity, Vector2* solve_acceleration, koef_of_model* koef_model, surface* current_surface, double* force, double* h, runge_K* K) {
 	
 	//calculate all koef for runge
 
-	K->kx1.k1 = *solve_velocity * h;
-	K->kx2.k1 = *solve_acceleration * h;
-	K->kx3.k1 = func_solve_acceleration(solve_velocity,  koef_model, force, current_surface) * h;
+	K->kx1.k1 = *solve_velocity * (*h);
+	K->kx2.k1 = *solve_acceleration * (*h);
+	K->kx3.k1 = func_solve_acceleration(solve_velocity,  koef_model, force, current_surface) * (*h);
 
-	K->kx1.k2 = (*solve_velocity + K->kx1.k1 / 2) * h;
-	K->kx2.k2 = (*solve_acceleration + K->kx2.k1 / 2) * h;
-	K->kx3.k2 = (func_solve_acceleration(&(*solve_velocity + K->kx3.k1 / 2), koef_model, force, current_surface)) * h;
+	K->kx1.k2 = (*solve_velocity + K->kx1.k1 / 2) * (*h);
+	K->kx2.k2 = (*solve_acceleration + K->kx2.k1 / 2) * (*h);
+	K->kx3.k2 = (func_solve_acceleration(&(*solve_velocity + K->kx3.k1 / 2), koef_model, force, current_surface)) * (*h);
 
-	K->kx1.k3 = (*solve_velocity + K->kx1.k2 / 2) * h;
-	K->kx2.k3 = (*solve_acceleration + K->kx2.k2 / 2) * h;
-	K->kx3.k3 = func_solve_acceleration(&(*solve_velocity + K->kx3.k2 / 2), koef_model, force, current_surface) * h;
+	K->kx1.k3 = (*solve_velocity + K->kx1.k2 / 2) * (*h);
+	K->kx2.k3 = (*solve_acceleration + K->kx2.k2 / 2) * (*h);
+	K->kx3.k3 = func_solve_acceleration(&(*solve_velocity + K->kx3.k2 / 2), koef_model, force, current_surface) * (*h);
 
-	K->kx1.k4 = (*solve_velocity + K->kx1.k3) * h;
-	K->kx2.k4 = (*solve_acceleration + K->kx2.k3) * h;
-	K->kx3.k4 = func_solve_acceleration(&(*solve_velocity + K->kx3.k3), koef_model, force, current_surface) * h;
+	K->kx1.k4 = (*solve_velocity + K->kx1.k3) * (*h);
+	K->kx2.k4 = (*solve_acceleration + K->kx2.k3) * (*h);
+	K->kx3.k4 = func_solve_acceleration(&(*solve_velocity + K->kx3.k3), koef_model, force, current_surface) * (*h);
 }
 
 Vector2 solve_koef_coord(runge_K* K) { //Solution function

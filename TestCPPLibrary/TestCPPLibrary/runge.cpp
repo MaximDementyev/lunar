@@ -17,7 +17,7 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 		}
 
 		runge_K K;
-		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, step_time, &K); // Calculation koef for step h
+		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, &step_time, &K); // Calculation koef for step h
 		
 		if (solve_koef_coord(&K).x > current_surface->start_x + current_surface->limitation_x ||//Step reduction
 			solve_koef_coord(&K).x < current_surface->start_x ||
@@ -31,15 +31,17 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 		z2 = current_model->Velocity + solve_koef_velocity(&K);
 
 
+		double half_step_time = step_time / 2;
 		runge_K Km;
-		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, (step_time / 2), &Km); //Calculation koef for step h/2
+		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, &half_step_time, &Km); //Calculation koef for step h/2
 		//solve for step h/2
 		Vector2 y1, y2;
 		y1 = current_model->Coord + solve_koef_coord(&Km);
 		y2 = current_model->Velocity + solve_koef_velocity(&Km);
 
+		
 		solve_Acceleration = func_solve_acceleration(&y2, koef_model, force, current_surface); //Calculation of a new acceleration
-		runge_koef(&y2, &solve_Acceleration, koef_model, current_surface, force, (step_time / 2), &Km); //Calculation koef for time+h and step h/2
+		runge_koef(&y2, &solve_Acceleration, koef_model, current_surface, force, &half_step_time, &Km); //Calculation koef for time+h and step h/2
 
 		//solve for time+h and step h/2
 		y1 = y1 + solve_koef_coord(&Km);
