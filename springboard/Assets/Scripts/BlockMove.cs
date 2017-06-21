@@ -8,16 +8,30 @@ public class BlockMove : MonoBehaviour {
 	new private Rigidbody2D rigidbody;
 	private Animator animator;
 	private SpriteRenderer sprite;
+	public struct double_Vector2{
+		public double x;
+		public double y;
+	}
 
-	//[DllImport("TestCPPLibrary", EntryPoint="TestDivide")]
-	//public static extern float StraightFromDllTestDivide(float a, float b);
+	[DllImport("TestCPPLibrary", EntryPoint="TestSum")]
+	public static extern float TestSum_for_dll(float a, float b);
+	[DllImport("TestCPPLibrary", EntryPoint="TestStruct")]
+	public static extern double_Vector2 Test_struct();
+
+	//[DllImport("TestCPPLibrary", EntryPoint="TestUpdateStruct")]
+	//public static extern void TestUpdateStruct(double_Vector2* res);
 
 	private void Start ()
 	{
 		Vector3 position = this.transform.position;
-		position.y = TestCSharpLibrary.TestCSharpLibrary.TestSum(position.y, 5);
+		position.y = TestSum_for_dll(position.y, 5);
 		this.transform.position = position;
-
+		StreamWriter log = new StreamWriter(@"log_unity.txt");
+		double_Vector2 test = Test_struct ();
+		log.WriteLine("Vector2.x = " + test.x + "\nVector2.y = " + test.y);
+		//TestUpdateStruct (&test);
+		log.WriteLine("\n\nVector2.x = " + test.x + "\nVector2.y = " + test.y);
+		log.Close();
 	}
 
 
@@ -34,25 +48,25 @@ public class BlockMove : MonoBehaviour {
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			Vector3 position = this.transform.position;
-			position.x = TestCSharpLibrary.TestCSharpLibrary.TestSum(position.x, -1);
+			position.x = TestSum_for_dll(position.x, -1);
 			this.transform.position = position;
 		}
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			Vector3 position = this.transform.position;
-			position.x = TestCSharpLibrary.TestCSharpLibrary.TestSum(position.x, 1);
+			position.x = TestSum_for_dll(position.x, 1);
 			this.transform.position = position;
 		}
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			Vector3 position = this.transform.position;
-			position.y = TestCSharpLibrary.TestCSharpLibrary.TestSum(position.y, 1);
+			position.y = TestSum_for_dll(position.y, 1);
 			this.transform.position = position;
 		}
 		if (Input.GetKey(KeyCode.DownArrow))
 		{
 			Vector3 position = this.transform.position;
-			position.y = TestCSharpLibrary.TestCSharpLibrary.TestSum(position.y, -1);
+			position.y = TestSum_for_dll(position.y, -1);
 			this.transform.position = position;
 		}
 	}
