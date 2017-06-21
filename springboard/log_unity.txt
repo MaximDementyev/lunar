@@ -1,6 +1,15 @@
-Vector2.x = 5
-Vector2.y = 7
+Coord.x = 5
+Coord.y = 7
+Velocity.x = -20
+Velocity.y = -37
+Coord.x = 105
+Coord.y = 107
+Velocity.x = -420
+Velocity.y = -337
 
 
-Vector2.x = 1
-Vector2.y = 10
+
+
+koef_model.mass = 1
+koef_model.gravity = 9.8
+koef_model.radius = 0
