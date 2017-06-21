@@ -18,8 +18,8 @@ public class BlockMove : MonoBehaviour {
 	[DllImport("TestCPPLibrary", EntryPoint="TestStruct")]
 	public static extern double_Vector2 Test_struct();
 
-	//[DllImport("TestCPPLibrary", EntryPoint="TestUpdateStruct")]
-	//public static extern void TestUpdateStruct(double_Vector2* res);
+	[DllImport("TestCPPLibrary", EntryPoint="TestUpdateStruct")]
+	public static unsafe extern void TestUpdateStruct(double_Vector2* res);
 
 	private void Start ()
 	{
@@ -29,7 +29,9 @@ public class BlockMove : MonoBehaviour {
 		StreamWriter log = new StreamWriter(@"log_unity.txt");
 		double_Vector2 test = Test_struct ();
 		log.WriteLine("Vector2.x = " + test.x + "\nVector2.y = " + test.y);
-		//TestUpdateStruct (&test);
+		unsafe {
+			TestUpdateStruct (&test);
+		}
 		log.WriteLine("\n\nVector2.x = " + test.x + "\nVector2.y = " + test.y);
 		log.Close();
 	}
