@@ -23,23 +23,27 @@ extern "C" __declspec(dllexport) float TestSum(float a, float b)
 	return a + b;
 }
 
-extern "C" __declspec(dllexport) struct Vector2 TestStruct()
+extern "C" __declspec(dllexport) struct state_model TestStruct()
 {
-	Vector2 res;
-	res.x = 5;
-	res.y = 7;
+	state_model res;
+	res.Coord.x = 5;
+	res.Coord.y = 7;
+	res.Velocity.x = -20;
+	res.Velocity.y = -37;
 	FILE *out = fopen("cpp_out.txt", "w");
-	fprintf(out, "Vector2.x = %lf\nVector2.y = %lf", res.x, res.y);
+	fprintf(out, "Coord.x = %lf\nCoord.y = %lf\nVelocity.x = %lf\nVelocity.y = %lf", res.Coord.x, res.Coord.y, res.Velocity.x, res.Velocity.y);
 	fclose(out);
 	return res;
 }
 
-extern "C" __declspec(dllexport) void TestUpdateStruct(struct Vector2* res)
+extern "C" __declspec(dllexport) void TestUpdateStruct(struct state_model* res)
 {
 	FILE *out = fopen("cpp_out.txt", "a");
-	fprintf(out, "\n________\nUpdate in\nVector2.x = %lf\nVector2.y = %lf", res->x, res->y);
-	res->x = 1;
-	res->y = 10;
-	fprintf(out, "\n________\nUpdate out\nVector2.x = %lf\nVector2.y = %lf", res->x, res->y);
+	fprintf(out, "\n________\nUpdate in\nCoord.x = %lf\nCoord.y = %lf\nVelocity.x = %lf\nVelocity.y = %lf", res->Coord.x, res->Coord.y, res->Velocity.x, res->Velocity.y);
+	res->Coord.x = 105;
+	res->Coord.y = 107;
+	res->Velocity.x = -420;
+	res->Velocity.y = -337;
+	fprintf(out, "\n________\nUpdate out\nCoord.x = %lf\nCoord.y = %lf\nVelocity.x = %lf\nVelocity.y = %lf", res->Coord.x, res->Coord.y, res->Velocity.x, res->Velocity.y);
 	fclose(out);
 }
