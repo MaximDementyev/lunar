@@ -1,4 +1,0 @@
-D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\bin\Release\TestCSharpLibrary.dll
-D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\bin\Release\TestCSharpLibrary.pdb
-D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\obj\Release\TestCSharpLibrary.dll
-D:\Progect_VS\TestCSharpLibrary\TestCSharpLibrary\obj\Release\TestCSharpLibrary.pdb
