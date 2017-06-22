@@ -9,7 +9,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-	
+	public StreamWriter log; 
     public Camera playerCamera;
 	public struct double_Vector2{
 		public double x;
@@ -33,11 +33,11 @@ public class PlayerMovement : MonoBehaviour
 	};
 	public surface current_surface;
 
-	[DllImport("TestCPPLibrary", EntryPoint="initialization_koef_model")]
+	[DllImport("TestCPPLibrary",CallingConvention = CallingConvention.Cdecl, EntryPoint="initialization_koef_model")]
 	public static extern koef_of_model initialization_koef_of_model();
 	public koef_of_model koef_model;
 
-	[DllImport("TestCPPLibrary", EntryPoint="solve_step")]
+	[DllImport("TestCPPLibrary",CallingConvention = CallingConvention.Cdecl, EntryPoint="solve_step")]
 	public static unsafe extern int solve_step(state_model* current_model, koef_of_model* koef_model, surface* current_surface, double* step_time, double* force);
 	public state_model current_model;
 
@@ -53,17 +53,25 @@ public class PlayerMovement : MonoBehaviour
         }
         playerCamera.transparencySortMode = TransparencySortMode.Orthographic;
 
-		koef_model = initialization_koef_of_model ();//initialization_koef_model
+		//initialization_koef_model
+		koef_model = initialization_koef_of_model ();
+
+		current_position = this.transform.position;
+
 		//initialization start model
-		current_model.Velocity.x = current_model.Velocity.y = 0;
-		current_position.x = this.transform.position.x;
-		current_position.y = this.transform.position.y;
-		current_model.Coord.x = (double)current_position.x;
-		current_model.Coord.y = (double)current_position.y;
+		current_model.Velocity.x = 0;
+		current_model.Velocity.y = 0;
+		current_model.Coord.x = System.Convert.ToDouble(current_position.x);
+		current_model.Coord.y = System.Convert.ToDouble(current_position.y);
 
 		current_surface.limitation_x = 0.1;
 		current_surface.mu = 1;
 
+		//log = new StreamWriter (@"log_unity.txt");
+		//StreamWriter log = new StreamWriter(@"log_unity_start.txt");
+		//log.WriteLine("current_position.x = " + current_position.x + "\ncurrent_position.y = " + current_position.y);
+		//log.WriteLine("\n\ncurrent_model.Coord.x = " + current_model.Coord.x + "\ncurrent_model.Coord.y = " + current_model.Coord.y);
+		//log.Close();
     }
 
 
@@ -97,17 +105,27 @@ public class PlayerMovement : MonoBehaviour
 
 		double step_time = (double)Time.deltaTime;
 		int res_solve;
+		/*state_model current_model;
+		current_model.Velocity.x = 0;
+		current_model.Velocity.y = 0;
+		current_position = this.transform.position;
+		current_model.Coord.x = System.Convert.ToDouble(current_position.x);
+		current_model.Coord.y = System.Convert.ToDouble(current_position.y);*/
 		unsafe{
+			
+			//state_model* ptr_current_model = &current_model;
 			fixed(state_model* ptr_current_model = &current_model) {
 				fixed(koef_of_model *ptr_koef_model = &koef_model) {
 					fixed(surface *ptr_current_surface = &current_surface) {
-						
+						//log.WriteLine("\n2current_model.Coord.x = " + ptr_current_model->Coord.x + "\n1current_model.Coord.y = " + ptr_current_model->Coord.y);
+						//log.WriteLine("\n\n!current_model.Coord.x = " + current_model.Coord.x + "\ncurrent_model.Coord.y = " + current_model.Coord.y);
+
 						if (current_model.Velocity.x >= 0) learn_the_surface(ptr_current_surface, ptr_current_model, 1);
 						else learn_the_surface(ptr_current_surface, ptr_current_model, -1);
 						while ((res_solve = solve_step(ptr_current_model, ptr_koef_model, ptr_current_surface, &step_time, &force)) != 0){
-							current_position.x = (float)current_model.Coord.x;
-							current_position.y = (float)current_model.Coord.y;
-							learn_the_surface(ptr_current_surface, ptr_current_model, res_solve);
+							//current_position.x = (float)current_model.Coord.x;
+							//current_position.y = (float)current_model.Coord.y;
+							//learn_the_surface(ptr_current_surface, ptr_current_model, res_solve);
 						}
 					}
 				}
@@ -115,10 +133,9 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-
 	unsafe void learn_the_surface (surface* current_surface, state_model* current_model, int flag){
-		double left_height = 1;
-		double right_height = 1;
+		double left_height = 100;
+		double right_height = 100;
 		if (flag == 1){
 			//reycast +!!!!!!!!!!!!!!!!!
 			current_surface->start_x = current_model->Coord.x;
@@ -130,4 +147,5 @@ public class PlayerMovement : MonoBehaviour
 		}
 		current_surface->angle = Math.Atan ((left_height - right_height) / current_surface->limitation_x) * Math.PI / 180;
 	}
+
 }
