@@ -28,7 +28,8 @@ Vector2 func_solve_acceleration (const Vector2 *Velocity, const koef_of_model *k
 	}
 }
 
-void runge_koef(Vector2* solve_velocity, Vector2* solve_acceleration, koef_of_model* koef_model, surface* current_surface, double* force, double* h, runge_K* K) {
+void runge_koef (const Vector2 *solve_velocity, const Vector2 *solve_acceleration, const koef_of_model *koef_model, const surface *current_surface,
+	             double *force, double *h, runge_K *K) {
 	
 	//calculate all koef for runge
 
@@ -49,7 +50,7 @@ void runge_koef(Vector2* solve_velocity, Vector2* solve_acceleration, koef_of_mo
 	K->kx3.k4 = func_solve_acceleration(&(*solve_velocity + K->kx3.k3), koef_model, force, current_surface) * (*h);
 }
 
-Vector2 solve_koef_coord (const runge_K* K) { //Solution function
+Vector2 solve_koef_coord (const runge_K *K) { //Solution function
 	return (K->kx1.k1 + 2 * K->kx1.k2 + 2 * K->kx1.k3 + K->kx1.k4) / 6;
 }
 

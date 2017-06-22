@@ -3,7 +3,7 @@
 const double eps = 1e-6; // подобрать
 
 
-void next_step_N(struct state_model* current_model, struct koef_of_model* koef_model, struct surface* current_surface, double* force, double* time_left) {
+void next_step_N (struct state_model *current_model, struct koef_of_model *koef_model, struct surface *current_surface, double *force, double *time_left) {
 	Vector2 solve_Acceleration = func_solve_acceleration(&current_model->Velocity, koef_model, force, current_surface); // Acceleration calculation
 	double step_time = *time_left;
 	
@@ -64,7 +64,7 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 	}
 }
 
-void next_step_no_N(struct state_model* current_model, struct koef_of_model* koef_model, double *time) {
+void next_step_no_N (struct state_model* current_model, const struct koef_of_model* koef_model, double *time) {
 	//Analytical solution
 
 	// v_x = v_x
