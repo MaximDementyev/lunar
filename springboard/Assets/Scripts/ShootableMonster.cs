@@ -10,36 +10,34 @@ public class ShootableMonster : Monster
 
     private Bullet bullet;
 
-    protected override void Awake ()
+    protected override void Awake()
     {
-        bullet = Resources.Load<Bullet> ("Bullet");
+        bullet = Resources.Load<Bullet>("Bullet");
     }
 
-    protected override void Start ()
+    protected override void Start()
     {
-        InvokeRepeating ("Shoot", rate, rate);
+        InvokeRepeating("Shoot", rate, rate);
     }
 
-    private void Shoot ()
+    private void Shoot()
     {
         Vector3 position = transform.position;          position.y += 0.5F;
-        Bullet newBullet = Instantiate (bullet, position, bullet.transform.rotation) as Bullet;
+        Bullet newBullet = Instantiate(bullet, position, bullet.transform.rotation) as Bullet;
 
         newBullet.Parent = gameObject;
         newBullet.Direction = -newBullet.transform.right;
         newBullet.Color = bulletColor;
     }
 
-    protected override void OnTriggerEnter2D (Collider2D collider)
+    protected override void OnTriggerEnter2D(Collider2D collider)
     {
-        Unit unit = collider.GetComponent<Unit> ();
+        Unit unit = collider.GetComponent<Unit>();
 
         if (unit && unit is Character)
         {
-            if (Mathf.Abs (unit.transform.position.x - transform.position.x) < 0.3F)
-                ReceiveDamage ();
-            else
-                unit.ReceiveDamage ();
+            if (Mathf.Abs(unit.transform.position.x - transform.position.x) < 0.3F) ReceiveDamage();
+            else unit.ReceiveDamage();
         }
     }
 }

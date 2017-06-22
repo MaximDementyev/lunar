@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Unit : MonoBehaviour
 {
-    public virtual void ReceiveDamage ()
+    public virtual void ReceiveDamage()
     {
-        Die ();
+        Die();
     }
 
-    protected virtual void Die ()
+    protected virtual void Die()
     {
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
 }

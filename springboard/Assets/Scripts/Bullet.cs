@@ -4,14 +4,9 @@ using System.Collections;
 public class Bullet : MonoBehaviour
 {
     private GameObject parent;
-    public GameObject Parent
-    {
-        set { parent = value; }
-        get { return parent; }
-    }
+    public GameObject Parent { set { parent = value; }  get { return parent; } }
 
     private float speed = 10.0F;
-    // TODO: maybe rename below variables
     private Vector3 direction;
     public Vector3 Direction { set { direction = value; } }
 
@@ -22,29 +17,29 @@ public class Bullet : MonoBehaviour
 
     private SpriteRenderer sprite;
 
-    private void Awake ()
+    private void Awake()
     {
-        sprite = GetComponentInChildren<SpriteRenderer> ();
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void Start ()
+    private void Start()
     {
-        Destroy (gameObject, 1.4F);
+        Destroy(gameObject, 1.4F);
     }
 	
 
-    private void Update ()
+    private void Update()
     {
-        transform.position = Vector3.MoveTowards (transform.position, transform.position + direction, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D (Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Unit unit = collider.GetComponent<Unit> ();
+        Unit unit = collider.GetComponent<Unit>();
 
         if (unit && unit.gameObject != parent)
         {
-            Destroy (gameObject);
+            Destroy(gameObject);
         }
     }
 }
