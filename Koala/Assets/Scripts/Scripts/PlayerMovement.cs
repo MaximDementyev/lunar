@@ -11,13 +11,6 @@ public class PlayerMovement : MonoBehaviour
 {
 	
     public Camera playerCamera;
-	
-    /*public float speed = 12.0F;
-    public float jumpSpeed = 8.0F;
-    public float gravity = 20.0F;
-    private Vector3 moveDirection = Vector3.zero;*/
-
-
 	public struct double_Vector2{
 		public double x;
 		public double y;
@@ -35,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
 		public double start_x;
 		public double start_y;
 		public double angle;
-		public double limitation_x = 1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		public double mu = 1;
+		public double limitation_x;
+		public double mu;
 	};
 	public surface current_surface;
 
@@ -50,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 	public Vector2 current_position;
-	public int force_module = 1;
+	public double force_module = 10;
 
     void Start()
     {
@@ -63,63 +56,27 @@ public class PlayerMovement : MonoBehaviour
 		koef_model = initialization_koef_of_model ();//initialization_koef_model
 		//initialization start model
 		current_model.Velocity.x = current_model.Velocity.y = 0;
-		//coord !!!!!!!!!!
-		// !!!!!!!!current_position = position
+		current_position.x = this.transform.position.x;
+		current_position.y = this.transform.position.y;
+		current_model.Coord.x = (double)current_position.x;
+		current_model.Coord.y = (double)current_position.y;
+
+		current_surface.limitation_x = 0.1;
+		current_surface.mu = 1;
+
     }
 
 
 	void Update(){
-		//!!!!!position = current_position
+		this.transform.position = current_position;
 
 		//After we move, adjust the camera to follow the player
 		playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + 10, playerCamera.transform.position.z);
 
 	}
 
-    void FixUpdate()
+    void FixedUpdate()
     {    
-		/*if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.x--;
-			this.transform.position = position;
-		}
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.x++;
-			this.transform.position = position;
-		}
-		if (Input.GetKey(KeyCode.UpArrow))
-		{
-			Vector3 position = this.transform.position;
-			position.y++;
-			this.transform.position = position;
-		}
-        CharacterController controller = GetComponent<CharacterController>();
-        if (controller.isGrounded)
-        {
-            moveDirection = new Vector3(1, 0, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            //moveDirection *= speed;
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed; 
-            }
-            if (Input.touchCount > 0)
-            {
-                moveDirection.y = jumpSpeed;
-            }
-           
-        }
-        moveDirection.y -= gravity * Time.smoothDeltaTime;
-        controller.Move(moveDirection * Time.smoothDeltaTime);*/
-
-
-        
-
-
-		//__________________________________________________________
 		if (Input.GetKey(KeyCode.A))
 		{
 			++force_module;
@@ -129,45 +86,48 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if (force_module > 0) --force_module;
 		}
-		int force;
-		//!!!!!!!!!!!!!! force = Input.KeyCode.UpArrow/KeyCode.DownArrow
-		//!!!!!!!!!!!!!! If the button is pressed the value is. Button not pressed - value 0;
+		double force;
+		if (Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow) ) {
+			if (Input.GetKeyDown (KeyCode.RightArrow)) force = force_module;
+			if (Input.GetKeyDown (KeyCode.LeftArrow)) force = -force_module;
+		} else {
+			force = 0;
+		}
 
 
-
-		int step_time = 1; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! time one step unity
+		double step_time = (double)Time.deltaTime;
 		int res_solve;
 		unsafe{
 			fixed(state_model* ptr_current_model = &current_model) {
 				fixed(koef_of_model *ptr_koef_model = &koef_model) {
 					fixed(surface *ptr_current_surface = &current_surface) {
-						double left_height;
-						double right_height;
-						if (current_model.Velocity.x >= 0){
-							//reycast +!!!!!!!!!!!!!!!!!
-							current_surface.start_x = 0; //=position.x
-							current_surface.start_y = 0; //=position.y - left_height
-						}else{
-							//reycast -!!!!!!!!!!!!!!!!!
-							current_surface.start_x = 0; //=position.x-current_surface.limitation_x
-							current_surface.start_y = 0; //=position.y - right_height
-						}
-						current_surface.angle = Math.Atan ((left_height - right_height) / current_surface.limitation_x) * Math.PI / 180;
-						while ((res_solve = solve_step(ptr_current_model, ptr_koef_model, ptr_current_surface, &step_time, &force) != 0)){
-							//!!!!!position = current_model.Coord    in(float)
-							if (res_solve == 1){
-								//reycast +!!!!!!!!!!!!!!!!!
-								current_surface.start_x = 0; //=position.x
-								current_surface.start_y = 0; //=position.y - left_height
-							}else{
-								//reycast -!!!!!!!!!!!!!!!!!
-								current_surface.start_x = 0; //=position.x-current_surface.limitation_x
-								current_surface.start_y = 0; //=position.y - right_height
-							}
+						
+						if (current_model.Velocity.x >= 0) learn_the_surface(ptr_current_surface, ptr_current_model, 1);
+						else learn_the_surface(ptr_current_surface, ptr_current_model, -1);
+						while ((res_solve = solve_step(ptr_current_model, ptr_koef_model, ptr_current_surface, &step_time, &force)) != 0){
+							current_position.x = (float)current_model.Coord.x;
+							current_position.y = (float)current_model.Coord.y;
+							learn_the_surface(ptr_current_surface, ptr_current_model, res_solve);
 						}
 					}
 				}
 			}
 		}
+	}
+
+
+	unsafe void learn_the_surface (surface* current_surface, state_model* current_model, int flag){
+		double left_height = 1;
+		double right_height = 1;
+		if (flag == 1){
+			//reycast +!!!!!!!!!!!!!!!!!
+			current_surface->start_x = current_model->Coord.x;
+			current_surface->start_y = current_model->Coord.y - left_height;
+		}else{
+			//reycast -!!!!!!!!!!!!!!!!!
+			current_surface->start_x = current_model->Coord.x - current_surface->limitation_x;
+			current_surface->start_y =current_model->Coord.y - right_height;
+		}
+		current_surface->angle = Math.Atan ((left_height - right_height) / current_surface->limitation_x) * Math.PI / 180;
 	}
 }
