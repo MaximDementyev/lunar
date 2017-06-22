@@ -2,7 +2,7 @@
 
 const double eps = 1e-3; // подобрать
 
-Vector2 func_solve_acceleration(Vector2* Velocity, koef_of_model* koef_model, double* force, surface* current_surface) {
+Vector2 func_solve_acceleration (const Vector2 *Velocity, const koef_of_model *koef_model, double *force, const surface *current_surface) {
 	Vector2 res;
 	double acceleration;
 	if (norm(Velocity) > eps) { //check zero speed
@@ -49,10 +49,10 @@ void runge_koef(Vector2* solve_velocity, Vector2* solve_acceleration, koef_of_mo
 	K->kx3.k4 = func_solve_acceleration(&(*solve_velocity + K->kx3.k3), koef_model, force, current_surface) * (*h);
 }
 
-Vector2 solve_koef_coord(runge_K* K) { //Solution function
+Vector2 solve_koef_coord (const runge_K* K) { //Solution function
 	return (K->kx1.k1 + 2 * K->kx1.k2 + 2 * K->kx1.k3 + K->kx1.k4) / 6;
 }
 
-Vector2 solve_koef_velocity(runge_K* K) {//Solution function
+Vector2 solve_koef_velocity (const runge_K *K) {//Solution function
 	return (K->kx2.k1 + 2 * K->kx2.k2 + 2 * K->kx2.k3 + K->kx2.k4) / 6;
 }
