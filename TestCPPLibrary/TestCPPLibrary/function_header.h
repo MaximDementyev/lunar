@@ -17,12 +17,12 @@ double dotprod (const struct Vector2 &, const struct Vector2 &);
 
 //runge.cpp
 void next_step_N (struct state_model *, struct koef_of_model *, struct surface *, double *, double *);
-void next_step_no_N (struct state_model*, const struct koef_of_model*, double *);
+void next_step_no_N (struct state_model*, struct koef_of_model*, double *);
 
 //runge_func.cpp
-struct Vector2 func_solve_acceleration (const struct Vector2 *, const struct koef_of_model *, double *, const struct surface *);
-void runge_koef (const struct Vector2 *, const struct Vector2 *, const struct koef_of_model *, const struct surface *,
-				 double *, double *, struct runge_K *); // Attention * &
+struct Vector2 func_solve_acceleration (const struct Vector2 *, const struct koef_of_model *, double *, struct surface *);
+void runge_koef (const struct Vector2 *, const struct Vector2 *, const struct koef_of_model*, struct surface*,
+				 double *, double *, struct runge_K *K); // Attention * &
 struct Vector2 solve_koef_coord (const struct runge_K *);
 struct Vector2 solve_koef_velocity (const struct runge_K *);
 

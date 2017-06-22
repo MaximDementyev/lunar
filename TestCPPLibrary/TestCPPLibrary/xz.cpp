@@ -25,7 +25,7 @@ double time_no_N (const state_model *current_model, const surface *current_surfa
 }
 
 // TODO: maybe koef_model unused variable?
-void hit (state_model *current_model, koef_of_model *koef_model, const surface *current_surface) {
+void hit (state_model* current_model, koef_of_model* koef_model, surface* current_surface) {
 	struct Vector2 guide_surface; //Surface vector guide
 	guide_surface.x = cos_deg(current_surface->angle);
 	guide_surface.y = sin_deg(current_surface->angle);
