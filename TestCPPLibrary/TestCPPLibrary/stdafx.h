@@ -54,7 +54,7 @@ struct koef_of_model {
 
 struct surface {
 	double start_x;
-	double srart_y;
+	double start_y;
 	double angle;
 	double limitation_x;
 	double mu;

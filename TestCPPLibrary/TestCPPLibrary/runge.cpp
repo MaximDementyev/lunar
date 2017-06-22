@@ -1,6 +1,6 @@
 #include"stdafx.h"
 
-const double eps = 1e-6; // подобрать
+const double eps = 1e-7; // подобрать
 
 
 void next_step_N(struct state_model* current_model, struct koef_of_model* koef_model, struct surface* current_surface, double* force, double* time_left) {
@@ -67,9 +67,11 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 void next_step_no_N(struct state_model* current_model, struct koef_of_model* koef_model, double *time) {
 	//Analytical solution
 
+	current_model->Coord.x += current_model->Velocity.x * (*time); // x = x0 + vt
+	current_model->Coord.y += current_model->Velocity.y * (*time) - koef_model->gravity * (*time) * (*time) / 2; // y = y0 + vt - (gt^2)/2
+	
 	// v_x = v_x
 	current_model->Velocity.y -= koef_model->gravity * (*time); // v_y = v0_y - gt
 
-	current_model->Coord.x += current_model->Velocity.x * (*time); // x = x0 + vt
-	current_model->Coord.y += current_model->Velocity.y * (*time) - koef_model->gravity * (*time) * (*time) / 2; // y = y0 + vt - (gt^2)/2
+	
 }
