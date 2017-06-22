@@ -11,8 +11,9 @@ public class Character : Unit
         get { return lives; }
         set
         {
-           if (value < 5) lives = value;
-            livesBar.Refresh();
+           if (value < 5)
+                lives = value;
+           livesBar.Refresh ();
         }
     }
     private LivesBar livesBar;
@@ -28,7 +29,7 @@ public class Character : Unit
 
     private CharState State
     {
-        get { return (CharState)animator.GetInteger("State"); }
+        get { return (CharState)animator.GetInteger ("State"); }
         set { animator.SetInteger("State", (int)value); }
     }
 
@@ -36,85 +37,87 @@ public class Character : Unit
     private Animator animator;
     private SpriteRenderer sprite;
 
-    private void Awake()
+    private void Awake ()
     {
-        livesBar = FindObjectOfType<LivesBar>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
+        livesBar = FindObjectOfType<LivesBar> ();
+        rigidbody = GetComponent<Rigidbody2D> ();
+        animator = GetComponent<Animator> ();
+        sprite = GetComponentInChildren<SpriteRenderer> ();
 
-        bullet = Resources.Load<Bullet>("Bullet");
+        bullet = Resources.Load<Bullet> ("Bullet");
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate ()
     {
-        CheckGround();
+        CheckGround ();
     }
 
-    private void Update()
+    private void Update ()
     {
-        if (isGrounded) State = CharState.Idle;
+        if (isGrounded)
+            State = CharState.Idle;
 
-        if (Input.GetButtonDown("Fire1")) Shoot();
-        if (Input.GetButton("Horizontal")) Run();
-        if (isGrounded && Input.GetButtonDown("Jump")) Jump();
+        if (Input.GetButtonDown ("Fire1"))
+            Shoot ();
+        if (Input.GetButton ("Horizontal"))
+            Run ();
+        if (isGrounded && Input.GetButtonDown ("Jump"))
+            Jump ();
     }
 
-    private void Run()
+    private void Run ()
     {
-        Vector3 direction = transform.right * Input.GetAxis("Horizontal");
-
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
-
+        Vector3 direction = transform.right * Input.GetAxis ("Horizontal");
+        transform.position = Vector3.MoveTowards (transform.position, transform.position + direction, speed * Time.deltaTime);
         sprite.flipX = direction.x < 0.0F;
-
-        if (isGrounded) State = CharState.Run;
+        if (isGrounded)
+            State = CharState.Run;
     }
 
-    private void Jump()
+    private void Jump ()
     {
-        rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        rigidbody.AddForce (transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void Shoot()
+    private void Shoot ()
     {
         Vector3 position = transform.position; position.y += 0.8F;
-        Bullet newBullet = Instantiate(bullet, position, bullet.transform.rotation) as Bullet;
+        Bullet newBullet = Instantiate (bullet, position, bullet.transform.rotation) as Bullet;
 
         newBullet.Parent = gameObject;
         newBullet.Direction = newBullet.transform.right * (sprite.flipX ? -1.0F : 1.0F);
     }
 
-    public override void ReceiveDamage()
+    public override void ReceiveDamage ()
     {
         Lives--;
 
         rigidbody.velocity = Vector3.zero;
-        rigidbody.AddForce(transform.up * 8.0F, ForceMode2D.Impulse);
+        rigidbody.AddForce (transform.up * 8.0F, ForceMode2D.Impulse);
 
-        Debug.Log(lives);
+        Debug.Log (lives);
     }
 
-    private void CheckGround()
+    private void CheckGround ()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll (transform.position, 0.3F);
 
         isGrounded = colliders.Length > 1;
 
-        if (!isGrounded) State = CharState.Jump;
+        if (!isGrounded)
+            State = CharState.Jump;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D (Collider2D collider)
     {
 
-        Bullet bullet = collider.gameObject.GetComponent<Bullet>();
+        Bullet bullet = collider.gameObject.GetComponent<Bullet> ();
         if (bullet && bullet.Parent != gameObject)
         {
-            ReceiveDamage();
+            ReceiveDamage ();
         }
     }
 }
-
 
 public enum CharState
 {
