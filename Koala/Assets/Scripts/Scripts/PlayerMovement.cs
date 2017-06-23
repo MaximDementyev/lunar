@@ -5,8 +5,6 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System;
 
-
-
 public class PlayerMovement : MonoBehaviour
 {
 	public StreamWriter log; 
@@ -41,9 +39,12 @@ public class PlayerMovement : MonoBehaviour
 	public static unsafe extern int solve_step(state_model* current_model, koef_of_model* koef_model, surface* current_surface, double* step_time, double* force);
 	public state_model current_model;
 
-
 	public Vector2 current_position;
 	public double force_module = 10;
+
+	public Transform sightStart1, sightEnd1, sightStart2, sightEnd2, StartCenter, EndCenter;//position of rays for raycasting();
+	public Collider coll;
+
 
     void Start()
     {
@@ -102,6 +103,21 @@ public class PlayerMovement : MonoBehaviour
 			force = 0;
 		}
 
+		//Это для отладки рейкастинга
+		/*if (Input.GetMouseButtonDown(0)) {
+			RaycastHit hit;
+			Debug.DrawLine (transform.position, transform.position - Vector3.up*100, Color.green);
+			if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+				print("Found an object - distance: " + hit.distance);
+			}
+		Raycasting (1);
+
+
+		if(Input.GetKey(KeyCode.RightArrow)){
+			Vector3 position = this.transform.position;
+			position.x++;
+			this.transform.position = position;
+		}*/
 
 		double step_time = (double)Time.deltaTime;
 		int res_solve;
@@ -123,9 +139,9 @@ public class PlayerMovement : MonoBehaviour
 						if (current_model.Velocity.x >= 0) learn_the_surface(ptr_current_surface, ptr_current_model, 1);
 						else learn_the_surface(ptr_current_surface, ptr_current_model, -1);
 						while ((res_solve = solve_step(ptr_current_model, ptr_koef_model, ptr_current_surface, &step_time, &force)) != 0){
-							//current_position.x = (float)current_model.Coord.x;
-							//current_position.y = (float)current_model.Coord.y;
-							//learn_the_surface(ptr_current_surface, ptr_current_model, res_solve);
+							current_position.x = (float)current_model.Coord.x;
+							current_position.y = (float)current_model.Coord.y;
+							learn_the_surface(ptr_current_surface, ptr_current_model, res_solve);
 						}
 					}
 				}
@@ -137,15 +153,36 @@ public class PlayerMovement : MonoBehaviour
 		double left_height = 100;
 		double right_height = 100;
 		if (flag == 1){
-			//reycast +!!!!!!!!!!!!!!!!!
+			//reycast right
+			Raycasting(flag, &left_height, &right_height);
 			current_surface->start_x = current_model->Coord.x;
 			current_surface->start_y = current_model->Coord.y - left_height;
 		}else{
-			//reycast -!!!!!!!!!!!!!!!!!
+			//reycast left
+			Raycasting(flag, &left_height, &right_height);
 			current_surface->start_x = current_model->Coord.x - current_surface->limitation_x;
 			current_surface->start_y =current_model->Coord.y - right_height;
 		}
-		current_surface->angle = Math.Atan ((left_height - right_height) / current_surface->limitation_x) * Math.PI / 180;
+		current_surface->angle = Math.Atan ((left_height - right_height) / current_surface->limitation_x);
 	}
 
+	public unsafe void Raycasting(int flag, double* left_height, double* right_height){
+		if (flag == 1) {
+			RaycastHit hitSurface1;
+			RaycastHit hitSurface2;
+			Physics.Raycast (StartCenter.position, -Vector3.up, out hitSurface1);
+			Physics.Raycast (sightStart2.position, -Vector3.up, out hitSurface2);
+			*left_height = hitSurface1.distance;
+			*right_height = hitSurface2.distance;
+			//print ("difference" + Math.Abs (hitSurface1.distance - hitSurface2.distance));
+		} else {
+			RaycastHit hitSurface1;
+			RaycastHit hitSurface2;
+			Physics.Raycast (StartCenter.position, -Vector3.up, out hitSurface1);
+			Physics.Raycast (sightStart1.position, -Vector3.up, out hitSurface2);
+			*left_height = hitSurface1.distance;
+			*right_height = hitSurface2.distance;
+			//print ("difference" + Math.Abs (hitSurface1.distance - hitSurface2.distance));
+		}
+	}
 }
