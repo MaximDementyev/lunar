@@ -22,18 +22,6 @@ double sign(double a) {
 	else return -1;
 }
 
-double cos_deg(double a) {
-	return cos(a * M_PI / 180);
-}
-
-double sin_deg(double a) {
-	return sin(a * M_PI / 180);
-}
-
-double tan_deg(double a) {
-	return tan(a * M_PI / 180);
-}
-
 double dotprod(struct Vector2 a, struct Vector2 b) {
 	return a.x * b.x + a.y * b.y;
 }

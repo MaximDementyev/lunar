@@ -7,9 +7,6 @@ double norm(struct Vector2*, struct Vector2*);
 double norm(struct Vector2);
 double norm(struct Vector2*);
 double sign(double);
-double cos_deg(double);
-double sin_deg(double);
-double tan_deg(double);
 double dotprod(struct Vector2, struct Vector2);
 
 //runge.cpp
