@@ -52,12 +52,12 @@ namespace Test_DLL
             koef_model.radius = 0;
 
             current_model.Coord.x = 0;
-            current_model.Coord.y = 1;
-            current_model.Velocity.x = 0.05;
+            current_model.Coord.y = 0;
+            current_model.Velocity.x = 20;
             current_model.Velocity.y = 0;
 
-            current_surface.limitation_x = 1;
-            current_surface.angle = 0;
+            current_surface.limitation_x = 100;
+            current_surface.angle = -0.78;
             current_surface.mu = 1;
             current_surface.start_x = 0;
             current_surface.srart_y = 0;
