@@ -1,17 +1,18 @@
 #include"stdafx.h"
 
-const double eps = 1e-5; // подобрать
-const double max_num_step = 10;
+const double eps = 1e-4; // подобрать
+const double max_num_step = 5;
 
 
-void next_step_N(struct state_model* current_model, struct koef_of_model* koef_model, struct surface* current_surface, double* force, double* time_left) {
-	FILE* log = fopen("log_runge.txt", "a");
+void next_step_N(struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left) {
+	//FILE* log = fopen("log_runge.txt", "a");
 	Vector2 solve_Acceleration = func_solve_acceleration(&current_model->Velocity, koef_model, force, current_surface); // Acceleration calculation
-	fprintf(log, "\n\n solve_Acceleration.x = %lf\nsolve_Acceleration.y = %lf\n", solve_Acceleration.x, solve_Acceleration.y);
+	//fprintf(log, "\n\n solve_Acceleration.x = %lf\nsolve_Acceleration.y = %lf\n", solve_Acceleration.x, solve_Acceleration.y);
+	//fprintf(log, "force = %lf", force);
 	double step_time = *time_left;
 	while (true) {
 		Vector2 Approximate_movement = current_model->Velocity * step_time + solve_Acceleration * step_time*step_time / 2; //Approximate movement calculation in lineral model
-		fprintf(log, "Approximate_movement.x = %lf\nApproximate_movement.y = %lf\n", Approximate_movement.x, Approximate_movement.y);
+	//	fprintf(log, "Approximate_movement.x = %lf\nApproximate_movement.y = %lf\n", Approximate_movement.x, Approximate_movement.y);
 		if (current_model->Coord.x + Approximate_movement.x > current_surface->start_x + current_surface->limitation_x ||   //Step reduction
 			current_model->Coord.x + Approximate_movement.x < current_surface->start_x) {
 			step_time /= 2;
@@ -19,7 +20,7 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 		}
 
 		runge_K K;
-		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, &step_time, &K); // Calculation koef for step h
+		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, step_time, &K); // Calculation koef for step h
 		
 
 		if (current_model->Coord.x + solve_koef_coord(&K).x > current_surface->start_x + current_surface->limitation_x ||//Step reduction
@@ -35,14 +36,14 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 
 		double half_step_time = step_time / 2;
 		runge_K Km;
-		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, &half_step_time, &Km); //Calculation koef for step h/2
+		runge_koef(&current_model->Velocity, &solve_Acceleration, koef_model, current_surface, force, half_step_time, &Km); //Calculation koef for step h/2
 		//solve for step h/2
 		Vector2 y1, y2;
 		y1 = current_model->Coord + solve_koef_coord(&Km);
 		y2 = current_model->Velocity + solve_koef_velocity(&Km);
 
 		solve_Acceleration = func_solve_acceleration(&y2, koef_model, force, current_surface); //Calculation of a new acceleration
-		runge_koef(&y2, &solve_Acceleration, koef_model, current_surface, force, &half_step_time, &Km); //Calculation koef for time+h and step h/2
+		runge_koef(&y2, &solve_Acceleration, koef_model, current_surface, force, half_step_time, &Km); //Calculation koef for time+h and step h/2
 
 		//solve for time+h and step h/2
 		y1 = y1 + solve_koef_coord(&Km);
@@ -63,17 +64,17 @@ void next_step_N(struct state_model* current_model, struct koef_of_model* koef_m
 			step_time /= 2;//all new calculation with new h
 		}
 	}
-	fclose(log);
+	//fclose(log);
 }
 
-void next_step_no_N(struct state_model* current_model, struct koef_of_model* koef_model, double *time) {
+void next_step_no_N(struct state_model* current_model, const struct koef_of_model* koef_model, const double time) {
 	//Analytical solution
 
-	current_model->Coord.x += current_model->Velocity.x * (*time); // x = x0 + vt
-	current_model->Coord.y += current_model->Velocity.y * (*time) - koef_model->gravity * (*time) * (*time) / 2; // y = y0 + vt - (gt^2)/2
+	current_model->Coord.x += current_model->Velocity.x * time; // x = x0 + vt
+	current_model->Coord.y += current_model->Velocity.y * time - koef_model->gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
 	
 	// v_x = v_x
-	current_model->Velocity.y -= koef_model->gravity * (*time); // v_y = v0_y - gt
+	current_model->Velocity.y -= koef_model->gravity * time; // v_y = v0_y - gt
 
 	
 }
