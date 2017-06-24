@@ -4,25 +4,33 @@ const double eps = 1e-3; // ïîäîáðàòü
 
 Vector2 func_solve_acceleration(Vector2* Velocity, koef_of_model* koef_model, double* force, surface* current_surface) {
 	Vector2 res;
+	FILE* log = fopen("acc_log.txt", "a");
+	fprintf(log,"\n\nforce = %lf\n", *force);
 	double acceleration;
 	if (norm(Velocity) > eps) { //check zero speed
-		//find acceleration in ñonnected coordinate system
+		//find acceleration in connected coordinate system
 		acceleration = *force - current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle) * sign(Velocity->x * cos(current_surface->angle)
 			- koef_model->mass * koef_model->gravity * sin(current_surface->angle)) / koef_model->mass;
-		
+		fprintf(log, "|v| > 0\n");
 		//Conversion to an inertial coordinate system
 		res.x = acceleration * cos(current_surface->angle);
 		res.y = acceleration * sin(current_surface->angle);
+		fclose(log);
 		return res;
-	}else{
+	}
+	else {
 		//tmp_force Just a convenient change of coordinates (All forces except friction on the connected x-axis = F-mg*sin(alpha))
 		double tmp_force = *force - koef_model->mass * koef_model->gravity * sin(current_surface->angle);
-		if (fabs(tmp_force) <= fabs(current_surface->mu * (*force) - koef_model->mass * koef_model->gravity * cos(current_surface->angle))) // body is at rest
+		if (fabs(tmp_force) <= fabs(current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle))) {// body is at rest
+			fprintf(log, "1\n");
+			fclose(log);
 			return res;
-		else {
+		} else {
+			fprintf(log, "2\n");
 			acceleration = (tmp_force - current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle) * sign(tmp_force)) / koef_model->mass; //body rested, but began to move (Q>Ftr)
 			res.x = acceleration * cos(current_surface->angle);
 			res.y = acceleration * sin(current_surface->angle);
+			fclose(log);
 			return res;
 		}
 	}
