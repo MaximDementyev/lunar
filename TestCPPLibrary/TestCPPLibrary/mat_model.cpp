@@ -83,13 +83,13 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 		if (current_model->Coord.x > current_surface->start_x + current_surface->limitation_x * 9. / 10. && current_model->Velocity.x > 0) {//Forward movement, there was not enough known map
 			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true)
 				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall in the future
-			//fprintf(log, "дайте поверхноcть cправа");
+			fprintf(log, "дайте поверхноcть cправа");
 			return 1;
 		}
 		if (current_model->Coord.x < current_surface->start_x + current_surface->limitation_x / 10. && current_model->Velocity.x < 0) {//Backward movement, there was not enough known map
 			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true)
 				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall in the future
-			//fprintf(log, "дайте поверхноcть cлева");
+			fprintf(log, "дайте поверхноcть cлева");
 			return -1;
 		}
 	}
