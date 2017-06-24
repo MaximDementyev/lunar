@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 	public koef_of_model koef_model;
 
 	[DllImport("TestCPPLibrary",CallingConvention = CallingConvention.Cdecl, EntryPoint="solve_step")]
-	public static unsafe extern int solve_step(ref state_model current_model, ref koef_of_model koef_model, ref surface current_surface, ref double step_time, ref double force);
+	public static unsafe extern int solve_step(ref state_model current_model, ref koef_of_model koef_model, ref surface current_surface, ref double step_time, double force);
 	public state_model current_model;
 
 	public Vector2 current_position;
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
 		//initialization_koef_model
 		koef_model = initialization_koef_of_model ();
-		current_surface.limitation_x = 0.02;
+		current_surface.limitation_x = 0.1;
 		current_surface.mu = 1;
 
 		current_position = this.transform.position;
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
 		unsafe{
 			if (current_model.Velocity.x >= 0) learn_the_surface(ref current_surface, ref current_model, 1);
 			else learn_the_surface(ref current_surface, ref current_model, -1);
-			while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, ref force)) != 0){
+			while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, force)) != 0){
 				current_position.x = (float)current_model.Coord.x;
 				current_position.y = (float)current_model.Coord.y;
 				learn_the_surface(ref current_surface, ref current_model, res_solve);
@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 			left_height = hitSurfaceLeft.distance;
 			right_height = hitSurfaceRight.distance;
 		}
-		using (StreamWriter log = File.AppendText("log_ray.txt"))
-			log.WriteLine("\n\n\nleft_height = " + left_height + "\nright_height = " + right_height);
+		//using (StreamWriter log = File.AppendText("log_ray.txt"))
+		//	log.WriteLine("\n\n\nleft_height = " + left_height + "\nright_height = " + right_height);
 	}
 }
