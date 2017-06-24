@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
 		//initialization_koef_model
 		koef_model = initialization_koef_of_model ();
-		current_surface.limitation_x = 0.1;
+		current_surface.limitation_x = 0.02;
 		current_surface.mu = 1;
 
 		current_position = this.transform.position;
@@ -69,8 +69,6 @@ public class PlayerMovement : MonoBehaviour
 		current_model.Coord.x = System.Convert.ToDouble(current_position.x);
 		current_model.Coord.y = System.Convert.ToDouble(current_position.y);
 
-		current_surface.limitation_x = 0.1;
-		current_surface.mu = 1;
 
 		//StreamWriter log = new StreamWriter(@"log_unity_start.txt");
 		//log.WriteLine("current_position.x = " + current_position.x + "\ncurrent_position.y = " + current_position.y);
@@ -82,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update(){
 		GetComponent<Transform>().position = new Vector3(current_position.x, current_position.y, 0);
-
 		//After we move, adjust the camera to follow the player
 		playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + 10, playerCamera.transform.position.z);
 
@@ -101,26 +98,23 @@ public class PlayerMovement : MonoBehaviour
 			if (force_module > 0) --force_module;
 		}
 		double force = 0;
-		if (Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow) ) {
-			if (Input.GetKeyDown (KeyCode.RightArrow)) force = force_module;
-			if (Input.GetKeyDown (KeyCode.LeftArrow)) force = -force_module;
+		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow) ) {
+			if (Input.GetKey(KeyCode.RightArrow)) force = force_module;
+			if (Input.GetKey (KeyCode.LeftArrow)) force = -force_module;
 		}
 
-		double step_time = 0.1;//(double)Time.deltaTime;
+		double step_time = System.Convert.ToDouble(Time.deltaTime);
 		int res_solve;
 		unsafe{
-			StreamWriter log = new StreamWriter (@"log_unity.txt");
 			if (current_model.Velocity.x >= 0) learn_the_surface(ref current_surface, ref current_model, 1);
 			else learn_the_surface(ref current_surface, ref current_model, -1);
-			log.WriteLine("\n\ntmp_test = " + tmp_test + "\ncurrent_model.Coord.x = " + current_model.Coord.x + "\ncurrent_model.Coord.y = " + current_model.Coord.y);
 			while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, ref force)) != 0){
-				log.WriteLine("\n\ntmp_test = " + tmp_test + "\ncurrent_model.Coord.x = " + current_model.Coord.x + "\ncurrent_model.Coord.y = " + current_model.Coord.y);
 				current_position.x = (float)current_model.Coord.x;
 				current_position.y = (float)current_model.Coord.y;
 				learn_the_surface(ref current_surface, ref current_model, res_solve);
 			}
-			log.WriteLine("THE END\n");
-			log.Close();
+			current_position.x = (float)current_model.Coord.x;
+			current_position.y = (float)current_model.Coord.y;
 		}
 	}
 
@@ -138,9 +132,6 @@ public class PlayerMovement : MonoBehaviour
 			current_surface.start_x = current_model.Coord.x - current_surface.limitation_x;
 			current_surface.start_y = current_model.Coord.y - right_height;
 		}
-		StreamWriter log_ray2 = new StreamWriter (@"log_ray2.txt");
-		log_ray2.WriteLine("right = " + right_height + "\n");
-		log_ray2.Close();
 		current_surface.angle = Math.Atan ((left_height - right_height) / current_surface.limitation_x);
 	}
 
@@ -158,8 +149,7 @@ public class PlayerMovement : MonoBehaviour
 			left_height = hitSurfaceLeft.distance;
 			right_height = hitSurfaceRight.distance;
 		}
-		StreamWriter log_ray = new StreamWriter (@"log_ray.txt");
-		log_ray.WriteLine("right = " + right_height + "\n");
-		log_ray.Close();
+		using (StreamWriter log = File.AppendText("log_ray.txt"))
+			log.WriteLine("\n\n\nleft_height = " + left_height + "\nright_height = " + right_height);
 	}
 }
