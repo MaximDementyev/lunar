@@ -67,7 +67,7 @@ void next_step_N(struct state_model* current_model, const struct koef_of_model* 
 	//fclose(log);
 }
 
-void next_step_no_N(struct state_model* current_model, const struct koef_of_model* koef_model, const double time) {
+inline void next_step_no_N(struct state_model* current_model, const struct koef_of_model* koef_model, const double time) {
 	//Analytical solution
 
 	current_model->Coord.x += current_model->Velocity.x * time; // x = x0 + vt

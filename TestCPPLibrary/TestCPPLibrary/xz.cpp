@@ -10,17 +10,13 @@ double find_earth(const state_model* current_model, const koef_of_model* koef_mo
 	fprintf(log, "current_surface\n   angle = %.4lf\n   lim_x = %.4lf\n   mu = %.4lf\n   start_x = %.4lf\n   start_y = %.4lf\n\n", current_surface->angle, current_surface->limitation_x, current_surface->mu, current_surface->start_x, current_surface->start_y);
 	fprintf(log, "b = %.10lf\nc = %.10lf\nD = %.10lf", b,c, D);
 	fclose(log);*/
-	if (D < 0 && fabs(b) > 1e-7) {
+	if (D < 0) {
 	/*	log = fopen("xz_log.txt", "a");
 		fprintf(log, "!!!!!!!!!!!!!!!!!!!!  D < 0   !!!!!!!!!!!!!!!!\n");
 		fclose(log);*/
 		return -2; //error! We fell through the texture 
 	}
-	double touch_time;
-	if (fabs(b) > 1e-9)
-		touch_time = (-b + sqrt(D)) / koef_model->gravity; //Surface touch time
-	else
-		touch_time = -2 * c / koef_model->gravity;
+	double touch_time = (-b + sqrt(D)) / koef_model->gravity; //Surface touch time
 	/*log = fopen("xz_log.txt", "a");
 	fprintf(log, "touch_time = %.10lf\n",touch_time);
 	fclose(log);*/
