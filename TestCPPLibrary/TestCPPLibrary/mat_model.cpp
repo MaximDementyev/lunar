@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include"function_header.h"
 const double eps = 1e-5; //The error of touching the wheel of the earth
 
 extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {

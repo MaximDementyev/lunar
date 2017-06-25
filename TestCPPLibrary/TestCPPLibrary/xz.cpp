@@ -1,4 +1,6 @@
 #include"stdafx.h"
+#include"function_header.h"
+
 const double eps = 1e-4; //The error of touching the wheel of the earth
 
 double find_earth(const state_model* current_model, const koef_of_model* koef_model, const surface* current_surface) {

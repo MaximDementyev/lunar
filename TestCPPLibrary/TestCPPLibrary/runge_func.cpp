@@ -1,8 +1,9 @@
 #include "stdafx.h"
+#include"function_header.h"
 
 const double eps = 1e-3; // ïîäîáðàòü
 
-inline Vector2 func_solve_acceleration(const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface) {
+ Vector2 func_solve_acceleration(const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface) {
 	double acceleration;
 	if (norm(Velocity) > eps) { //check zero speed
 		//find acceleration in connected coordinate system
@@ -23,14 +24,14 @@ inline Vector2 func_solve_acceleration(const Vector2* Velocity, const koef_of_mo
 	}
 }
 
-inline struct Vector2 ñonversion_inertial_coordinate_system(const double val, const struct surface* current_surface) {
+ struct Vector2 ñonversion_inertial_coordinate_system(const double val, const struct surface* current_surface) {
 	Vector2 res;
 	res.x = val * cos(current_surface->angle);
 	res.y = val * sin(current_surface->angle);
 	return res;
 }
 
-inline void runge_koef(const Vector2* solve_velocity, const Vector2* solve_acceleration, const koef_of_model* koef_model, const surface* current_surface, const double force, const double h, runge_K* K) {
+ void runge_koef(const Vector2* solve_velocity, const Vector2* solve_acceleration, const koef_of_model* koef_model, const surface* current_surface, const double force, const double h, runge_K* K) {
 	
 	//calculate all koef for runge
 
@@ -51,10 +52,10 @@ inline void runge_koef(const Vector2* solve_velocity, const Vector2* solve_accel
 	K->kx3.k4 = func_solve_acceleration(&(*solve_velocity + K->kx3.k3), koef_model, force, current_surface) * h;
 }
 
-inline Vector2 solve_koef_coord(const runge_K* K) { //Solution function
+ Vector2 solve_koef_coord(const runge_K* K) { //Solution function
 	return (K->kx1.k1 + 2 * K->kx1.k2 + 2 * K->kx1.k3 + K->kx1.k4) / 6;
 }
 
-inline Vector2 solve_koef_velocity(const runge_K* K) {//Solution function
+ Vector2 solve_koef_velocity(const runge_K* K) {//Solution function
 	return (K->kx2.k1 + 2 * K->kx2.k2 + 2 * K->kx2.k3 + K->kx2.k4) / 6;
 }
