@@ -2,10 +2,10 @@
 #include"function_header.h"
 
 const double eps = 1e-4; // подобрать
-const double max_num_step = 5;
+const double max_num_step = 10;
 
 
-void next_step_N(struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left) {
+void next_step_N(struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
 	//FILE* log = fopen("log_runge.txt", "a");
 	Vector2 solve_Acceleration = func_solve_acceleration(&current_model->Velocity, koef_model, force, current_surface); // Acceleration calculation
 	//fprintf(log, "\n\n solve_Acceleration.x = %lf\nsolve_Acceleration.y = %lf\n", solve_Acceleration.x, solve_Acceleration.y);
@@ -55,7 +55,7 @@ void next_step_N(struct state_model* current_model, const struct koef_of_model* 
 		if (err < tmp_err)
 			err = tmp_err;
 
-		if (err < eps || step_time < *time_left / max_num_step) { //Error checking
+		if (err < eps || step_time < all_time_step / max_num_step) { //Error checking
 			current_model->Coord = (16 * y1 - z1) / 15; //solve model
 			current_model->Velocity = (16 * y2 - z2) / 15;
 			*time_left -= step_time;

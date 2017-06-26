@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include"function_header.h"
 
-const double eps = 1e-3; // ïîäîáðàòü
+const double eps = 1e-2; // ïîäîáðàòü
 
  Vector2 func_solve_acceleration(const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface) {
 	double acceleration;
 	if (norm(Velocity) > eps) { //check zero speed
 		//find acceleration in connected coordinate system
-		acceleration = force - current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle) * sign(Velocity->x * cos(current_surface->angle)
+		acceleration = (force - current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle) * sign(Velocity->x)
 			- koef_model->mass * koef_model->gravity * sin(current_surface->angle)) / koef_model->mass;
 		return ñonversion_inertial_coordinate_system(acceleration, current_surface);
 	}

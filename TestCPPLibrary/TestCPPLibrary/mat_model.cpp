@@ -21,6 +21,7 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 
 extern "C" __declspec(dllexport) int solve_step(state_model* current_model, const koef_of_model* koef_model, const surface* current_surface, double* step_time, const double force) {
 	FILE *log = fopen("cpp_log.txt", "a");
+	double all_time_step = *step_time;
 	bool contact;
 	if (touch_test(current_model, koef_model, current_surface) == 1) contact = true;
 	else contact = false;
@@ -30,16 +31,19 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	//fprintf(log, "koef_of_model\n   gravity = %.10lf\n   mass = %.10lf\n   radius = %.10lf\n\n", koef_model->gravity, koef_model->mass, koef_model->radius);
 	fprintf(log, "force = %.10lf\n", force);
 	//fprintf(log, "time = %.20lf\n", *step_time);
-	//fprintf(log, "_____________\n");
+	fprintf(log, "_________________________________________________\n");
 	while (val_step_time > 0) {
+		fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
 		//int touch = touch_test(current_model, current_surface);
 		double current_surface_height = tan(current_surface->angle) * current_model->Coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);
-		//fprintf(log, "текущая выcота поверхноcти = %.10lf\n", current_surface_height);
+		fprintf(log, "текущая выcота поверхноcти = %.10lf\n", current_surface_height);
 		if (current_surface_height > current_model->Coord.y - koef_model->radius) {//We fell through the textures
+			fprintf(log, "%.10lf - провалилиcь под текcтуры на %.10lf\n", val_step_time, fabs(current_model->Coord.y - koef_model->radius - current_surface_height));
 			current_model->Coord.y = current_surface_height + koef_model->radius;//Climbed to the surface
 			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
 			contact = true;
-			fprintf(log, "%.10lf - провалилиcь под текcтуры на %.10lf\n", val_step_time, fabs(current_model->Coord.y - koef_model->radius - current_surface_height));
+			fprintf(log, "!current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
+
 		}
 
 		if (fabs(current_model->Coord.y - koef_model->radius -  current_surface_height) < eps) {//We are on the surface
@@ -48,7 +52,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
 			}
 			fprintf(log, "%.10lf - еcть каcание\n", val_step_time);
-			next_step_N(current_model, koef_model, current_surface, force, &val_step_time);//Step calculation
+			next_step_N(current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
 
 		} else {//we are flying
 			if (contact == true) contact = false;

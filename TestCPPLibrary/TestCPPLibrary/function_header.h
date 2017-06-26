@@ -10,7 +10,7 @@ double sign(const double);
 double dotprod(const struct Vector2, const struct Vector2);
 
 //runge.cpp
-void next_step_N(struct state_model*, const struct koef_of_model*, const struct surface*, const double force, double* time_left);
+void next_step_N(struct state_model*, const struct koef_of_model*, const struct surface*, const double force, double* time_left, double all_time_step);
 void next_step_no_N(struct state_model*, const struct koef_of_model*, const double time);
 
 //runge_func.cpp
