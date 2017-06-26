@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public Vector2 bias_ray, vec_gravity;
 	public int tmp_test;
+	
 
     void Start()
     {
@@ -51,10 +52,12 @@ public class PlayerMovement : MonoBehaviour
             playerCamera = Camera.main;
         }
         playerCamera.transparencySortMode = TransparencySortMode.Orthographic;
-
+		/*TextMesh text=gameObject.GetComponent<TextMesh>();
+		text.text="1";*/
+		
 		//initialization_koef_model
 		koef_model = initialization_koef_of_model ();
-		current_surface.limitation_x = 0.1;
+		current_surface.limitation_x = 5;
 		current_surface.mu = 1;
 
 		current_position = this.transform.position;
@@ -130,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
 			//reycast left
 			Raycasting(flag, ref left_height, ref right_height);
 			current_surface.start_x = current_model.Coord.x - current_surface.limitation_x;
-			current_surface.start_y = current_model.Coord.y - right_height;
+			current_surface.start_y = current_model.Coord.y - left_height;
 		}
 		current_surface.angle = Math.Atan ((left_height - right_height) / current_surface.limitation_x);
 	}
