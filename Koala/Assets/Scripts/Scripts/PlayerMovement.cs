@@ -8,6 +8,7 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     public Camera playerCamera;
+	public TextMesh model_text;
 	public struct double_Vector2{
 		public double x;
 		public double y;
@@ -52,9 +53,6 @@ public class PlayerMovement : MonoBehaviour
             playerCamera = Camera.main;
         }
         playerCamera.transparencySortMode = TransparencySortMode.Orthographic;
-		/*TextMesh text=gameObject.GetComponent<TextMesh>();
-		text.text="1";*/
-		
 		//initialization_koef_model
 		koef_model = initialization_koef_of_model ();
 		current_surface.limitation_x = 5;
@@ -85,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 		GetComponent<Transform>().position = new Vector3(current_position.x, current_position.y, 0);
 		//After we move, adjust the camera to follow the player
 		playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + 10, playerCamera.transform.position.z);
-
+		model_text.text = "coord.x      " + current_model.Coord.x + "\ncoord.y      " + current_model.Coord.y + "\nvelocity.x   " + current_model.Velocity.x + "\nvelocity.y   " + current_model.Velocity.y;
 	}
 
     void FixedUpdate()
@@ -111,11 +109,11 @@ public class PlayerMovement : MonoBehaviour
 		unsafe{
 			if (current_model.Velocity.x >= 0) learn_the_surface(ref current_surface, ref current_model, 1);
 			else learn_the_surface(ref current_surface, ref current_model, -1);
-			while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, force)) != 0){
+		/*	while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, force)) != 0){
 				current_position.x = (float)current_model.Coord.x;
 				current_position.y = (float)current_model.Coord.y;
 				learn_the_surface(ref current_surface, ref current_model, res_solve);
-			}
+			}*/
 			current_position.x = (float)current_model.Coord.x;
 			current_position.y = (float)current_model.Coord.y;
 		}
