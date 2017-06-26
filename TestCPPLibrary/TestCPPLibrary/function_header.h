@@ -1,5 +1,4 @@
 #pragma once
-#include "stdafx.h"
 
 //bibl.cpp
 double norm(const struct Vector2, const struct Vector2);
