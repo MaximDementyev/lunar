@@ -49,3 +49,9 @@ int touch_test(const state_model* current_model, const struct koef_of_model* koe
 	if (fabs(current_model->Coord.y - koef_model->radius - current_surface_height) < eps) return 1;
 	return 0;
 }
+
+
+int speed_into_surface(const struct state_model* current_model, const struct surface* current_surface) {
+	if (current_model->Velocity.y / norm(current_model->Velocity) > sin(current_surface->angle)) return 0;
+	else return 1;
+}

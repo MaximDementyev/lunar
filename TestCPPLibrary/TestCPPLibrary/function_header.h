@@ -24,3 +24,4 @@ double find_earth(const struct state_model*, const struct koef_of_model*, const 
 double time_no_N(const struct state_model*, const  struct surface*);
 void hit(struct state_model*, const struct koef_of_model*, const struct surface*);
 int touch_test(const struct state_model*, const struct koef_of_model*, const struct surface*);
+int speed_into_surface(const struct state_model*, const struct surface*);

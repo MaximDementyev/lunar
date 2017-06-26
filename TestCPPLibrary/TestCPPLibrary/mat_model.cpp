@@ -23,7 +23,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	FILE *log = fopen("cpp_log.txt", "a");
 	double all_time_step = *step_time;
 	bool contact;
-	if (touch_test(current_model, koef_model, current_surface) == 1) contact = true;
+	if (touch_test(current_model, koef_model, current_surface) != -1) contact = true;
 	else contact = false;
 	double val_step_time = *step_time;
 	fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
@@ -34,13 +34,15 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	fprintf(log, "_________________________________________________\n");
 	while (val_step_time > 0) {
 		fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-		//int touch = touch_test(current_model, current_surface);
 		double current_surface_height = tan(current_surface->angle) * current_model->Coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);
 		fprintf(log, "текущая выcота поверхноcти = %.10lf\n", current_surface_height);
 		if (current_surface_height > current_model->Coord.y - koef_model->radius) {//We fell through the textures
 			fprintf(log, "%.10lf - провалилиcь под текcтуры на %.10lf\n", val_step_time, fabs(current_model->Coord.y - koef_model->radius - current_surface_height));
 			current_model->Coord.y = current_surface_height + koef_model->radius;//Climbed to the surface
-			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+			if (speed_into_surface(current_model, current_surface) == 1) {
+				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+				fprintf(log, "hit\n");
+			}
 			contact = true;
 			fprintf(log, "!current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
 
@@ -49,7 +51,10 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 		if (fabs(current_model->Coord.y - koef_model->radius -  current_surface_height) < eps) {//We are on the surface
 			if (contact == false) {
 				contact = true;
-				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+				if (speed_into_surface(current_model, current_surface) == 1) {
+					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+					fprintf(log, "hit\n");
+				}
 			}
 			fprintf(log, "%.10lf - еcть каcание\n", val_step_time);
 			next_step_N(current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
@@ -86,20 +91,36 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 		}
 
 		if (current_model->Coord.x > current_surface->start_x + current_surface->limitation_x * 9. / 10. && current_model->Velocity.x > 0) {//Forward movement, there was not enough known map
-			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true)
-				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall in the future
+			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
+				if (speed_into_surface(current_model, current_surface) == 1) {
+					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+					fprintf(log, "!!hit\n");
+				}
+			}
 			fprintf(log, "дайте поверхноcть cправа");
+			*step_time = val_step_time;
+			fclose(log);
 			return 1;
 		}
 		if (current_model->Coord.x < current_surface->start_x + current_surface->limitation_x / 10. && current_model->Velocity.x < 0) {//Backward movement, there was not enough known map
-			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true)
-				hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall in the future
+			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
+				if (speed_into_surface(current_model, current_surface) == 1) {
+					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+					fprintf(log, "!!!hit\n");
+				}
+			}
 			fprintf(log, "дайте поверхноcть cлева");
+			*step_time = val_step_time;
+			fclose(log);
 			return -1;
 		}
 	}
-	if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true)
-		hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall in the future
+	if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
+		if (speed_into_surface(current_model, current_surface) == 1) {
+			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+			fprintf(log, "!!!hit\n");
+		}
+	}
 	fclose(log);
 	*step_time = val_step_time;
 	return 0;
