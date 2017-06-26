@@ -83,9 +83,11 @@ public class PlayerMovement : MonoBehaviour
 		GetComponent<Transform>().position = new Vector3(current_position.x, current_position.y, 0);
 		//After we move, adjust the camera to follow the player
 		playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + 10, playerCamera.transform.position.z);
-		model_text.text = "coord.x      " + current_model.Coord.x + "\ncoord.y      " + current_model.Coord.y + "\nvelocity.x   " + current_model.Velocity.x + "\nvelocity.y   " + current_model.Velocity.y;
+		model_text.text = "coord.x      " + current_model.Coord.x + "\ncoord.y      " + current_model.Coord.y + 
+			"\nvelocity.x   " + current_model.Velocity.x + "\nvelocity.y   " + current_model.Velocity.y +
+			"\nangle         " + current_surface.angle;
 	}
-
+ 
     void FixedUpdate()
 	{   
 		tmp_test++;
