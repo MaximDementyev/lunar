@@ -5,7 +5,7 @@ const double eps = 1e-2; // подобрать
 
  Vector2 func_solve_acceleration(const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface) {
 	double acceleration;
-	if (norm(Velocity) > eps) { //check zero speed
+	if (norm(*Velocity) > eps) { //check zero speed
 		//find acceleration in connected coordinate system
 		acceleration = (force - current_surface->mu * koef_model->mass * koef_model->gravity * cos(current_surface->angle) * sign(Velocity->x)
 			- koef_model->mass * koef_model->gravity * sin(current_surface->angle)) / koef_model->mass;

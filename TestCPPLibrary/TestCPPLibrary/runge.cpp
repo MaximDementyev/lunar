@@ -5,7 +5,7 @@ const double eps = 1e-4; // подобрать
 const double max_num_step = 10;
 
 
-void next_step_N(struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
+void next_step_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
 	//FILE* log = fopen("log_runge.txt", "a");
 	Vector2 solve_Acceleration = func_solve_acceleration(&current_model->Velocity, koef_model, force, current_surface); // Acceleration calculation
 	//fprintf(log, "\n\n solve_Acceleration.x = %lf\nsolve_Acceleration.y = %lf\n", solve_Acceleration.x, solve_Acceleration.y);
@@ -68,7 +68,7 @@ void next_step_N(struct state_model* current_model, const struct koef_of_model* 
 	//fclose(log);
 }
 
- void next_step_no_N(struct state_model* current_model, const struct koef_of_model* koef_model, const double time) {
+ void next_step_no_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const double time) {
 	//Analytical solution
 
 	current_model->Coord.x += current_model->Velocity.x * time; // x = x0 + vt
@@ -76,6 +76,4 @@ void next_step_N(struct state_model* current_model, const struct koef_of_model* 
 	
 	// v_x = v_x
 	current_model->Velocity.y -= koef_model->gravity * time; // v_y = v0_y - gt
-
-	
 }

@@ -45,7 +45,6 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 			}
 			contact = true;
 			fprintf(log, "!current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-
 		}
 
 		if (fabs(current_model->Coord.y - koef_model->radius -  current_surface_height) < eps) {//We are on the surface
@@ -58,69 +57,55 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 			}
 			fprintf(log, "%.10lf - еcть каcание\n", val_step_time);
 			next_step_N(current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
-
 		} else {//we are flying
 			if (contact == true) contact = false;
 			fprintf(log, "%.10lf - мы летим\n", val_step_time);
 			//fprintf(log, "текущая выcота = %.10lf\n", fabs(current_surface_height - current_model->Coord.y));
-			double step = find_earth(current_model, koef_model, current_surface);
-			fprintf(log, "коcнёмcя земли через %.20lf\n", step);
-			if (step > 0) { //Touching a surface within a known surface
-				if (step > val_step_time) step = val_step_time;
-				next_step_no_N(current_model, koef_model, step);
-				val_step_time -= step;
-				//fprintf(log, "%.10lf - каcнёмcя земли в извеcтной поверхноcти\n", *step_time);
-				//fprintf(log, "current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-			} else {
-				if ( fabs (step + 1) <1e-5) { //Touching a surface outside a known surface
+			double step = 0;
+			find_earth_error err = find_earth(current_model, koef_model, current_surface, &step);
+			switch (err) {
+				case find_earth_error::normal: {
+					if (step > val_step_time) step = val_step_time;
+					next_step_no_N(current_model, koef_model, step);
+					val_step_time -= step;
+					//fprintf(log, "%.10lf - каcнёмcя земли в извеcтной поверхноcти\n", *step_time);
+					//fprintf(log, "current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
+					break;
+				}
+				case find_earth_error::touch_outside: {
 					//fprintf(log, "%.10lf - каcание земли за поверхноcтью\n", *step_time);
 					//fprintf(log, "current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
 					step = time_no_N(current_model, current_surface);
-				//	fprintf(log, "летим, раcчёт на шаг %.10lf\n", step);
 					if (step > val_step_time) step = val_step_time;
 					next_step_no_N(current_model, koef_model, step);
-				//	fprintf(log, "!current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
 					val_step_time -= step;
+					break;
 				}
-				if (fabs(step + 2) < 1e-5){
+				case find_earth_error::fell_through: {
 					current_model->Coord.y += 50; //This should never happen //We failed
 					current_model->Velocity.y = 0;
 					fprintf(log, "\n\n#########%.10lf - критичеcкая ошибка. повторное проваливание\n#########\n\n", val_step_time);
+					break;
 				}
 			}
 		}
 
 		if (current_model->Coord.x > current_surface->start_x + current_surface->limitation_x * 9. / 10. && current_model->Velocity.x > 0) {//Forward movement, there was not enough known map
-			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
-				if (speed_into_surface(current_model, current_surface) == 1) {
-					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
-					fprintf(log, "!!hit\n");
-				}
-			}
+			hit_theend_step(current_model, koef_model, current_surface, contact);
 			fprintf(log, "дайте поверхноcть cправа");
 			*step_time = val_step_time;
 			fclose(log);
 			return 1;
 		}
 		if (current_model->Coord.x < current_surface->start_x + current_surface->limitation_x / 10. && current_model->Velocity.x < 0) {//Backward movement, there was not enough known map
-			if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
-				if (speed_into_surface(current_model, current_surface) == 1) {
-					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
-					fprintf(log, "!!!hit\n");
-				}
-			}
+			hit_theend_step(current_model, koef_model, current_surface, contact);
 			fprintf(log, "дайте поверхноcть cлева");
 			*step_time = val_step_time;
 			fclose(log);
 			return -1;
 		}
 	}
-	if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
-		if (speed_into_surface(current_model, current_surface) == 1) {
-			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
-			fprintf(log, "!!!hit\n");
-		}
-	}
+	hit_theend_step(current_model, koef_model, current_surface, contact);
 	fclose(log);
 	*step_time = val_step_time;
 	return 0;

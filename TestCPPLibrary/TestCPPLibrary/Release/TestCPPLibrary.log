@@ -6,13 +6,11 @@ mat_model.cpp(23): warning C4996: 'fopen': This function or variable may be unsa
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
   runge.cpp
   runge_func.cpp
-  stdafx.cpp
   xz.cpp
-  dllmain.cpp
      Создается библиотека D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.lib и объект D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.exp
   Создание кода
   2 of 35 functions ( 5.7%) were compiled, the rest were copied from previous compilation.
     1 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   TestCPPLibrary.vcxproj -> D:\GitHab\lunar\TestCPPLibrary\Release\TestCPPLibrary.dll

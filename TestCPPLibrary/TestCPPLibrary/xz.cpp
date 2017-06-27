@@ -3,29 +3,17 @@
 
 const double eps = 1e-4; //The error of touching the wheel of the earth
 
-double find_earth(const state_model* current_model, const koef_of_model* koef_model, const surface* current_surface) {
+find_earth_error find_earth(const state_model* current_model, const koef_of_model* koef_model, const surface* current_surface,double* res) {
 	double b = tan(current_surface->angle) * current_model->Velocity.x - current_model->Velocity.y; //Coefficient before the first power in the quadratic equation
 	double c = (current_model->Coord.x - current_surface->start_x) * tan(current_surface->angle) - current_model->Coord.y + current_surface->start_y - koef_model->radius;//Coefficient before the zero power in the quadratic equation
 	double D = b * b - 2 * koef_model->gravity * c;	
-/*	FILE *log = fopen("xz_log.txt", "a");
-	fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.4lf\n   Corrd.y = %.4lf\n   Velocity.x = %.4lf\n   Velocity.y = %.4lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-	fprintf(log, "current_surface\n   angle = %.4lf\n   lim_x = %.4lf\n   mu = %.4lf\n   start_x = %.4lf\n   start_y = %.4lf\n\n", current_surface->angle, current_surface->limitation_x, current_surface->mu, current_surface->start_x, current_surface->start_y);
-	fprintf(log, "b = %.10lf\nc = %.10lf\nD = %.10lf", b,c, D);
-	fclose(log);*/
-	if (D < 0) {
-	/*	log = fopen("xz_log.txt", "a");
-		fprintf(log, "!!!!!!!!!!!!!!!!!!!!  D < 0   !!!!!!!!!!!!!!!!\n");
-		fclose(log);*/
-		return -2; //error! We fell through the texture 
-	}
-	double touch_time = (-b + sqrt(D)) / koef_model->gravity; //Surface touch time
-	/*log = fopen("xz_log.txt", "a");
-	fprintf(log, "touch_time = %.10lf\n",touch_time);
-	fclose(log);*/
-	double find_tau = (current_model->Coord.x + current_model->Velocity.x * touch_time - current_surface->start_x) / current_surface->limitation_x; //Touch point
-	if (find_tau < 0 || find_tau > 1) return -1; // Touching outside a known surface
+	if (D < 0) return find_earth_error::fell_through; //error! We fell through the texture 
 
-	return touch_time;
+	double touch_time = (-b + sqrt(D)) / koef_model->gravity; //Surface touch time
+	double find_tau = (current_model->Coord.x + current_model->Velocity.x * touch_time - current_surface->start_x) / current_surface->limitation_x; //Touch point
+	if (find_tau < 0 || find_tau > 1) return find_earth_error::touch_outside; // Touching outside a known surface
+	*res = touch_time;
+	return find_earth_error::normal;
 }
 
 double time_no_N(const state_model* current_model, const surface* current_surface) {
@@ -54,4 +42,12 @@ int touch_test(const state_model* current_model, const struct koef_of_model* koe
 int speed_into_surface(const struct state_model* current_model, const struct surface* current_surface) {
 	if (current_model->Velocity.y / norm(current_model->Velocity) > sin(current_surface->angle)) return 0;
 	else return 1;
+}
+
+void hit_theend_step(struct state_model* const current_model, const struct koef_of_model* koef_model, const surface* current_surface, const bool contact) {
+	if (touch_test(current_model, koef_model, current_surface) == 1 && contact == true) {
+		if (speed_into_surface(current_model, current_surface) == 1) {
+			hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
+		}
+	}
 }
