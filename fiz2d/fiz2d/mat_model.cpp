@@ -26,12 +26,12 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	if (touch_test(current_model, koef_model, current_surface) != -1) contact = true;
 	else contact = false;
 	double val_step_time = *step_time;
-	fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-	fprintf(log, "current_surface\n  angle = %.10lf\n  start_x = %.10lf\n  start_y = %.10lf\n\n", current_surface->angle, current_surface->start_x, current_surface->start_y);
+	fprintf(log, "\n___________\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
+	fprintf(log, "current_surface\n  angle = %.10lf\n  left_h = %.2lf\n  right_h = %.2lf\n  start_x = %.10lf\n  start_y = %.10lf\n\n", current_surface->angle, current_surface->left_height, current_surface->right_height, current_surface->start_x, current_surface->start_y);
 	//fprintf(log, "koef_of_model\n   gravity = %.10lf\n   mass = %.10lf\n   radius = %.10lf\n\n", koef_model->gravity, koef_model->mass, koef_model->radius);
 	fprintf(log, "force = %.10lf\n", force);
 	//fprintf(log, "time = %.20lf\n", *step_time);
-	fprintf(log, "_________________________________________________\n");
+	//*fprintf(log, "_________________________________________________\n");
 	while (val_step_time > 0) {
 		fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
 		double current_surface_height = tan(current_surface->angle) * current_model->Coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);

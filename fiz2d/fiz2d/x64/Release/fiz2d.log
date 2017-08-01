@@ -11,6 +11,8 @@ mat_model.cpp(23): warning C4996: 'fopen': This function or variable may be unsa
   xz.cpp
      Создается библиотека D:\GitHub\lunar\fiz2d\x64\Release\fiz2d.lib и объект D:\GitHub\lunar\fiz2d\x64\Release\fiz2d.exp
   Создание кода
-  All 35 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  23 of 35 functions (65.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   fiz2d.vcxproj -> D:\GitHub\lunar\fiz2d\x64\Release\fiz2d.dll
