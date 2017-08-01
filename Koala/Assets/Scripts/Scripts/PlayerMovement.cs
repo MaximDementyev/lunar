@@ -25,26 +25,29 @@ public class PlayerMovement : MonoBehaviour
 	public struct surface {
 		public double start_x;
 		public double start_y;
+		public double left_height;
+		public double right_height;
 		public double angle;
 		public double limitation_x;
 		public double mu;
 	};
 	public surface current_surface;
 
-	[DllImport("TestCPPLibrary",CallingConvention = CallingConvention.Cdecl, EntryPoint="initialization_koef_model")]
+	[DllImport("fiz2d",CallingConvention = CallingConvention.Cdecl, EntryPoint="initialization_koef_model")]
 	public static extern koef_of_model initialization_koef_of_model();
 	public koef_of_model koef_model;
 
-	[DllImport("TestCPPLibrary",CallingConvention = CallingConvention.Cdecl, EntryPoint="solve_step")]
+	[DllImport("fiz2d",CallingConvention = CallingConvention.Cdecl, EntryPoint="solve_step")]
 	public static unsafe extern int solve_step(ref state_model current_model, ref koef_of_model koef_model, ref surface current_surface, ref double step_time, double force);
 	public state_model current_model;
 
 	public Vector2 current_position;
-	public double force_module = 10;
+	public double force_module;
 
 	public Vector2 bias_ray, vec_gravity;
-	public int tmp_test;
 	
+	public float body_lifting;
+	int layerMask = 1 << 8;
 
     void Start()
     {
@@ -55,14 +58,12 @@ public class PlayerMovement : MonoBehaviour
         playerCamera.transparencySortMode = TransparencySortMode.Orthographic;
 		//initialization_koef_model
 		koef_model = initialization_koef_of_model ();
-		current_surface.limitation_x = 5;
-		current_surface.mu = 1;
+		current_surface.limitation_x = 0.5;
+		current_surface.mu = 0.5;
 
 		current_position = this.transform.position;
 		bias_ray.x = (float)current_surface.limitation_x;
 		bias_ray.y = 0;
-		vec_gravity.x = 0;
-		vec_gravity.y = -1;
 
 		//initialization start model
 		current_model.Velocity.x = 0;
@@ -70,12 +71,11 @@ public class PlayerMovement : MonoBehaviour
 		current_model.Coord.x = System.Convert.ToDouble(current_position.x);
 		current_model.Coord.y = System.Convert.ToDouble(current_position.y);
 
-
+		layerMask = ~layerMask;
 		//StreamWriter log = new StreamWriter(@"log_unity_start.txt");
 		//log.WriteLine("current_position.x = " + current_position.x + "\ncurrent_position.y = " + current_position.y);
 		//log.WriteLine("\n\ncurrent_model.Coord.x = " + current_model.Coord.x + "\ncurrent_model.Coord.y = " + current_model.Coord.y);
 		//log.Close();
-		tmp_test = 0;
     }
 
 
@@ -90,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
  
     void FixedUpdate()
 	{   
-		tmp_test++;
 		if (Input.GetKey(KeyCode.A))
 		{
 			++force_module;
@@ -109,8 +108,9 @@ public class PlayerMovement : MonoBehaviour
 		double step_time = System.Convert.ToDouble(Time.deltaTime);
 		int res_solve;
 		unsafe{
-			if (current_model.Velocity.x >= 0) learn_the_surface(ref current_surface, ref current_model, 1);
-			else learn_the_surface(ref current_surface, ref current_model, -1);
+			if (current_model.Velocity.x >= 0) res_solve = 1;
+			else res_solve = -1;
+			learn_the_surface(ref current_surface, ref current_model, res_solve);
 			while ((res_solve = solve_step(ref current_model, ref koef_model, ref current_surface, ref step_time, force)) != 0){
 				current_position.x = (float)current_model.Coord.x;
 				current_position.y = (float)current_model.Coord.y;
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	unsafe void learn_the_surface (ref surface current_surface, ref state_model current_model, int flag){
+	public unsafe void learn_the_surface (ref surface current_surface, ref state_model current_model, int flag){
 		double left_height = 0;
 		double right_height = 0;
 		if (flag == 1){
@@ -136,23 +136,21 @@ public class PlayerMovement : MonoBehaviour
 			current_surface.start_y = current_model.Coord.y - left_height;
 		}
 		current_surface.angle = Math.Atan ((left_height - right_height) / current_surface.limitation_x);
+		current_surface.left_height = left_height;
+		current_surface.right_height = right_height;
 	}
 
 	public unsafe void Raycasting(int flag, ref double  left_height, ref double right_height){
 		RaycastHit hitSurfaceLeft;
 		RaycastHit hitSurfaceRight;
 		if (flag == 1) {
-			Physics.Raycast (current_position, vec_gravity, out hitSurfaceLeft);
-			Physics.Raycast (current_position + bias_ray, vec_gravity, out hitSurfaceRight);
-			left_height = hitSurfaceLeft.distance;
-			right_height = hitSurfaceRight.distance;
+			Physics.Raycast (current_position - vec_gravity * body_lifting, vec_gravity, out hitSurfaceLeft, Mathf.Infinity, layerMask);
+			Physics.Raycast (current_position + bias_ray - vec_gravity * body_lifting, vec_gravity, out hitSurfaceRight, Mathf.Infinity, layerMask);
 		} else {
-			Physics.Raycast (current_position, vec_gravity, out hitSurfaceRight);
-			Physics.Raycast (current_position - bias_ray, vec_gravity, out hitSurfaceLeft);
-			left_height = hitSurfaceLeft.distance;
-			right_height = hitSurfaceRight.distance;
+			Physics.Raycast (current_position - vec_gravity * body_lifting, vec_gravity, out hitSurfaceRight, Mathf.Infinity, layerMask);
+			Physics.Raycast (current_position - bias_ray - vec_gravity * body_lifting, vec_gravity, out hitSurfaceLeft, Mathf.Infinity, layerMask);
 		}
-		//using (StreamWriter log = File.AppendText("log_ray.txt"))
-		//	log.WriteLine("\n\n\nleft_height = " + left_height + "\nright_height = " + right_height);
+		left_height = hitSurfaceLeft.distance + vec_gravity.y * body_lifting;
+		right_height = hitSurfaceRight.distance + vec_gravity.y * body_lifting;
 	}
 }
