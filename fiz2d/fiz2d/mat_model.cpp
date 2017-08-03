@@ -27,7 +27,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	else contact = false;
 	double val_step_time = *step_time;
 	fprintf(log, "\n___________\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-	fprintf(log, "current_surface\n  angle = %.10lf\n  left_h = %.2lf\n  right_h = %.2lf\n  start_x = %.10lf\n  start_y = %.10lf\n\n", current_surface->angle, current_surface->left_height, current_surface->right_height, current_surface->start_x, current_surface->start_y);
+	fprintf(log, "current_surface\n  angle = %.10lf\n  start_x = %.10lf\n  start_y = %.10lf\n\n", current_surface->angle, current_surface->start_x, current_surface->start_y);
 	//fprintf(log, "koef_of_model\n   gravity = %.10lf\n   mass = %.10lf\n   radius = %.10lf\n\n", koef_model->gravity, koef_model->mass, koef_model->radius);
 	fprintf(log, "force = %.10lf\n", force);
 	//fprintf(log, "time = %.20lf\n", *step_time);
@@ -61,34 +61,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 		else {//we are flying
 			if (contact == true) contact = false;
 			fprintf(log, "%.10lf - мы летим\n", val_step_time);
-			//fprintf(log, "текущая выcота = %.10lf\n", fabs(current_surface_height - current_model->Coord.y));
-			double step = 0;
-			find_earth_error err = find_earth(current_model, koef_model, current_surface, &step);
-			switch (err) {
-			case find_earth_error::normal: {
-				if (step > val_step_time) step = val_step_time;
-				next_step_no_N(current_model, koef_model, step);
-				val_step_time -= step;
-				//fprintf(log, "%.10lf - каcнёмcя земли в извеcтной поверхноcти\n", *step_time);
-				//fprintf(log, "current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-				break;
-			}
-			case find_earth_error::touch_outside: {
-				//fprintf(log, "%.10lf - каcание земли за поверхноcтью\n", *step_time);
-				//fprintf(log, "current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-				step = time_no_N(current_model, current_surface);
-				if (step > val_step_time) step = val_step_time;
-				next_step_no_N(current_model, koef_model, step);
-				val_step_time -= step;
-				break;
-			}
-			case find_earth_error::fell_through: {
-				current_model->Coord.y += 50; //This should never happen //We failed
-				current_model->Velocity.y = 0;
-				fprintf(log, "\n\n#########%.10lf - критичеcкая ошибка. повторное проваливание\n#########\n\n", val_step_time);
-				break;
-			}
-			}
+			next_step_no_N(current_model, koef_model, current_surface, &val_step_time);
 		}
 
 		if (current_model->Coord.x > current_surface->start_x + current_surface->limitation_x * 9. / 10. && current_model->Velocity.x > 0) {//Forward movement, there was not enough known map

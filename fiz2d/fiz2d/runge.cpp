@@ -68,12 +68,30 @@ void next_step_N(struct state_model* const current_model, const struct koef_of_m
 	//fclose(log);
 }
 
-void next_step_no_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const double time) {
-	//Analytical solution
-
+int next_step_no_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, double* time_left) {
+	//we flying
+	double time = *time_left;
+	Vector2 tmp_coord;
+	double height_above_ground = -100 * koef_model->radius;
+	while (fabs(height_above_ground) > eps*0.1 && time > 0) {
+		if (height_above_ground > 0) {
+			current_model->Coord.x += current_model->Velocity.x * time; // x = x0 + vt
+			current_model->Coord.y += current_model->Velocity.y * time - koef_model->gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
+			current_model->Velocity.y -= koef_model->gravity * time; // v_y = v0_y - gt
+			*time_left -= time;
+			time = *time_left;
+			return 0;
+		}
+		tmp_coord = current_model->Coord;
+		tmp_coord.x += current_model->Velocity.x * time; // x = x0 + vt
+		tmp_coord.y += current_model->Velocity.y * time - koef_model->gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
+		double current_surface_height = tan(current_surface->angle) * tmp_coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);
+		height_above_ground = tmp_coord.y - koef_model->radius - current_surface_height; 
+		if (height_above_ground < 0) time /= 2;
+	}
 	current_model->Coord.x += current_model->Velocity.x * time; // x = x0 + vt
 	current_model->Coord.y += current_model->Velocity.y * time - koef_model->gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
-
-																										// v_x = v_x
 	current_model->Velocity.y -= koef_model->gravity * time; // v_y = v0_y - gt
+	*time_left -= time;
+	return 0;
 }

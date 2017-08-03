@@ -8,7 +8,7 @@ double dotprod(const struct Vector2, const struct Vector2);
 
 //runge.cpp
 void next_step_N(struct state_model* const, const struct koef_of_model*, const struct surface*, const double force, double* time_left, double all_time_step);
-void next_step_no_N(struct state_model* const, const struct koef_of_model*, const double time);
+int next_step_no_N(struct state_model* const, const struct koef_of_model*, const struct surface*, double *time_left);
 
 //runge_func.cpp
 struct Vector2 func_solve_acceleration(const struct Vector2* Velocity, const struct koef_of_model*, const double force, const struct surface*);
