@@ -28,21 +28,23 @@ struct Vector2 {
 	void set(double nx, double ny) { x = nx; y = ny; }
 	void set(struct Vector2 vec) { x = vec.x, y = vec.y; }
 	void set0() { x = y = 0; }
+
+	friend struct Vector2 operator + (const struct Vector2 &, const struct Vector2 &);
+	friend struct Vector2 operator - (const struct Vector2 &, const struct Vector2 &);
+	struct Vector2 operator - (const struct Vector2 &);
+	friend struct Vector2 operator * (const struct Vector2 &, const double);
+	friend struct Vector2 operator * (const double, const struct Vector2 &);
+	friend struct Vector2 operator *= (struct Vector2 &, const double);
+	friend struct Vector2 operator / (struct Vector2 &, const double);
 };
 
-struct Vector2 operator + (const struct Vector2 &, const struct Vector2 &);
-struct Vector2 operator - (const struct Vector2 &, const struct Vector2 &);
-struct Vector2 operator - (const struct Vector2 &);
-struct Vector2 operator * (const struct Vector2 &, const double);
-struct Vector2 operator * (const double, const struct Vector2 &);
-struct Vector2 operator *= (struct Vector2 &, const double);
-struct Vector2 operator / (struct Vector2 &, const double);
 
 
 struct state_model {
 	struct Vector2 Coord;
 	struct Vector2 Velocity;
 };
+
 
 struct koef_of_model {
 	double mass;
