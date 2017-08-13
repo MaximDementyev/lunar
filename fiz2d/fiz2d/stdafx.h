@@ -20,8 +20,14 @@
 
 
 struct Vector2 {
-	double x = 0;
-	double y = 0;
+	double x;
+	double y;
+
+	struct Vector2() { x = 0; y = 0; }
+	struct Vector2(double nx, double ny) { x = nx, y = ny; }
+	void set(double nx, double ny) { x = nx; y = ny; }
+	void set(struct Vector2 vec) { x = vec.x, y = vec.y; }
+	void set0() { x = y = 0; }
 };
 
 struct Vector2 operator + (const struct Vector2 &, const struct Vector2 &);

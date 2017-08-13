@@ -1,53 +1,29 @@
 #include "stdafx.h"
 
 struct Vector2 operator + (const struct Vector2 &a, const struct Vector2 &b) {
-	struct Vector2 res;
-	res.x = a.x + b.x;
-	res.y = a.y + b.y;
-	return res;
+	return struct Vector2(a.x + b.x, a.y + b.y);
 }
 
 struct Vector2 operator - (const struct Vector2 &a, const struct Vector2 &b) {
-	struct Vector2 res;
-	res.x = a.x - b.x;
-	res.y = a.y - b.y;
-	return res;
+	return struct Vector2(a.x - b.x, a.y - b.y);
 }
 
 struct Vector2 operator - (const struct Vector2 &a) {
-	struct Vector2 res;
-	res.x = -a.x;
-	res.y = -a.y;
-	return res;
+	return struct Vector2(-a.x, -a.y);
 }
 
 struct Vector2 operator * (const struct Vector2 &a, const double b) {
-	struct Vector2 res;
-	res.x = a.x * b;
-	res.y = a.y * b;
-	return res;
+	return struct Vector2(a.x * b, a.y * b);
 }
 
 struct Vector2 operator * (const double b, const struct Vector2 &a) {
-	struct Vector2 res;
-	res.x = a.x * b;
-	res.y = a.y * b;
-	return res;
+	return struct Vector2(a.x * b, a.y * b);
 }
 
 struct Vector2 operator / (struct Vector2 &a, const double b) {
-	struct Vector2 res;
-	if (b != 0) {
-		res.x = a.x / b;
-		res.y = a.y / b;
-		return res;
-	}
-	return res;
+	return Vector2(a.x / b, a.y / b);
 }
 
 struct Vector2 operator *= (struct Vector2 &a, const double b) {
-	struct Vector2 res;
-	res.x = a.x * b;
-	res.y = a.y * b;
-	return res;
+	return struct Vector2(a.x * b, a.y * b);
 }
