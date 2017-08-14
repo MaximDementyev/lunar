@@ -1,0 +1,17 @@
+﻿  bibl.cpp
+  mat_model.cpp
+mat_model.cpp(9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
+mat_model.cpp(30): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
+  runge.cpp
+  runge_body_func.cpp
+  runge_func.cpp
+  stdafx.cpp
+  xz.cpp
+  dllmain.cpp
+     Создается библиотека D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.lib и объект D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.exp
+  Создание кода
+  All 39 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  fiz2d.vcxproj -> D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.dll

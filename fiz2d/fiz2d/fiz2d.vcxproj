@@ -164,6 +164,7 @@
     </ClCompile>
     <ClCompile Include="mat_model.cpp" />
     <ClCompile Include="runge.cpp" />
+    <ClCompile Include="runge_body_func.cpp" />
     <ClCompile Include="runge_func.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="xz.cpp" />

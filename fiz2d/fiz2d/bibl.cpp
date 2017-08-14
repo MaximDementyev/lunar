@@ -18,3 +18,7 @@ double sign(const double a) {
 double dotprod(const struct Vector2 a, const struct Vector2 b) {
 	return a.x * b.x + a.y * b.y;
 }
+
+struct Vector2 rotate_vec(const struct Vector2 vec, const double phi) {
+	return Vector2(vec.x * cos(phi) - vec.y * sin(phi), vec.x * sin(phi) + vec.y * cos(phi));
+}

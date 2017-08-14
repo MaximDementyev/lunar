@@ -31,26 +31,59 @@ struct Vector2 {
 
 	friend struct Vector2 operator + (const struct Vector2 &, const struct Vector2 &);
 	friend struct Vector2 operator - (const struct Vector2 &, const struct Vector2 &);
-	struct Vector2 operator - (const struct Vector2 &);
+//	struct Vector2 operator - (const struct Vector2 &);
 	friend struct Vector2 operator * (const struct Vector2 &, const double);
 	friend struct Vector2 operator * (const double, const struct Vector2 &);
 	friend struct Vector2 operator *= (struct Vector2 &, const double);
-	friend struct Vector2 operator / (struct Vector2 &, const double);
+	friend struct Vector2 operator / (const struct Vector2 &, const double);
+	friend struct Vector2 operator /= (struct Vector2 &, const double);
 };
 
 
 
-struct state_model {
+struct object {
 	struct Vector2 Coord;
 	struct Vector2 Velocity;
+	struct Vector2 Acceleration;
+	struct Vector2 Force;
 };
 
+struct state_model {
+	struct object body;
+	struct object wheel;
+};
+
+/*struct state_model {
+struct Vector2 Coord;
+struct Vector2 Velocity;
+};*/
+
+struct Kwheel {
+	double mass;
+	double radius;
+	double position;
+	double rigidity_suspension;
+};
+
+struct Kbody {
+	double mass;
+};
+
+struct Kworld {
+	double gravity;
+};
 
 struct koef_of_model {
-	double mass;
-	double gravity;
-	double radius;
+	struct Kwheel wheel;
+	struct Kbody body;
+	struct Kworld world;
 };
+
+/*struct koef_of_model {
+double mass;
+double gravity;
+double radius;
+};*/
 
 struct surface {
 	double start_x;
@@ -74,5 +107,4 @@ struct koef1 {
 struct runge_K {
 	struct koef1 kx1;
 	struct koef1 kx2;
-	struct koef1 kx3;
 };
