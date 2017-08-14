@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        if (File.Exists("cpp_log.txt"))
+            File.Delete("cpp_log.txt");
+
         if (playerCamera == null)
         {
             playerCamera = Camera.main;
