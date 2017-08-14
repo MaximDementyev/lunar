@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\RenderQueue.cs" />
      <Compile Include="Assets\Scripts\Scripts\ChaseCamera.cs" />
      <Compile Include="Assets\Scripts\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Utils.cs" />
      <Compile Include="Assets\Scripts\Settings.cs" />
      <Compile Include="Assets\Scripts\TerrainDisplayer.cs" />
      <Compile Include="Assets\Scripts\TerrainManager.cs" />
