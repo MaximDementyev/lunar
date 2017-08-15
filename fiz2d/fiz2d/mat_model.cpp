@@ -33,18 +33,17 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 	if (touch_test(current_model, koef_model, current_surface, NULL) != 1) contact = true;
 	else contact = false;
 	double val_step_time = *step_time;
-	/*fprintf(log, "\n___________\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);
-	fprintf(log, "current_surface\n  angle = %.10lf\n  left_h = %.2lf\n  right_h = %.2lf\n  start_x = %.10lf\n  start_y = %.10lf\n\n", current_surface->angle, current_surface->left_height, current_surface->right_height, current_surface->start_x, current_surface->start_y);*/
-	//fprintf(log, "koef_of_model\n   gravity = %.10lf\n   mass = %.10lf\n   radius = %.10lf\n\n", koef_model->gravity, koef_model->mass, koef_model->radius);
+
+
+	print_new_step(log);
+	print_model(log, current_model);
+	print_surface(log, current_surface);
+	
 	//fprintf(log, "force = %.10lf\n", force);
 	//fprintf(log, "time = %.20lf\n", *step_time);
-	//*fprintf(log, "_________________________________________________\n");
-
-
 
 	while (val_step_time > 0) {
-		/*fprintf(log, "\n\ncurrent_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);*/
-
+		print_model(log, current_model);
 
 		double current_surface_height;
 		int touch_ground = touch_test(current_model, koef_model, current_surface, &current_surface_height);
@@ -53,6 +52,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 
 		switch (touch_ground) {
 			case -1: {//We fell through the textures
+				fprintf(log, "провалились\n");
 				/*fprintf(log, "%.10lf - провалилиcь под текcтуры на %.10lf\n", val_step_time, fabs(current_model->Coord.y - koef_model->radius - current_surface_height));*/
 				current_model->wheel.Coord.y = current_surface_height + koef_model->wheel.radius;//Climbed to the surface
 				if (speed_into_surface(current_model, current_surface) == 1) {
@@ -60,7 +60,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 				//fprintf(log, "hit\n");
 				}
 				contact = true;
-				/*fprintf(log, "!current_model\n   Corrd.x = %.10lf\n   Corrd.y = %.10lf\n   Velocity.x = %.10lf\n   Velocity.y = %.10lf\n\n", current_model->Coord.x, current_model->Coord.y, current_model->Velocity.x, current_model->Velocity.y);*/
+				//print_model(log, current_model);
 				break;
 			}
 
@@ -72,15 +72,15 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 						//fprintf(log, "hit\n");
 					}
 				}
-				//fprintf(log, "%.10lf - еcть каcание\n", val_step_time);
-				next_step_N(current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
+				fprintf(log, "%.5lf - еcть каcание\n", val_step_time);
+				next_step_N(log, current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
 				break;
 			}
 
 			case 1: {//we are flying
 				if (contact == true) contact = false;
-				fprintf(log, "%.10lf - мы летим\n", val_step_time);
-				next_step_no_N(current_model, koef_model, current_surface, &val_step_time);
+				fprintf(log, "%.5lf - мы летим\n", val_step_time);
+				next_step_no_N(log, current_model, koef_model, current_surface, &val_step_time);
 			}
 		}
 

@@ -3,26 +3,6 @@
 
 const double eps = 1e-4; //The error of touching the wheel of the earth
 
-/*find_earth_error find_earth(const state_model* current_model, const koef_of_model* koef_model, const surface* current_surface, double* res) {
-	double b = tan(current_surface->angle) * current_model->Velocity.x - current_model->Velocity.y; //Coefficient before the first power in the quadratic equation
-	double c = (current_model->Coord.x - current_surface->start_x) * tan(current_surface->angle) - current_model->Coord.y + current_surface->start_y - koef_model->radius;//Coefficient before the zero power in the quadratic equation
-	double D = b * b - 2 * koef_model->gravity * c;
-	if (D < 0) return find_earth_error::fell_through; //error! We fell through the texture 
-
-	double touch_time = (-b + sqrt(D)) / koef_model->gravity; //Surface touch time
-	double find_tau = (current_model->Coord.x + current_model->Velocity.x * touch_time - current_surface->start_x) / current_surface->limitation_x; //Touch point
-	if (find_tau < 0 || find_tau > 1) return find_earth_error::touch_outside; // Touching outside a known surface
-	*res = touch_time;
-	return find_earth_error::normal;
-}*/
-
-/*double time_no_N(const state_model* current_model, const surface* current_surface) {
-	if (current_model->Velocity.x > 0)
-		return (current_surface->start_x + current_surface->limitation_x - current_model->Coord.x) / current_model->Velocity.x;
-	else
-		return (current_surface->start_x - current_model->Coord.x) / current_model->Velocity.x;
-}*/
-
 void hit(state_model* current_model, const koef_of_model* koef_model, const surface* current_surface) {
 	struct Vector2 guide_surface; //Surface vector guide
 	guide_surface.x = cos(current_surface->angle);

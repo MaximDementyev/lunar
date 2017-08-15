@@ -5,7 +5,7 @@ const double eps = 1e-4; // подобрать
 const double max_num_step = 10;
 
 
-void next_step_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
+void next_step_N(FILE* log, struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
 	func_solve_acc_wheel(current_model, &current_model->wheel.Velocity, koef_model, force, current_surface, true); // Acceleration calculation
 	double step_time = *time_left;
 	while (true) {
@@ -82,7 +82,7 @@ void solve_body(state_model *current_model, const koef_of_model *koef_model, dou
 
 
 //very BAD
-void next_step_no_N(struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, double* time_left) {
+void next_step_no_N(FILE* log, struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, double* time_left) {
 	//we flying
 	double time = *time_left;
 	Vector2 tmp_coord;
