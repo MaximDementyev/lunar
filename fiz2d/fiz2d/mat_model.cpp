@@ -52,8 +52,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 
 		switch (touch_ground) {
 			case -1: {//We fell through the textures
-				fprintf(log, "провалились\n");
-				/*fprintf(log, "%.10lf - провалилиcь под текcтуры на %.10lf\n", val_step_time, fabs(current_model->Coord.y - koef_model->radius - current_surface_height));*/
+				fprintf(log, "%.8lf - провалилиcь на %.10lf\n", val_step_time, fabs(current_model->wheel.Coord.y - koef_model->wheel.radius - current_surface_height));
 				current_model->wheel.Coord.y = current_surface_height + koef_model->wheel.radius;//Climbed to the surface
 				if (speed_into_surface(current_model, current_surface) == 1) {
 					hit(current_model, koef_model, current_surface);//Calculated impact against the surface, so as not to fall through again
@@ -61,7 +60,6 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 				}
 				contact = true;
 				//print_model(log, current_model);
-				break;
 			}
 
 			case 0: {//We are on the surface

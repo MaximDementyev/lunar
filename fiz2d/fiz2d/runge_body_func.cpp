@@ -1,11 +1,18 @@
 #include"stdafx.h"
 #include"function_header.h"
 
-Vector2 func_solve_acc_body(state_model* current_model, const koef_of_model* koef_model, const bool flag_record) {
-	double deformation_suspension = koef_model->wheel.position - norm(current_model->body.Coord, current_model->wheel.Coord);//We assume the deformation of the spring
+double deformation_suspension(const Vector2 body, const Vector2 wheel, const koef_of_model *const koef_model) {
+	double distance = norm(body, wheel);
+	if (body.y < wheel.y) distance = -distance;
+	double deformation = koef_model->wheel.position - distance;//We assume the deformation of the spring
+	return deformation;
+}
 
-	Vector2 res_acc(0, (koef_model->wheel.rigidity_suspension * deformation_suspension - koef_model->body.mass * koef_model->world.gravity) / koef_model->body.mass);
-	if (flag_record == true)
+Vector2 func_solve_acc_body(const Vector2 body, const Vector2 wheel, const koef_of_model* koef_model, state_model* current_model) {
+	double deformation_susp = deformation_suspension(body, wheel, koef_model);//We assume the deformation of the spring
+
+	Vector2 res_acc(0, (koef_model->wheel.rigidity_suspension * deformation_susp - koef_model->body.mass * koef_model->world.gravity) / koef_model->body.mass);
+	if (current_model != NULL)
 		current_model->body.Acceleration = res_acc;
 	return res_acc;
 } 

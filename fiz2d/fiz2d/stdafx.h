@@ -34,8 +34,9 @@ struct Vector2 {
 //	struct Vector2 operator - (const struct Vector2 &);
 	friend struct Vector2 operator * (const struct Vector2 &, const double);
 	friend struct Vector2 operator * (const double, const struct Vector2 &);
-	friend struct Vector2 operator *= (struct Vector2 &, const double);
 	friend struct Vector2 operator / (const struct Vector2 &, const double);
+	friend struct Vector2 operator += (struct Vector2 &, const struct Vector2 &);
+	friend struct Vector2 operator *= (struct Vector2 &, const double);
 	friend struct Vector2 operator /= (struct Vector2 &, const double);
 };
 

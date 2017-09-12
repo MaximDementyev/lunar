@@ -14,7 +14,7 @@ void next_step_no_N(FILE*, struct state_model* const, const struct koef_of_model
 //runge_func.cpp
 struct Vector2 func_solve_acc_wheel(state_model* current_model, const Vector2* Velocity, const struct koef_of_model*, const double force, const struct surface*, const bool flag_record);
 void runge_koef(state_model *current_model, const Vector2 Velocity, const Vector2 Acceleration, const koef_of_model* koef_model, const surface* current_surface, const double force, const double h, runge_K* K);
-void solve_body(state_model *current_model, const koef_of_model *koef_model, double step_time);
+void solve_body(FILE*, state_model *current_model, const koef_of_model *koef_model, double step_time);
 struct Vector2 solve_koef_coord(const struct runge_K*);
 struct Vector2 solve_koef_velocity(const struct runge_K*);
 
@@ -27,11 +27,12 @@ void hit_theend_step(struct state_model* const current_model, const struct koef_
 
 
 //runge_body_func.cpp
-Vector2 func_solve_acc_body(state_model* current_model, const koef_of_model* koef_model, const bool flag_record);
+double deformation_suspension(const Vector2  body, const Vector2 wheel, const koef_of_model *const koef_model);
+Vector2 func_solve_acc_body(const Vector2 body, const Vector2 wheel, const koef_of_model* koef_model, state_model* current_model);
 Vector2 func_solve_acc_wheel_noN(state_model* current_model, const koef_of_model* koef_model, const bool flag_record);
 void runge_koef_body(const Vector2 Velocity, const Vector2 Acceleration, const koef_of_model* koef_model, const double h, runge_K* K);
 
 //Log.cpp
-void print_model(FILE*, const state_model const*);
+void print_model(FILE*, const state_model *const);
 void print_new_step(FILE*);
-void print_surface(FILE*, const surface const*);
+void print_surface(FILE*, const surface *const);

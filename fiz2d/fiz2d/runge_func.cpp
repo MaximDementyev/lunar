@@ -58,9 +58,9 @@ void runge_koef(state_model *current_model, const Vector2 Velocity, const Vector
 }
 
 Vector2 solve_koef_coord(const runge_K* K) { //Solution function
-	return (K->kx1.k1 + 2 * K->kx1.k2 + 2 * K->kx1.k3 + K->kx1.k4) / 6;
+	return (K->kx1.k1 + 2 * K->kx1.k2 + 2 * K->kx1.k3 + K->kx1.k4) / 6.;
 }
 
 Vector2 solve_koef_velocity(const runge_K* K) {//Solution function
-	return (K->kx2.k1 + 2 * K->kx2.k2 + 2 * K->kx2.k3 + K->kx2.k4) / 6;
+	return (K->kx2.k1 + 2 * K->kx2.k2 + 2 * K->kx2.k3 + K->kx2.k4) / 6.;
 }
