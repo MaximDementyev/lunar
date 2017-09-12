@@ -64,3 +64,13 @@ Vector2 solve_koef_coord(const runge_K* K) { //Solution function
 Vector2 solve_koef_velocity(const runge_K* K) {//Solution function
 	return (K->kx2.k1 + 2 * K->kx2.k2 + 2 * K->kx2.k3 + K->kx2.k4) / 6.;
 }
+
+double err_runge(const Vector2 Yh, const Vector2 Yh_2) {
+	Vector2 err = (Yh_2 - Yh) * 16 / 15.;
+	return max(err.x, err.y);
+}
+
+double err_runge_body(const Vector2 Yh, const Vector2 Yh_2) {
+	Vector2 err = (Yh_2 - Yh) * 16 / 15.;
+	return err.y;
+}

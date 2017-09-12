@@ -71,7 +71,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 					}
 				}
 				fprintf(log, "%.5lf - еcть каcание\n", val_step_time);
-				next_step_N(log, current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
+				int tmp = next_step_N(log, current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
 				break;
 			}
 

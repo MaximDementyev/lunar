@@ -5,7 +5,7 @@ const double eps = 1e-4; // подобрать
 const double max_num_step = 10;
 
 
-void next_step_N(FILE* log, struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
+int next_step_N(FILE* log, struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, const double force, double* time_left, double all_time_step) {
 	fprintf(log, "! ! !runge_N\n");
 	func_solve_acc_wheel(current_model, &current_model->wheel.Velocity, koef_model, force, current_surface, true); // Acceleration calculation
 	double step_time = *time_left;
@@ -47,26 +47,29 @@ void next_step_N(FILE* log, struct state_model* current_model, const struct koef
 		Rcoord_half += solve_koef_coord(&Km);
 		Rvelocity_half += solve_koef_velocity(&Km);
 
-		double err = norm(Rcoord - Rcoord_half); //find max err
-		double tmp_err = norm(Rvelocity - Rvelocity_half);
+		double err = err_runge(Rcoord, Rcoord_half); //find max err
+		double tmp_err = err_runge(Rvelocity, Rvelocity_half);
 		if (err < tmp_err)
 			err = tmp_err;
 
 		if (err < eps || step_time < all_time_step / max_num_step) { //Error checking
 			current_model->wheel.Coord = (16 * Rcoord_half - Rcoord) / 15; //solve model
 			current_model->wheel.Velocity = (16 * Rvelocity_half - Rvelocity) / 15;
-			current_model->body.Coord.x = current_model->wheel.Coord.x;
 			*time_left -= step_time;
-			solve_body(log, current_model, koef_model, step_time);
+			//int tmp = solve_body(log, current_model, koef_model, step_time);
+			current_model->body.Coord.x = current_model->wheel.Coord.x;
+			current_model->body.Velocity.x = current_model->wheel.Velocity.x;
 			break;
 		}
 		else {
 			step_time /= 2;//all new calculation with new h
 		}
 	}
+	return 0;
 }
 
-void solve_body(FILE* log, state_model *current_model, const koef_of_model *koef_model, double all_time_step) {
+
+int solve_body(FILE* log, state_model *current_model, const koef_of_model *koef_model, double all_time_step) {
 	//At the moment, we integrate simply with a given step
 	double step_time = all_time_step;
 	double time_left = all_time_step;
@@ -95,8 +98,8 @@ void solve_body(FILE* log, state_model *current_model, const koef_of_model *koef
 		Rcoord_half += solve_koef_coord(&Km);
 		Rvelocity_half += solve_koef_velocity(&Km);
 
-		double err = norm(Rcoord - Rcoord_half); //find max err
-		double tmp_err = norm(Rvelocity - Rvelocity_half);
+		double err = err_runge_body(Rcoord, Rcoord_half); //find max err
+		double tmp_err = err_runge_body(Rvelocity, Rvelocity_half);
 		if (err < tmp_err) err = tmp_err;
 		fprintf(log, "step_time = %.10lf,   err = %.10lf\n", step_time, err);
 
@@ -108,6 +111,7 @@ void solve_body(FILE* log, state_model *current_model, const koef_of_model *koef
 		}
 		else step_time /= 2;//all new calculation with new h
 	}
+	return 0;
 }
 
 
