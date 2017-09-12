@@ -11,22 +11,23 @@ public class PlayerMovement : MonoBehaviour
     public Camera playerCamera;
 	public TextMesh model_text;
 
-	public Surface current_surface;
+	private Surface current_surface;
 
 	[DllImport("fiz2d",CallingConvention = CallingConvention.Cdecl, EntryPoint="initialization_koef_model")]
 	public static extern Koef_of_model initialization_koef_of_model();
-	public Koef_of_model koef_model;
+	private Koef_of_model koef_model;
 
 	[DllImport("fiz2d",CallingConvention = CallingConvention.Cdecl, EntryPoint="solve_step")]
 	public static unsafe extern int solve_step(ref State_model current_model, ref Koef_of_model koef_model, ref Surface current_surface, ref double step_time, double force);
 	public State_model current_model;
 
-	public Vector2 cur_pos_Wheel, cur_pos_body;
+    private Vector2 cur_pos_Wheel, cur_pos_body;
     public double mu = 0.5;
     public double limitation_x = 0.5;
     public double force_module;
 
-	public Vector2 bias_ray, vec_gravity;
+    private Vector2 bias_ray;
+	public Vector2 vec_gravity;
     public GameObject Wheel;
    
 	
