@@ -1,6 +1,0 @@
-D:\GitHab\lunar\Test_DLL\Test_DLL\bin\Debug\Test_DLL.exe.config
-D:\GitHab\lunar\Test_DLL\Test_DLL\bin\Debug\Test_DLL.exe
-D:\GitHab\lunar\Test_DLL\Test_DLL\bin\Debug\Test_DLL.pdb
-D:\GitHab\lunar\Test_DLL\Test_DLL\obj\Debug\Test_DLL.csprojResolveAssemblyReference.cache
-D:\GitHab\lunar\Test_DLL\Test_DLL\obj\Debug\Test_DLL.exe
-D:\GitHab\lunar\Test_DLL\Test_DLL\obj\Debug\Test_DLL.pdb
