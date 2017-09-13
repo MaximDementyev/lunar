@@ -1,8 +1,0 @@
-﻿  runge.cpp
-     Создается библиотека D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.lib и объект D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.exp
-  Создание кода
-  12 of 41 functions (29.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Создание кода завершено
-  fiz2d.vcxproj -> D:\GitHab\lunar\fiz2d\x64\Release\fiz2d.dll
