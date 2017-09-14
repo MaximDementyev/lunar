@@ -11,7 +11,7 @@ double norm(const struct Vector2& a) {
 
 double sign(const double a) {
 	if (a > 0) return 1;
-	if (a == 0) return 0;
+	if (fabs(a) < 1e-18) return 0;
 	else return -1;
 }
 

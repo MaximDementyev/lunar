@@ -1,13 +1,6 @@
 #include"stdafx.h"
 #include"function_header.h"
 
-double deformation_suspension(const Vector2 body, const Vector2 wheel, const koef_of_model *const koef_model) {
-	double distance = norm(body, wheel);
-	if (body.y < wheel.y) distance = -distance;
-	double deformation = koef_model->wheel.position - distance;//We assume the deformation of the spring
-	return deformation;
-}
-
 Vector2 func_solve_acc_body(const Vector2 body, const Vector2 wheel, const koef_of_model* koef_model, state_model* current_model) {
 	double deformation_susp = deformation_suspension(body, wheel, koef_model);//We assume the deformation of the spring
 

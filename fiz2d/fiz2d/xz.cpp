@@ -12,7 +12,7 @@ void hit(state_model* current_model, const koef_of_model* koef_model, const surf
 	current_model->body.Velocity.x = current_model->wheel.Velocity.x; //The body from above along the x axis is rigidly connected to the wheel
 }
 
-int touch_test(const state_model* current_model, const struct koef_of_model* koef_model, const surface* current_surface, double *current_surface_height) {
+int touch_test(state_model* current_model, const struct koef_of_model* koef_model, const surface* current_surface, double *current_surface_height) {
 	//Find the height of the surface under the body
 	double cur_surface_height = tan(current_surface->angle) * current_model->wheel.Coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);
 	if (current_surface_height != NULL)
@@ -42,4 +42,11 @@ Vector2 center_mass(const state_model *current_model, const koef_of_model *koef_
 	center = current_model->body.Coord * koef_model->body.mass + current_model->wheel.Coord * koef_model->wheel.mass;
 	center /= koef_model->body.mass + koef_model->wheel.mass;
 	return center;
+}
+
+double deformation_suspension(const Vector2 body, const Vector2 wheel, const koef_of_model *const koef_model) {
+	double distance = norm(body, wheel);
+	if (body.y < wheel.y) distance = -distance;
+	double deformation = koef_model->wheel.position - distance;//We assume the deformation of the spring
+	return deformation;
 }

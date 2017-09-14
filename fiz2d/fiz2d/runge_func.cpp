@@ -4,8 +4,8 @@
 const double eps = 1e-2; // подобрать
 
 Vector2 func_solve_acc_wheel(state_model* current_model, const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface, const bool flag_record) {
-	double deformation_suspension = koef_model->wheel.position - norm(current_model->body.Coord, current_model->wheel.Coord);//We assume the deformation of the spring
-	double mg_Fyp = deformation_suspension * koef_model->wheel.rigidity_suspension + koef_model->wheel.mass * koef_model->world.gravity;
+	double deformation_susp = deformation_suspension(current_model->body.Coord, current_model->wheel.Coord, koef_model);//We assume the deformation of the spring
+	double mg_Fyp = deformation_susp * koef_model->wheel.rigidity_suspension + koef_model->wheel.mass * koef_model->world.gravity;
 	double acceleration;
 	struct Vector2 related_acc;
 	if (mg_Fyp >= 0) {//The spring presses against the ground
@@ -65,10 +65,10 @@ Vector2 solve_koef_velocity(const runge_K* K) {//Solution function
 
 double err_runge(const Vector2 Yh, const Vector2 Yh_2) {
 	Vector2 err = (Yh_2 - Yh) * 16 / 15.;
-	return max(err.x, err.y);
+	return max(fabs(err.x), fabs(err.y));
 }
 
-double err_runge_body(const Vector2 Yh, const Vector2 Yh_2) {
+double err_runge_y(const Vector2 Yh, const Vector2 Yh_2) {
 	Vector2 err = (Yh_2 - Yh) * 16 / 15.;
 	return err.y;
 }

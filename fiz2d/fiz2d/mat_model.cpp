@@ -78,7 +78,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 			case 1: {//we are flying
 				if (contact == true) contact = false;
 				fprintf(log, "%.5lf - мы летим\n", val_step_time);
-				next_step_no_N(log, current_model, koef_model, current_surface, &val_step_time);
+				next_step_no_N(log, current_model, koef_model, current_surface, &val_step_time, all_time_step);
 			}
 		}
 

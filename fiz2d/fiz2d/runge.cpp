@@ -49,14 +49,13 @@ int next_step_N(FILE* log, struct state_model* current_model, const struct koef_
 
 		double err = err_runge(Rcoord, Rcoord_half); //find max err
 		double tmp_err = err_runge(Rvelocity, Rvelocity_half);
-		if (err < tmp_err)
-			err = tmp_err;
+		if (err < tmp_err) err = tmp_err;
 
 		if (err < eps || step_time < all_time_step / max_num_step) { //Error checking
 			current_model->wheel.Coord = (16 * Rcoord_half - Rcoord) / 15; //solve model
 			current_model->wheel.Velocity = (16 * Rvelocity_half - Rvelocity) / 15;
 			*time_left -= step_time;
-			//int tmp = solve_body(log, current_model, koef_model, step_time);
+			int tmp = solve_body(log, current_model, koef_model, step_time);
 			current_model->body.Coord.x = current_model->wheel.Coord.x;
 			current_model->body.Velocity.x = current_model->wheel.Velocity.x;
 			break;
@@ -98,8 +97,8 @@ int solve_body(FILE* log, state_model *current_model, const koef_of_model *koef_
 		Rcoord_half += solve_koef_coord(&Km);
 		Rvelocity_half += solve_koef_velocity(&Km);
 
-		double err = err_runge_body(Rcoord, Rcoord_half); //find max err
-		double tmp_err = err_runge_body(Rvelocity, Rvelocity_half);
+		double err = err_runge_y(Rcoord, Rcoord_half); //find max err
+		double tmp_err = err_runge_y(Rvelocity, Rvelocity_half);
 		if (err < tmp_err) err = tmp_err;
 		fprintf(log, "step_time = %.10lf,   err = %.10lf\n", step_time, err);
 
@@ -112,38 +111,4 @@ int solve_body(FILE* log, state_model *current_model, const koef_of_model *koef_
 		else step_time /= 2;//all new calculation with new h
 	}
 	return 0;
-}
-
-
-
-
-
-
-//very BAD
-void next_step_no_N(FILE* log, struct state_model* const current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, double* time_left) {
-	//we flying
-	double time = *time_left;
-	Vector2 tmp_coord;
-	double height_above_ground = -100 * koef_model->wheel.radius;
-	while (true) {
-		tmp_coord = current_model->wheel.Coord;
-		tmp_coord.x += current_model->wheel.Velocity.x * time; // x = x0 + vt
-		tmp_coord.y += current_model->wheel.Velocity.y * time - koef_model->world.gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
-		double current_surface_height = tan(current_surface->angle) * tmp_coord.x + current_surface->start_y - current_surface->start_x * tan(current_surface->angle);
-		height_above_ground = tmp_coord.y - koef_model->wheel.radius - current_surface_height;
-		
-		if (fabs(height_above_ground) > eps*0.1 || height_above_ground > 0) break;
-		time /= 2;
-	}
-	//solve wheel without body
-	current_model->wheel.Coord.x += current_model->wheel.Velocity.x * time; // x = x0 + vt
-	current_model->wheel.Coord.y += current_model->wheel.Velocity.y * time - koef_model->world.gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
-	current_model->wheel.Velocity.y -= koef_model->world.gravity * time; // v_y = v0_y - gt
-	
-	//solve body The shift is the same as that of the wheel
-	current_model->body.Coord.x += current_model->body.Velocity.x * time; // x = x0 + vt
-	current_model->body.Coord.y += current_model->body.Velocity.y * time - koef_model->world.gravity * time * time / 2; // y = y0 + vt - (gt^2)/2
-	current_model->body.Velocity.y -= koef_model->world.gravity * time; // v_y = v0_y - gt
-
-	*time_left -= time;
 }

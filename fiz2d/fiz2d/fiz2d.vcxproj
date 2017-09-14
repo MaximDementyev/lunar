@@ -162,6 +162,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="fly_runge.cpp" />
+    <ClCompile Include="fly_runge_func.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="mat_model.cpp" />
     <ClCompile Include="runge.cpp" />
