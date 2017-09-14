@@ -3,7 +3,7 @@
 
 void fly_acc(state_model *current_model, const koef_of_model * koef_model) {
 	current_model->body.Acceleration.x = current_model->wheel.Acceleration.x = 0; //we fly. acc_x = 0
-	double deformation_susp = deformation_suspension(current_model->body.Coord, current_model->wheel.Coord, koef_model); //find deformatin suspension
+	const auto deformation_susp = deformation_suspension(current_model->body.Coord, current_model->wheel.Coord, koef_model); //find deformatin suspension
 	current_model->body.Acceleration.y = (-koef_model->body.mass * koef_model->world.gravity + deformation_susp * koef_model->wheel.rigidity_suspension) / koef_model->body.mass;//solve acc_y body
 	current_model->wheel.Acceleration.y = -(koef_model->wheel.mass * koef_model->world.gravity + deformation_susp * koef_model->wheel.rigidity_suspension) / koef_model->wheel.mass;//solve acc_y wheel
 }

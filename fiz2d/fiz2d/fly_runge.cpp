@@ -3,20 +3,20 @@
 const double eps = 1e-4; // подобрать
 const double max_num_step = 10;
 
-void next_step_no_N(FILE* log, struct state_model* current_model, const struct koef_of_model* koef_model, const struct surface* current_surface, double* time_left, double all_time_step) {
+void next_step_no_n(FILE* log,  state_model* current_model, const  koef_of_model* koef_model, const  surface* current_surface, double* time_left, double all_time_step) {
 	//we flying
-	double step_time = *time_left;
-	Vector2 mass_coord = center_mass(current_model, koef_model);
+	auto step_time = *time_left;
+	auto mass_coord = center_mass(current_model, koef_model);
 	fly_acc(current_model, koef_model);
 	fprintf(log, "b_acc.y = %lf    w_acc.y = %lf\n", current_model->body.Acceleration.y, current_model->wheel.Acceleration.y);
 	while (true) {
-		state_model step_model = *current_model;
+		auto step_model = *current_model;
 		runge_K Kbody, Kwheel;
 		
 		fly_runge_koef(step_model.wheel.Velocity, step_model.wheel.Acceleration, step_time, &Kwheel);//solve runge koef for wheel
 		step_model.wheel.Coord.x += step_model.wheel.Velocity.x * step_time; // x = x0 + vt;
 		step_model.wheel.Coord += solve_koef_coord(&Kwheel);//WARNING cheked change coord_x = 0!!!
-		if (touch_test(&step_model, koef_model, current_surface, NULL) == -1) {
+		if (touch_test(&step_model, koef_model, current_surface, nullptr) == -1) {
 			step_time /= 2;
 			continue;
 		}else{
@@ -36,15 +36,14 @@ void next_step_no_N(FILE* log, struct state_model* current_model, const struct k
 		step_model.body.Velocity.y += solve_koef_velocity(&Kbody).y;
 
 		//solve half step time
-		state_model half_step_model = *current_model;
-		double half_step_time = step_time / 2;
+		auto half_step_model = *current_model;
 		//solve wheel
-		fly_runge_koef(half_step_model.wheel.Velocity, half_step_model.wheel.Acceleration, half_step_time, &Kwheel);//solve runge koef for wheel
+		fly_runge_koef(half_step_model.wheel.Velocity, half_step_model.wheel.Acceleration, step_time / 2, &Kwheel);//solve runge koef for wheel
 		half_step_model.wheel.Coord.y += solve_koef_coord(&Kwheel).y;
 		half_step_model.wheel.Velocity.y += solve_koef_velocity(&Kwheel).y;
 
 		//solve body
-		fly_runge_koef(half_step_model.body.Velocity, half_step_model.body.Acceleration, half_step_time, &Kbody);//solve runge koef for wheel
+		fly_runge_koef(half_step_model.body.Velocity, half_step_model.body.Acceleration, step_time / 2, &Kbody);//solve runge koef for wheel
 		half_step_model.body.Coord.y += solve_koef_coord(&Kbody).y;
 		half_step_model.body.Velocity.y += solve_koef_velocity(&Kbody).y;
 
@@ -52,18 +51,18 @@ void next_step_no_N(FILE* log, struct state_model* current_model, const struct k
 		//second half step
 		fly_acc(&half_step_model, koef_model);//solve acceleration
 
-		fly_runge_koef(half_step_model.wheel.Velocity, half_step_model.wheel.Acceleration, half_step_time, &Kwheel);//solve runge koef for wheel
+		fly_runge_koef(half_step_model.wheel.Velocity, half_step_model.wheel.Acceleration, step_time / 2, &Kwheel);//solve runge koef for wheel
 		half_step_model.wheel.Coord.y += solve_koef_coord(&Kwheel).y;
 		half_step_model.wheel.Velocity.y += solve_koef_velocity(&Kwheel).y;
 		
 		//solve body
-		fly_runge_koef(half_step_model.body.Velocity, half_step_model.body.Acceleration, half_step_time, &Kbody);//solve runge koef for wheel
+		fly_runge_koef(half_step_model.body.Velocity, half_step_model.body.Acceleration, step_time / 2, &Kbody);//solve runge koef for wheel
 		half_step_model.body.Coord.y += solve_koef_coord(&Kbody).y;
 		half_step_model.body.Velocity.y += solve_koef_velocity(&Kbody).y;
 
 		//find max err
-		double err = err_runge_y(step_model.body.Coord, half_step_model.body.Coord); 
-		double tmp_err = err_runge_y(step_model.body.Velocity, half_step_model.body.Velocity);
+		auto err = err_runge_y(step_model.body.Coord, half_step_model.body.Coord); 
+		auto tmp_err = err_runge_y(step_model.body.Velocity, half_step_model.body.Velocity);
 		if (tmp_err > err) err = tmp_err;
 		tmp_err = err_runge_y(step_model.wheel.Coord, half_step_model.wheel.Coord);
 		if (tmp_err > err) err = tmp_err;

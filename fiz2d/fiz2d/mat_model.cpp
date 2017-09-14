@@ -6,7 +6,7 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 	koef_of_model koef_model;
 
 	FILE *in;
-	if ((in = fopen("model_koef.ini", "r")) == NULL) {
+	if ((in = fopen("model_koef.ini", "r")) == nullptr) {
 		printf("Cannot open file model_koef.txt");
 		return koef_model;
 	}
@@ -27,12 +27,12 @@ extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
 extern "C" __declspec(dllexport) int solve_step(state_model* current_model, const koef_of_model* koef_model, const surface* current_surface, double* step_time, const double force) {
 	
 	
-	FILE *log = fopen("cpp_log.txt", "a");
-	double all_time_step = *step_time;
+	auto *log = fopen("cpp_log.txt", "a");
+	const auto all_time_step = *step_time;
 	bool contact;
-	if (touch_test(current_model, koef_model, current_surface, NULL) != 1) contact = true;
+	if (touch_test(current_model, koef_model, current_surface, nullptr) != 1) contact = true;
 	else contact = false;
-	double val_step_time = *step_time;
+	auto val_step_time = *step_time;
 
 
 	print_new_step(log);
@@ -46,7 +46,7 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 		print_model(log, current_model);
 
 		double current_surface_height;
-		int touch_ground = touch_test(current_model, koef_model, current_surface, &current_surface_height);
+		const auto touch_ground = touch_test(current_model, koef_model, current_surface, &current_surface_height);
 		//fprintf(log, "текущая выcота поверхноcти = %.10lf\n", current_surface_height);
 
 
@@ -71,14 +71,18 @@ extern "C" __declspec(dllexport) int solve_step(state_model* current_model, cons
 					}
 				}
 				fprintf(log, "%.5lf - еcть каcание\n", val_step_time);
-				int tmp = next_step_N(log, current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
+				auto tmp = next_step_n(log, current_model, koef_model, current_surface, force, &val_step_time, all_time_step);//Step calculation
 				break;
 			}
 
 			case 1: {//we are flying
 				if (contact == true) contact = false;
 				fprintf(log, "%.5lf - мы летим\n", val_step_time);
-				next_step_no_N(log, current_model, koef_model, current_surface, &val_step_time, all_time_step);
+				next_step_no_n(log, current_model, koef_model, current_surface, &val_step_time, all_time_step);
+			}
+			default:{
+				fprintf_s(log, "err switch");
+				break;
 			}
 		}
 

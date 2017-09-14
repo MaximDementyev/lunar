@@ -4,10 +4,10 @@
 const double eps = 1e-2; // подобрать
 
 Vector2 func_solve_acc_wheel(state_model* current_model, const Vector2* Velocity, const koef_of_model* koef_model, const double force, const surface* current_surface, const bool flag_record) {
-	double deformation_susp = deformation_suspension(current_model->body.Coord, current_model->wheel.Coord, koef_model);//We assume the deformation of the spring
-	double mg_Fyp = deformation_susp * koef_model->wheel.rigidity_suspension + koef_model->wheel.mass * koef_model->world.gravity;
+	const auto deformation_susp = deformation_suspension(current_model->body.Coord, current_model->wheel.Coord, koef_model);//We assume the deformation of the spring
+	const auto mg_Fyp = deformation_susp * koef_model->wheel.rigidity_suspension + koef_model->wheel.mass * koef_model->world.gravity;
 	double acceleration;
-	struct Vector2 related_acc;
+	 Vector2 related_acc;
 	if (mg_Fyp >= 0) {//The spring presses against the ground
 		if (norm(*Velocity) > eps) { //check zero speed
 			// We are moving. Resistance is directed against speed
@@ -16,7 +16,7 @@ Vector2 func_solve_acc_wheel(state_model* current_model, const Vector2* Velocity
 			related_acc = rotate_vec(Vector2(acceleration, 0), current_surface->angle);
 		} else {
 			//tmp_force Just a convenient change of coordinates (All forces except friction on the connected x-axis = F-mg*sin(alpha))
-			double tmp_force = force - mg_Fyp * sin(current_surface->angle);
+			const auto tmp_force = force - mg_Fyp * sin(current_surface->angle);
 			if (fabs(tmp_force) <= fabs(current_surface->mu * mg_Fyp * cos(current_surface->angle)))
 				related_acc.set0();// body is at rest
 			else {
@@ -38,7 +38,7 @@ Vector2 func_solve_acc_wheel(state_model* current_model, const Vector2* Velocity
 void runge_koef(state_model *current_model, const Vector2 Velocity, const Vector2 Acceleration, const koef_of_model* koef_model, const surface* current_surface, const double force, const double h, runge_K* K) {
 
 	//calculate all koef for runge
-	Vector2 tmp_velocity = Velocity;
+	auto tmp_velocity = Velocity;
 	K->kx1.k1 = Velocity * h;
 	K->kx2.k1 = func_solve_acc_wheel(current_model, &tmp_velocity, koef_model, force, current_surface,false) * h;
 
@@ -69,6 +69,6 @@ double err_runge(const Vector2 Yh, const Vector2 Yh_2) {
 }
 
 double err_runge_y(const Vector2 Yh, const Vector2 Yh_2) {
-	Vector2 err = (Yh_2 - Yh) * 16 / 15.;
+	const auto err = (Yh_2 - Yh) * 16 / 15.;
 	return err.y;
 }
