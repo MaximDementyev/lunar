@@ -2,28 +2,6 @@
 #include"function_header.h"
 const double eps = 1e-5; //The error of touching the wheel of the earth
 
-extern "C" __declspec(dllexport) koef_of_model  initialization_koef_model() {
-	koef_of_model koef_model;
-
-	FILE *in;
-	if ((in = fopen("model_koef.ini", "r")) == nullptr) {
-		printf("Cannot open file model_koef.txt");
-		return koef_model;
-	}
-
-	fscanf_s(in, "%lf", &koef_model.wheel.mass);
-	fscanf_s(in, "%lf", &koef_model.wheel.radius);
-	fscanf_s(in, "%lf", &koef_model.wheel.position);
-	fscanf_s(in, "%lf", &koef_model.wheel.rigidity_suspension);
-
-	fscanf_s(in, "%lf", &koef_model.body.mass);
-
-	fscanf_s(in, "%lf", &koef_model.world.gravity);
-
-	fclose(in);
-	return koef_model;
-}
-
 extern "C" __declspec(dllexport) int solve_step(state_model* current_model, const koef_of_model* koef_model, const surface* current_surface, double* step_time, const double force) {
 	
 	
