@@ -31,7 +31,6 @@ double deformation_suspension(const Vector2 body, const Vector2 wheel, const koe
 
 
 //runge_body_func.cpp
-double deformation_suspension(const Vector2  body, const Vector2 wheel, const koef_of_model *const koef_model);
 Vector2 func_solve_acc_body(const Vector2 body, const Vector2 wheel, const koef_of_model* , state_model* );
 Vector2 func_solve_acc_wheel_no_n(state_model* , const koef_of_model* , const bool flag_record);
 void runge_koef_body(const Vector2 Velocity, const Vector2 Acceleration, const koef_of_model* , const double h, runge_K* K);
@@ -45,3 +44,6 @@ void print_surface(FILE*, const surface *const);
 //fly_runge_func
 void fly_acc(state_model *, const koef_of_model * );
 void fly_runge_koef(const Vector2 Velocity, const Vector2 Acceleration, const double h, runge_K* );
+
+//wheel_function
+bool transform_local_coord_to_global(state_model const* current_model);

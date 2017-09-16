@@ -171,6 +171,7 @@
     <ClCompile Include="runge_body_func.cpp" />
     <ClCompile Include="runge_func.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="wheel_function.cpp" />
     <ClCompile Include="xz.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
