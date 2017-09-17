@@ -44,6 +44,7 @@
 	 double radius;
 	 double position;
 	 double rigidity_suspension;
+	 bool leading;
  };
 
  struct koef_body {
@@ -86,8 +87,14 @@ struct object_wheel {
 	 koef_world world;
 };
 
+//only state model without koef, spesial for runge
+struct light_model {
+	state_body_object body;
+	state_wheel_object *wheel;
+};
 
 
+//struct fo surface
  struct  surface {
 	double start_x;
 	double start_y;
@@ -100,11 +107,17 @@ struct object_wheel {
 
 
 // for runge koef
- struct  koef1 {
+ struct  runge_koef_body {
 	 Vector2 k1;
 	 Vector2 k2;
 	 Vector2 k3;
 	 Vector2 k4;
 };
 
+ struct  runge_koef_wheel {
+	 double k1;
+	 double k2;
+	 double k3;
+	 double k4;
+ };
 

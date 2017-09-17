@@ -5,7 +5,8 @@ double norm(const  Vector2&, const  Vector2&);
 double norm(const  Vector2&);
 double sign(const double);
 double dotprod(const  Vector2, const  Vector2);
- Vector2 rotate_vec(const  Vector2 vec, const double phi);
+Vector2 rotate_vec(const  Vector2 vec, const double phi);
+bool transform_local_coord_to_global(state_model const* current_model);
 
 //runge.cpp
 int next_step_n(FILE*,  state_model* const, const  koef_of_model*, const  surface*, const double force, double* time_left, double all_time_step);
@@ -44,6 +45,3 @@ void print_surface(FILE*, const surface *const);
 //fly_runge_func
 void fly_acc(state_model *, const koef_of_model * );
 void fly_runge_koef(const Vector2 Velocity, const Vector2 Acceleration, const double h, runge_K* );
-
-//wheel_function
-bool transform_local_coord_to_global(state_model const* current_model);

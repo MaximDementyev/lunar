@@ -1,20 +1,1074 @@
-﻿  Log.cpp
-  bibl.cpp
-  fly_runge.cpp
-  fly_runge_func.cpp
-  mat_model.cpp
-mat_model.cpp(9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  bibl.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+  create_model.cpp
+create_model.cpp(7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
-mat_model.cpp(30): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+create_model.cpp(22): warning C4477: "fscanf_s": в строке форматирования "%lf" требуется аргумент типа "double *", но вариативный аргумент "1" имеет тип "int *"
+create_model.cpp(48): warning C4190: для "get_coord_body" задана С-компоновка, но возвращаемый тип UDT "Vector2" несовместим с языком Си
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(18): note:  см. объявление "Vector2"
+create_model.cpp(52): warning C4190: для "get_coord_wheel" задана С-компоновка, но возвращаемый тип UDT "Vector2" несовместим с языком Си
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(18): note:  см. объявление "Vector2"
+  fly_runge.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+fly_runge.cpp(6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+fly_runge.cpp(6): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+fly_runge.cpp(8): error C2065: time_left: необъявленный идентификатор
+fly_runge.cpp(9): error C2065: koef_model: необъявленный идентификатор
+fly_runge.cpp(10): error C2065: koef_model: необъявленный идентификатор
+fly_runge.cpp(11): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(11): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(11): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge.cpp(11): note: тип: object_wheel *
+  fly_runge.cpp(11): note: возможно, имеется в виду "->"
+fly_runge.cpp(14): error C2065: runge_K: необъявленный идентификатор
+fly_runge.cpp(14): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "Kbody"
+fly_runge.cpp(14): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(14): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(16): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(16): note: тип: object_wheel *
+  fly_runge.cpp(16): note: возможно, имеется в виду "->"
+fly_runge.cpp(16): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge.cpp(16): note: тип: object_wheel *
+  fly_runge.cpp(16): note: возможно, имеется в виду "->"
+fly_runge.cpp(16): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(17): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge.cpp(17): note: тип: object_wheel *
+  fly_runge.cpp(17): note: возможно, имеется в виду "->"
+fly_runge.cpp(17): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+fly_runge.cpp(17): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(17): note: тип: object_wheel *
+  fly_runge.cpp(17): note: возможно, имеется в виду "->"
+fly_runge.cpp(18): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge.cpp(18): note: тип: object_wheel *
+  fly_runge.cpp(18): note: возможно, имеется в виду "->"
+fly_runge.cpp(18): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(19): error C2065: koef_model: необъявленный идентификатор
+fly_runge.cpp(19): error C2065: current_surface: необъявленный идентификатор
+fly_runge.cpp(23): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge.cpp(23): note: тип: object_wheel *
+  fly_runge.cpp(23): note: возможно, имеется в виду "->"
+fly_runge.cpp(23): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+fly_runge.cpp(23): error C2065: current_surface: необъявленный идентификатор
+fly_runge.cpp(23): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge.cpp(23): note: тип: unknown-type
+fly_runge.cpp(23): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge.cpp(23): note: тип: unknown-type
+fly_runge.cpp(30): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(30): note: тип: object_wheel *
+  fly_runge.cpp(30): note: возможно, имеется в виду "->"
+fly_runge.cpp(30): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(30): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(33): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(33): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(33): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(34): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(34): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+fly_runge.cpp(34): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(35): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(35): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(35): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(36): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(36): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(36): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(41): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(41): note: тип: object_wheel *
+  fly_runge.cpp(41): note: возможно, имеется в виду "->"
+fly_runge.cpp(41): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge.cpp(41): note: тип: object_wheel *
+  fly_runge.cpp(41): note: возможно, имеется в виду "->"
+fly_runge.cpp(41): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(41): error C2660: fly_runge_koef: функция не принимает 2 аргументов
+fly_runge.cpp(42): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge.cpp(42): note: тип: object_wheel *
+  fly_runge.cpp(42): note: возможно, имеется в виду "->"
+fly_runge.cpp(42): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(42): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(43): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(43): note: тип: object_wheel *
+  fly_runge.cpp(43): note: возможно, имеется в виду "->"
+fly_runge.cpp(43): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(43): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(46): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(46): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(46): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(46): error C2660: fly_runge_koef: функция не принимает 2 аргументов
+fly_runge.cpp(47): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(47): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(47): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(48): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(48): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(48): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(52): error C2065: koef_model: необъявленный идентификатор
+fly_runge.cpp(54): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(54): note: тип: object_wheel *
+  fly_runge.cpp(54): note: возможно, имеется в виду "->"
+fly_runge.cpp(54): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge.cpp(54): note: тип: object_wheel *
+  fly_runge.cpp(54): note: возможно, имеется в виду "->"
+fly_runge.cpp(54): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(54): error C2660: fly_runge_koef: функция не принимает 2 аргументов
+fly_runge.cpp(55): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge.cpp(55): note: тип: object_wheel *
+  fly_runge.cpp(55): note: возможно, имеется в виду "->"
+fly_runge.cpp(55): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(55): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(56): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  fly_runge.cpp(56): note: тип: object_wheel *
+  fly_runge.cpp(56): note: возможно, имеется в виду "->"
+fly_runge.cpp(56): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(56): error C2065: Kwheel: необъявленный идентификатор
+fly_runge.cpp(59): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(59): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(59): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(59): error C2660: fly_runge_koef: функция не принимает 2 аргументов
+fly_runge.cpp(60): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(60): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(60): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(61): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(61): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge.cpp(61): error C2065: Kbody: необъявленный идентификатор
+fly_runge.cpp(64): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge.cpp(64): error C2660: err_runge_y: функция не принимает 1 аргументов
+fly_runge.cpp(64): fatal error C1003: число ошибок превышает 100; остановка компиляции
+  fly_runge_func.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+fly_runge_func.cpp(4): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+fly_runge_func.cpp(4): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+fly_runge_func.cpp(5): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge_func.cpp(5): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(5): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge_func.cpp(5): note: тип: object_wheel *
+  fly_runge_func.cpp(5): note: возможно, имеется в виду "->"
+fly_runge_func.cpp(6): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge_func.cpp(6): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  fly_runge_func.cpp(6): note: тип: object_wheel *
+  fly_runge_func.cpp(6): note: возможно, имеется в виду "->"
+fly_runge_func.cpp(6): error C2065: koef_model: необъявленный идентификатор
+fly_runge_func.cpp(6): error C2660: deformation_suspension: функция не принимает 2 аргументов
+fly_runge_func.cpp(6): error C2789: "deformation_susp": требуется инициализация объекта типа класса, квалифицированного как const
+  fly_runge_func.cpp(6): note:  см. объявление "deformation_susp"
+fly_runge_func.cpp(7): error C2039: Acceleration: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+fly_runge_func.cpp(7): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(7): error C2065: koef_model: необъявленный идентификатор
+fly_runge_func.cpp(7): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(7): note: тип: unknown-type
+fly_runge_func.cpp(7): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(7): error C2227: выражение слева от "->world" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(7): note: тип: unknown-type
+fly_runge_func.cpp(7): error C2228: выражение слева от ".gravity" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(7): error C3536: deformation_susp: не может использоваться до инициализации
+fly_runge_func.cpp(7): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(7): note: тип: unknown-type
+fly_runge_func.cpp(7): error C2228: выражение слева от ".rigidity_suspension" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(8): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  fly_runge_func.cpp(8): note: тип: object_wheel *
+  fly_runge_func.cpp(8): note: возможно, имеется в виду "->"
+fly_runge_func.cpp(8): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(8): error C2065: koef_model: необъявленный идентификатор
+fly_runge_func.cpp(8): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(8): note: тип: unknown-type
+fly_runge_func.cpp(8): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(8): error C2227: выражение слева от "->world" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(8): note: тип: unknown-type
+fly_runge_func.cpp(8): error C2228: выражение слева от ".gravity" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(8): error C2228: выражение слева от ".rigidity_suspension" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(11): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+fly_runge_func.cpp(14): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(14): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(14): note: тип: unknown-type
+fly_runge_func.cpp(14): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(15): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(15): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(15): note: тип: unknown-type
+fly_runge_func.cpp(15): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(17): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(17): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(17): note: тип: unknown-type
+fly_runge_func.cpp(17): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(17): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(18): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(18): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(18): note: тип: unknown-type
+fly_runge_func.cpp(18): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(18): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(20): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(20): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(20): note: тип: unknown-type
+fly_runge_func.cpp(20): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(20): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(21): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(21): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(21): note: тип: unknown-type
+fly_runge_func.cpp(21): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(21): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(23): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(23): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(23): note: тип: unknown-type
+fly_runge_func.cpp(23): error C2228: выражение слева от ".k4" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(23): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(24): error C2065: K: необъявленный идентификатор
+fly_runge_func.cpp(24): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  fly_runge_func.cpp(24): note: тип: unknown-type
+fly_runge_func.cpp(24): error C2228: выражение слева от ".k4" должно представлять класс, структуру или объединение
+fly_runge_func.cpp(24): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+  Log.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+Log.cpp(5): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+Log.cpp(5): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+Log.cpp(5): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+Log.cpp(5): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+Log.cpp(6): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  Log.cpp(6): note: тип: object_wheel *const 
+  Log.cpp(6): note: возможно, имеется в виду "->"
+Log.cpp(6): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+Log.cpp(6): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+Log.cpp(6): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  Log.cpp(6): note: тип: object_wheel *const 
+  Log.cpp(6): note: возможно, имеется в виду "->"
+Log.cpp(5): warning C4473: "fprintf": передано недостаточно аргументов для строки формата
+  Log.cpp(5): note: заполнители и их параметры ожидают переменное число аргументов в количестве 4, но было предоставлено 0
+  Log.cpp(5): note: отсутствующий вариативный аргумент "1" требуется для строки форматирования "%.5lf"
+Log.cpp(6): warning C4473: "fprintf": передано недостаточно аргументов для строки формата
+  Log.cpp(6): note: заполнители и их параметры ожидают переменное число аргументов в количестве 4, но было предоставлено 0
+  Log.cpp(6): note: отсутствующий вариативный аргумент "1" требуется для строки форматирования "%.5lf"
+  mat_model.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+mat_model.cpp(5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+mat_model.cpp(5): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+mat_model.cpp(9): error C2065: step_time: необъявленный идентификатор
+mat_model.cpp(11): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(11): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(13): error C2065: step_time: необъявленный идентификатор
+mat_model.cpp(18): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(27): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(27): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(27): error C2789: "touch_ground": требуется инициализация объекта типа класса, квалифицированного как const
+  mat_model.cpp(27): note:  см. объявление "touch_ground"
+mat_model.cpp(31): error C3536: touch_ground: не может использоваться до инициализации
+mat_model.cpp(33): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  mat_model.cpp(33): note: тип: object_wheel *
+  mat_model.cpp(33): note: возможно, имеется в виду "->"
+mat_model.cpp(33): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+mat_model.cpp(33): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(33): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(33): note: тип: unknown-type
+mat_model.cpp(33): error C2228: выражение слева от ".radius" должно представлять класс, структуру или объединение
+mat_model.cpp(34): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  mat_model.cpp(34): note: тип: object_wheel *
+  mat_model.cpp(34): note: возможно, имеется в виду "->"
+mat_model.cpp(34): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+mat_model.cpp(34): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(34): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(34): note: тип: unknown-type
+mat_model.cpp(34): error C2228: выражение слева от ".radius" должно представлять класс, структуру или объединение
+mat_model.cpp(35): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(36): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(36): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(46): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(47): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(47): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(52): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(52): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(52): error C2065: force: необъявленный идентификатор
+mat_model.cpp(59): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(59): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(67): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  mat_model.cpp(67): note: тип: object_wheel *
+  mat_model.cpp(67): note: возможно, имеется в виду "->"
+mat_model.cpp(67): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+mat_model.cpp(67): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(67): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(67): note: тип: unknown-type
+mat_model.cpp(67): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(67): note: тип: unknown-type
+mat_model.cpp(67): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  mat_model.cpp(67): note: тип: object_wheel *
+  mat_model.cpp(67): note: возможно, имеется в виду "->"
+mat_model.cpp(68): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(68): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(70): error C2065: step_time: необъявленный идентификатор
+mat_model.cpp(74): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  mat_model.cpp(74): note: тип: object_wheel *
+  mat_model.cpp(74): note: возможно, имеется в виду "->"
+mat_model.cpp(74): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+mat_model.cpp(74): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(74): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(74): note: тип: unknown-type
+mat_model.cpp(74): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  mat_model.cpp(74): note: тип: unknown-type
+mat_model.cpp(74): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  mat_model.cpp(74): note: тип: object_wheel *
+  mat_model.cpp(74): note: возможно, имеется в виду "->"
+mat_model.cpp(75): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(75): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(77): error C2065: step_time: необъявленный идентификатор
+mat_model.cpp(82): error C2065: koef_model: необъявленный идентификатор
+mat_model.cpp(82): error C2065: current_surface: необъявленный идентификатор
+mat_model.cpp(84): error C2065: step_time: необъявленный идентификатор
+mat_model.cpp(8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note:  см. объявление "fopen"
   runge.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+runge.cpp(8): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge.cpp(8): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge.cpp(10): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(10): note: тип: object_wheel *
+  runge.cpp(10): note: возможно, имеется в виду "->"
+runge.cpp(10): error C2065: koef_model: необъявленный идентификатор
+runge.cpp(10): error C2065: force: необъявленный идентификатор
+runge.cpp(10): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(11): error C2065: time_left: необъявленный идентификатор
+runge.cpp(13): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(13): note: тип: object_wheel *
+  runge.cpp(13): note: возможно, имеется в виду "->"
+runge.cpp(13): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  runge.cpp(13): note: тип: object_wheel *
+  runge.cpp(13): note: возможно, имеется в виду "->"
+runge.cpp(13): error C2789: "Approximate_movement": требуется инициализация объекта типа класса, квалифицированного как const
+  runge.cpp(13): note:  см. объявление "Approximate_movement"
+runge.cpp(14): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(14): note: тип: object_wheel *
+  runge.cpp(14): note: возможно, имеется в виду "->"
+runge.cpp(14): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+runge.cpp(14): error C3536: Approximate_movement: не может использоваться до инициализации
+runge.cpp(14): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(14): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(14): note: тип: unknown-type
+runge.cpp(14): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(14): note: тип: unknown-type
+runge.cpp(15): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(15): note: тип: object_wheel *
+  runge.cpp(15): note: возможно, имеется в виду "->"
+runge.cpp(15): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+runge.cpp(15): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(15): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(15): note: тип: unknown-type
+runge.cpp(20): error C2065: runge_K: необъявленный идентификатор
+runge.cpp(20): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "K"
+runge.cpp(20): error C2065: K: необъявленный идентификатор
+runge.cpp(21): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(21): note: тип: object_wheel *
+  runge.cpp(21): note: возможно, имеется в виду "->"
+runge.cpp(21): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  runge.cpp(21): note: тип: object_wheel *
+  runge.cpp(21): note: возможно, имеется в виду "->"
+runge.cpp(21): error C2065: koef_model: необъявленный идентификатор
+runge.cpp(21): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(21): error C2065: force: необъявленный идентификатор
+runge.cpp(21): error C2065: K: необъявленный идентификатор
+runge.cpp(24): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(24): note: тип: object_wheel *
+  runge.cpp(24): note: возможно, имеется в виду "->"
+runge.cpp(24): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+runge.cpp(24): error C2065: K: необъявленный идентификатор
+runge.cpp(24): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(24): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(24): note: тип: unknown-type
+runge.cpp(24): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(24): note: тип: unknown-type
+runge.cpp(25): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(25): note: тип: object_wheel *
+  runge.cpp(25): note: возможно, имеется в виду "->"
+runge.cpp(25): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+runge.cpp(25): error C2065: K: необъявленный идентификатор
+runge.cpp(25): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(25): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(25): note: тип: unknown-type
+runge.cpp(26): error C2065: K: необъявленный идентификатор
+runge.cpp(26): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+runge.cpp(26): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(26): error C2227: выражение слева от "->limitation_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge.cpp(26): note: тип: unknown-type
+runge.cpp(32): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(32): note: тип: object_wheel *
+  runge.cpp(32): note: возможно, имеется в виду "->"
+runge.cpp(32): error C2065: K: необъявленный идентификатор
+runge.cpp(32): error C2789: "Rcoord": требуется инициализация объекта типа класса, квалифицированного как const
+  runge.cpp(32): note:  см. объявление "Rcoord"
+runge.cpp(33): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(33): note: тип: object_wheel *
+  runge.cpp(33): note: возможно, имеется в виду "->"
+runge.cpp(33): error C2065: K: необъявленный идентификатор
+runge.cpp(33): error C2789: "Rvelocity": требуется инициализация объекта типа класса, квалифицированного как const
+  runge.cpp(33): note:  см. объявление "Rvelocity"
+runge.cpp(35): error C2065: runge_K: необъявленный идентификатор
+runge.cpp(35): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "Km"
+runge.cpp(35): error C2065: Km: необъявленный идентификатор
+runge.cpp(36): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(36): note: тип: object_wheel *
+  runge.cpp(36): note: возможно, имеется в виду "->"
+runge.cpp(36): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  runge.cpp(36): note: тип: object_wheel *
+  runge.cpp(36): note: возможно, имеется в виду "->"
+runge.cpp(36): error C2065: koef_model: необъявленный идентификатор
+runge.cpp(36): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(36): error C2065: force: необъявленный идентификатор
+runge.cpp(36): error C2065: Km: необъявленный идентификатор
+runge.cpp(39): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge.cpp(39): note: тип: object_wheel *
+  runge.cpp(39): note: возможно, имеется в виду "->"
+runge.cpp(39): error C2065: Km: необъявленный идентификатор
+runge.cpp(40): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  runge.cpp(40): note: тип: object_wheel *
+  runge.cpp(40): note: возможно, имеется в виду "->"
+runge.cpp(40): error C2065: Km: необъявленный идентификатор
+runge.cpp(42): error C3536: Rvelocity_half: не может использоваться до инициализации
+runge.cpp(42): error C2065: koef_model: необъявленный идентификатор
+runge.cpp(42): error C2065: force: необъявленный идентификатор
+runge.cpp(42): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(42): error C2789: "solve_Acceleration": требуется инициализация объекта типа класса, квалифицированного как const
+  runge.cpp(42): note:  см. объявление "solve_Acceleration"
+runge.cpp(43): error C3536: solve_Acceleration: не может использоваться до инициализации
+runge.cpp(43): error C2065: koef_model: необъявленный идентификатор
+runge.cpp(43): error C2065: current_surface: необъявленный идентификатор
+runge.cpp(43): error C2065: force: необъявленный идентификатор
+runge.cpp(43): error C2065: Km: необъявленный идентификатор
+runge.cpp(46): error C3536: Rcoord_half: не может использоваться до инициализации
+runge.cpp(46): error C2065: Km: необъявленный идентификатор
+runge.cpp(47): error C2065: Km: необъявленный идентификатор
+runge.cpp(49): error C3536: Rcoord: не может использоваться до инициализации
+runge.cpp(49): error C2664: "double err_runge(const Vector2,const Vector2)": невозможно преобразовать аргумент 1 из "int" в "const Vector2"
+  runge.cpp(49): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+runge.cpp(50): error C3536: Rvelocity: не может использоваться до инициализации
+runge.cpp(50): error C2664: "double err_runge(const Vector2,const Vector2)": невозможно преобразовать аргумент 1 из "int" в "const Vector2"
+  runge.cpp(50): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+runge.cpp(50): error C2789: "tmp_err": требуется инициализация объекта типа класса, квалифицированного как const
+  runge.cpp(50): note:  см. объявление "tmp_err"
+runge.cpp(51): error C3536: err: не может использоваться до инициализации
+runge.cpp(51): error C3536: tmp_err: не может использоваться до инициализации
+runge.cpp(53): error C2065: all_time_step: необъявленный идентификатор
+runge.cpp(54): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+runge.cpp(54): fatal error C1003: число ошибок превышает 100; остановка компиляции
   runge_body_func.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+runge_body_func.cpp(4): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge_body_func.cpp(4): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge_body_func.cpp(5): error C2065: koef_model: необъявленный идентификатор
+runge_body_func.cpp(5): error C2789: "deformation_susp": требуется инициализация объекта типа класса, квалифицированного как const
+  runge_body_func.cpp(5): note:  см. объявление "deformation_susp"
+runge_body_func.cpp(7): error C2065: koef_model: необъявленный идентификатор
+runge_body_func.cpp(7): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(7): note: тип: unknown-type
+runge_body_func.cpp(7): error C2228: выражение слева от ".rigidity_suspension" должно представлять класс, структуру или объединение
+runge_body_func.cpp(7): error C3536: deformation_susp: не может использоваться до инициализации
+runge_body_func.cpp(7): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(7): note: тип: unknown-type
+runge_body_func.cpp(7): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_body_func.cpp(7): error C2227: выражение слева от "->world" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(7): note: тип: unknown-type
+runge_body_func.cpp(7): error C2228: выражение слева от ".gravity" должно представлять класс, структуру или объединение
+runge_body_func.cpp(7): error C2664: "Vector2::Vector2(const Vector2 &)": невозможно преобразовать аргумент 1 из "int" в "const Vector2 &"
+  runge_body_func.cpp(7): note: Причина: невозможно преобразовать "int" в "const Vector2"
+  runge_body_func.cpp(7): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+runge_body_func.cpp(8): error C2065: current_model: необъявленный идентификатор
+runge_body_func.cpp(9): error C2065: current_model: необъявленный идентификатор
+runge_body_func.cpp(9): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(9): note: тип: unknown-type
+runge_body_func.cpp(9): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+runge_body_func.cpp(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge_body_func.cpp(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge_body_func.cpp(14): error C2065: koef_model: необъявленный идентификатор
+runge_body_func.cpp(14): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(14): note: тип: unknown-type
+runge_body_func.cpp(14): error C2228: выражение слева от ".position" должно представлять класс, структуру или объединение
+runge_body_func.cpp(14): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+runge_body_func.cpp(14): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge_body_func.cpp(14): note: тип: object_wheel *
+  runge_body_func.cpp(14): note: возможно, имеется в виду "->"
+runge_body_func.cpp(14): error C2789: "deformation_suspension": требуется инициализация объекта типа класса, квалифицированного как const
+  runge_body_func.cpp(14): note:  см. объявление "deformation_suspension"
+runge_body_func.cpp(16): error C2065: koef_model: необъявленный идентификатор
+runge_body_func.cpp(16): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(16): note: тип: unknown-type
+runge_body_func.cpp(16): error C2228: выражение слева от ".rigidity_suspension" должно представлять класс, структуру или объединение
+runge_body_func.cpp(16): error C3536: deformation_suspension: не может использоваться до инициализации
+runge_body_func.cpp(16): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(16): note: тип: unknown-type
+runge_body_func.cpp(16): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_body_func.cpp(16): error C2227: выражение слева от "->world" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(16): note: тип: unknown-type
+runge_body_func.cpp(16): error C2228: выражение слева от ".gravity" должно представлять класс, структуру или объединение
+runge_body_func.cpp(16): error C2664: "Vector2::Vector2(const Vector2 &)": невозможно преобразовать аргумент 1 из "int" в "const Vector2 &"
+  runge_body_func.cpp(16): note: Причина: невозможно преобразовать "int" в "const Vector2"
+  runge_body_func.cpp(16): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+runge_body_func.cpp(17): error C2065: flag_record: необъявленный идентификатор
+runge_body_func.cpp(17): warning C4805: ==: небезопасное смешение типа "unknown-type" и типа "bool" в операции
+runge_body_func.cpp(18): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  runge_body_func.cpp(18): note: тип: object_wheel *
+  runge_body_func.cpp(18): note: возможно, имеется в виду "->"
+runge_body_func.cpp(24): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge_body_func.cpp(24): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge_body_func.cpp(26): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(26): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(26): note: тип: unknown-type
+runge_body_func.cpp(26): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_body_func.cpp(26): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(27): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(27): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(27): note: тип: unknown-type
+runge_body_func.cpp(27): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_body_func.cpp(27): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(29): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(29): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(29): note: тип: unknown-type
+runge_body_func.cpp(29): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_body_func.cpp(29): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_body_func.cpp(29): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(30): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(30): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(30): note: тип: unknown-type
+runge_body_func.cpp(30): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_body_func.cpp(30): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_body_func.cpp(30): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(32): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(32): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(32): note: тип: unknown-type
+runge_body_func.cpp(32): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+runge_body_func.cpp(32): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_body_func.cpp(32): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(33): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(33): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(33): note: тип: unknown-type
+runge_body_func.cpp(33): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+runge_body_func.cpp(33): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_body_func.cpp(33): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(35): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(35): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(35): note: тип: unknown-type
+runge_body_func.cpp(35): error C2228: выражение слева от ".k4" должно представлять класс, структуру или объединение
+runge_body_func.cpp(35): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+runge_body_func.cpp(35): error C2065: h: необъявленный идентификатор
+runge_body_func.cpp(36): error C2065: K: необъявленный идентификатор
+runge_body_func.cpp(36): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_body_func.cpp(36): note: тип: unknown-type
+runge_body_func.cpp(36): error C2228: выражение слева от ".k4" должно представлять класс, структуру или объединение
+runge_body_func.cpp(36): error C2228: выражение слева от ".k3" должно представлять класс, структуру или объединение
+runge_body_func.cpp(36): error C2065: h: необъявленный идентификатор
   runge_func.cpp
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+runge_func.cpp(6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge_func.cpp(6): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge_func.cpp(7): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+runge_func.cpp(7): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  runge_func.cpp(7): note: тип: object_wheel *
+  runge_func.cpp(7): note: возможно, имеется в виду "->"
+runge_func.cpp(7): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(7): error C2660: deformation_suspension: функция не принимает 2 аргументов
+runge_func.cpp(7): error C2789: "deformation_susp": требуется инициализация объекта типа класса, квалифицированного как const
+  runge_func.cpp(7): note:  см. объявление "deformation_susp"
+runge_func.cpp(8): error C3536: deformation_susp: не может использоваться до инициализации
+runge_func.cpp(8): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(8): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(8): note: тип: unknown-type
+runge_func.cpp(8): error C2228: выражение слева от ".rigidity_suspension" должно представлять класс, структуру или объединение
+runge_func.cpp(8): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_func.cpp(8): error C2227: выражение слева от "->world" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(8): note: тип: unknown-type
+runge_func.cpp(8): error C2228: выражение слева от ".gravity" должно представлять класс, структуру или объединение
+runge_func.cpp(8): error C2789: "mg_Fyp": требуется инициализация объекта типа класса, квалифицированного как const
+  runge_func.cpp(8): note:  см. объявление "mg_Fyp"
+runge_func.cpp(11): error C3536: mg_Fyp: не может использоваться до инициализации
+runge_func.cpp(15): error C2065: force: необъявленный идентификатор
+runge_func.cpp(15): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(15): error C2227: выражение слева от "->mu" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(15): note: тип: unknown-type
+runge_func.cpp(15): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(15): note: тип: unknown-type
+runge_func.cpp(15): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(15): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(15): note: тип: unknown-type
+runge_func.cpp(15): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_func.cpp(16): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(16): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(16): note: тип: unknown-type
+runge_func.cpp(16): error C2660: rotate_vec: функция не принимает 1 аргументов
+runge_func.cpp(19): error C2065: force: необъявленный идентификатор
+runge_func.cpp(19): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(19): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(19): note: тип: unknown-type
+runge_func.cpp(19): error C2789: "tmp_force": требуется инициализация объекта типа класса, квалифицированного как const
+  runge_func.cpp(19): note:  см. объявление "tmp_force"
+runge_func.cpp(20): error C3536: tmp_force: не может использоваться до инициализации
+runge_func.cpp(20): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(20): error C2227: выражение слева от "->mu" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(20): note: тип: unknown-type
+runge_func.cpp(20): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(20): note: тип: unknown-type
+runge_func.cpp(24): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(24): error C2227: выражение слева от "->mu" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(24): note: тип: unknown-type
+runge_func.cpp(24): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(24): note: тип: unknown-type
+runge_func.cpp(24): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(24): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(24): note: тип: unknown-type
+runge_func.cpp(24): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_func.cpp(25): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(25): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(25): note: тип: unknown-type
+runge_func.cpp(25): error C2660: rotate_vec: функция не принимает 1 аргументов
+runge_func.cpp(29): error C2065: force: необъявленный идентификатор
+runge_func.cpp(29): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(29): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(29): note: тип: unknown-type
+runge_func.cpp(29): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(29): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(29): note: тип: unknown-type
+runge_func.cpp(29): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_func.cpp(30): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(30): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(30): note: тип: unknown-type
+runge_func.cpp(30): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+runge_func.cpp(31): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(31): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(31): note: тип: unknown-type
+runge_func.cpp(31): error C2660: rotate_vec: функция не принимает 1 аргументов
+runge_func.cpp(33): error C2065: flag_record: необъявленный идентификатор
+runge_func.cpp(33): warning C4805: ==: небезопасное смешение типа "unknown-type" и типа "bool" в операции
+runge_func.cpp(33): error C2228: выражение слева от ".Acceleration" должно представлять класс, структуру или объединение
+  runge_func.cpp(33): note: тип: object_wheel *
+  runge_func.cpp(33): note: возможно, имеется в виду "->"
+runge_func.cpp(38): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+runge_func.cpp(38): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+runge_func.cpp(42): error C2065: K: необъявленный идентификатор
+runge_func.cpp(42): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(42): note: тип: unknown-type
+runge_func.cpp(42): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_func.cpp(42): error C2065: h: необъявленный идентификатор
+runge_func.cpp(43): error C2065: K: необъявленный идентификатор
+runge_func.cpp(43): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(43): note: тип: unknown-type
+runge_func.cpp(43): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_func.cpp(43): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(43): error C2065: force: необъявленный идентификатор
+runge_func.cpp(43): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(43): error C2065: h: необъявленный идентификатор
+runge_func.cpp(45): error C2065: K: необъявленный идентификатор
+runge_func.cpp(45): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(45): note: тип: unknown-type
+runge_func.cpp(45): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_func.cpp(46): error C2065: K: необъявленный идентификатор
+runge_func.cpp(46): error C2227: выражение слева от "->kx1" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(46): note: тип: unknown-type
+runge_func.cpp(46): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_func.cpp(46): error C2065: h: необъявленный идентификатор
+runge_func.cpp(47): error C2065: K: необъявленный идентификатор
+runge_func.cpp(47): error C2227: выражение слева от "->kx2" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  runge_func.cpp(47): note: тип: unknown-type
+runge_func.cpp(47): error C2228: выражение слева от ".k2" должно представлять класс, структуру или объединение
+runge_func.cpp(47): error C2065: koef_model: необъявленный идентификатор
+runge_func.cpp(47): error C2065: force: необъявленный идентификатор
+runge_func.cpp(47): error C2065: current_surface: необъявленный идентификатор
+runge_func.cpp(47): error C2228: выражение слева от ".k1" должно представлять класс, структуру или объединение
+runge_func.cpp(47): error C2065: h: необъявленный идентификатор
+runge_func.cpp(49): error C2065: K: необъявленный идентификатор
+runge_func.cpp(49): fatal error C1003: число ошибок превышает 100; остановка компиляции
+  stdafx.cpp
   xz.cpp
-     Создается библиотека D:\GitHab\lunar\fiz2d\fiz2d\x64\Release\fiz2d.lib и объект D:\GitHab\lunar\fiz2d\fiz2d\x64\Release\fiz2d.exp
-  Создание кода
-  11 of 52 functions (21.2%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Создание кода завершено
-  fiz2d.vcxproj -> D:\GitHab\lunar\fiz2d\fiz2d\x64\Release\fiz2d.dll
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(12): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(13): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(14): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(17): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(18): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(19): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(20): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(25): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(26): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(28): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(29): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(30): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(35): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(36): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(37): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(46): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+d:\githab\lunar\fiz2d\fiz2d\fiz2d\function_header.h(47): error C2061: синтаксическая ошибка: идентификатор "runge_K"
+xz.cpp(6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+xz.cpp(6): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+xz.cpp(8): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(8): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(8): note: тип: unknown-type
+xz.cpp(9): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(9): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(9): note: тип: unknown-type
+xz.cpp(11): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  xz.cpp(11): note: тип: object_wheel *
+  xz.cpp(11): note: возможно, имеется в виду "->"
+xz.cpp(12): error C2039: Velocity: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+xz.cpp(12): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+xz.cpp(12): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  xz.cpp(12): note: тип: object_wheel *
+  xz.cpp(12): note: возможно, имеется в виду "->"
+xz.cpp(15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+xz.cpp(15): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+xz.cpp(17): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(17): error C2227: выражение слева от "->angle" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(17): note: тип: unknown-type
+xz.cpp(17): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  xz.cpp(17): note: тип: object_wheel *
+  xz.cpp(17): note: возможно, имеется в виду "->"
+xz.cpp(17): error C2228: выражение слева от ".x" должно представлять класс, структуру или объединение
+xz.cpp(17): error C2227: выражение слева от "->start_y" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(17): note: тип: unknown-type
+xz.cpp(17): error C2227: выражение слева от "->start_x" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(17): note: тип: unknown-type
+xz.cpp(17): error C2789: "cur_surface_height": требуется инициализация объекта типа класса, квалифицированного как const
+  xz.cpp(17): note:  см. объявление "cur_surface_height"
+xz.cpp(18): error C2065: current_surface_height: необъявленный идентификатор
+xz.cpp(19): error C2065: current_surface_height: необъявленный идентификатор
+xz.cpp(19): error C3536: cur_surface_height: не может использоваться до инициализации
+xz.cpp(21): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  xz.cpp(21): note: тип: object_wheel *
+  xz.cpp(21): note: возможно, имеется в виду "->"
+xz.cpp(21): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+xz.cpp(21): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(21): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(21): note: тип: unknown-type
+xz.cpp(21): error C2228: выражение слева от ".radius" должно представлять класс, структуру или объединение
+xz.cpp(22): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  xz.cpp(22): note: тип: object_wheel *
+  xz.cpp(22): note: возможно, имеется в виду "->"
+xz.cpp(22): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+xz.cpp(22): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(22): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(22): note: тип: unknown-type
+xz.cpp(22): error C2228: выражение слева от ".radius" должно представлять класс, структуру или объединение
+xz.cpp(28): error C2228: выражение слева от ".Velocity" должно представлять класс, структуру или объединение
+  xz.cpp(28): note: тип: object_wheel *const 
+  xz.cpp(28): note: возможно, имеется в виду "->"
+xz.cpp(28): error C2228: выражение слева от ".y" должно представлять класс, структуру или объединение
+xz.cpp(32): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+xz.cpp(32): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+xz.cpp(33): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(33): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(33): error C2065: contact: необъявленный идентификатор
+xz.cpp(33): warning C4805: ==: небезопасное смешение типа "unknown-type" и типа "bool" в операции
+xz.cpp(34): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(35): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(35): error C2065: current_surface: необъявленный идентификатор
+xz.cpp(40): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+xz.cpp(40): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+xz.cpp(42): error C2039: Coord: не является членом "object_body"
+  d:\githab\lunar\fiz2d\fiz2d\fiz2d\stdafx.h(74): note:  см. объявление "object_body"
+xz.cpp(42): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(42): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(42): note: тип: unknown-type
+xz.cpp(42): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+xz.cpp(42): error C2228: выражение слева от ".Coord" должно представлять класс, структуру или объединение
+  xz.cpp(42): note: тип: object_wheel *const 
+  xz.cpp(42): note: возможно, имеется в виду "->"
+xz.cpp(42): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(42): note: тип: unknown-type
+xz.cpp(43): error C3536: center: не может использоваться до инициализации
+xz.cpp(43): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(43): error C2227: выражение слева от "->body" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(43): note: тип: unknown-type
+xz.cpp(43): error C2228: выражение слева от ".mass" должно представлять класс, структуру или объединение
+xz.cpp(43): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(43): note: тип: unknown-type
+xz.cpp(44): error C2440: return: невозможно преобразовать "int" в "Vector2"
+  xz.cpp(44): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+xz.cpp(47): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+xz.cpp(47): error C2143: синтаксическая ошибка: отсутствие "," перед "*"
+xz.cpp(50): error C2065: koef_model: необъявленный идентификатор
+xz.cpp(50): error C2227: выражение слева от "->wheel" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+  xz.cpp(50): note: тип: unknown-type
+xz.cpp(50): error C2228: выражение слева от ".position" должно представлять класс, структуру или объединение
+xz.cpp(50): error C2789: "deformation": требуется инициализация объекта типа класса, квалифицированного как const
+  xz.cpp(50): note:  см. объявление "deformation"
+xz.cpp(51): error C3536: deformation: не может использоваться до инициализации
