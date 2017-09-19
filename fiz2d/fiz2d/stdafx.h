@@ -21,7 +21,6 @@
 	//\//
 	Vector2() { x = 0; y = 0; }
 	Vector2(double nx, double ny) { x = nx, y = ny; }
-	~Vector2() { x = 0; y = 0; }
 
 	void set(double nx, double ny) { x = nx; y = ny; }
 	void set( Vector2 vec) { x = vec.x, y = vec.y; }
@@ -78,6 +77,7 @@ struct object_body {
 struct object_wheel {
 	state_wheel_object state_wheel;
 	koef_wheel k_wheel;
+	object_wheel();
 };
 
  struct state_model {
@@ -85,6 +85,7 @@ struct object_wheel {
 	 object_wheel *wheel;
 	 int number_wheel;
 	 koef_world world;
+	 state_model();
 };
 
 //only state model without koef, spesial for runge
