@@ -39,9 +39,13 @@
 
 
  struct koef_wheel {
+	 double attachment_point;
+	 double fastening direction;
+	 double zero_position;
+	 double max_position;
+	 double min_position;
 	 double mass;
 	 double radius;
-	 double position;
 	 double rigidity_suspension;
 	 bool leading;
  };
@@ -58,16 +62,13 @@
 	 Vector2 coord;
 	 Vector2 velocity;
 	 Vector2 acceleration;
-	 Vector2 force;
 	 double pitch;
 };
  struct state_wheel_object {
-	 Vector2 coord;
-	 Vector2 local_coord;
-	 Vector2 velocity;
-	 Vector2 acceleration;
-	 Vector2 force;
-	 double pitch;
+	 Vector2 loc_coord;
+	 Vector2 global_coord;
+	 Vector2 loc_vel;
+	 Vector2 loc_acc;
  };
 
 struct object_body {
